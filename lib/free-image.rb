@@ -14,16 +14,39 @@ module FreeImage
     FFI::Platform.windows?
   end
 
-  def self.library
-    if FFI::Platform.windows?
-      'FreeImaged'
-    else
-      'free_image'
+  def self.search_paths
+    @search_paths ||= begin
+      if ENV['FREE_IMAGE_LIBRARY_PATH']
+        [ ENV['FREE_IMAGE_LIBRARY_PATH'] ]
+      elsif FFI::Platform::IS_WINDOWS
+        ENV['PATH'].split(File::PATH_SEPARATOR)
+      else
+        [ '/usr/local/{lib64,lib}', '/opt/local/{lib64,lib}', '/usr/{lib64,lib}' ]
+      end
+    end
+  end
+
+  def self.find_lib(lib)
+    files = search_paths.inject(Array.new) do |array, path|
+      file_name = File.expand_path(File.join(path, "#{lib}.#{FFI::Platform::LIBSUFFIX}"))
+      array << Dir.glob(file_name)
+      array
+    end
+    files.flatten.compact.first
+  end
+
+  def self.free_image_library_paths
+    @free_image_library_paths ||= begin
+      libs = %w{libfreeimage libfreeimage.3 FreeImaged}
+
+      libs.map do |lib|
+        find_lib(lib)
+      end.compact
     end
   end
 
   extend ::FFI::Library
-  ffi_lib(library)
+  ffi_lib(*free_image_library_paths)
   ffi_convention :stdcall if FFI::Platform.windows?
 end
 
