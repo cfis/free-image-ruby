@@ -1,0 +1,99 @@
+= free-image
+
+== Overview
+The free-image gem provides Ruby language bindings for the
+FreeImage[http://freeimage.sourceforge.net/] library.  It is free software,
+released under the MIT License.
+
+FreeImage is an light-weight, open source image manipulation library that
+supports many popular graphics image {formats}[rdoc-ref:FreeImage.formats]
+such as PNG, JPEG, GIF, BMP, and TIFF.
+
+We think FreeImage is a great library for applications that need to read, write,
+create and modify images and thumbnails because:
+
+* Its easy to use
+* Its supports almost all popular image formats
+* Its a light-weight alternative to larger libraries such as ImageMagick,
+  supporting basic manipulation functions but not advanced functionality
+* Its cross-platform
+* The ruby bindings are implemented using FFI, so work across all Ruby
+  implementations and do not have to be compiled
+* Its much more comprehensive than ImageScience
+* Has comprehensive documentation
+
+Note that FreeImage is not the right library for you if you need:
+* Advanced image processing operations such as convolution and transforms
+* Bitmap drawing
+* Vector graphics
+
+== Installation
+free-image requires Ruby 1.8.7 or higher.  The easiest way to install
+free-image is via Ruby Gems.  To install:
+
+ gem install free-image
+
+
+== Getting Started
+Using free-image is easy.  To get you started,  refer to the
+FreeImage cookbook[rdoc-ref:cookbook.rdoc].
+
+
+== Implementation Status
+The FreeImage API is divided into multiple parts.  As summarized below, the Ruby ffi
+bindings currently implement a subset of the available api. Patches are welcome to
+extend the coverage.
+
+=== Bitmap functions
+* General - FreeImage::Bitmap
+* Bitmap management - FreeImage::Bitmap
+* Bitmap information - FreeImage::Information, FreeImage::Color::Palette
+* Filetype - FreeImage::File, FreeImage::IO, FreeImage::Memory
+* Pixel access - FreeImage::Pixel
+* Conversion - FreeImage::Conversions
+* Tone mapping - Not Implemented
+* ICC profile - FreeImage::ICC
+* Plugin - Not Implemented
+* Multipage - Not Implemented
+* Memory I/O streams - FreeImage::MemoryStream
+* Compression - Not Implemented
+* Helper functions - FreeImage::Helper
+
+=== Metadata Functions
+* Introduction - Not Implemented
+* Tag creation and destruction - Not Implemented
+* Tag accessors - Not Implemented
+* Metadata iterator - Not Implemented
+* Metadata accessors - Not Implemented
+* Metadata helper functions - Not Implemented
+
+=== Toolkit Functions
+* Rotation and flipping - FreeImage::Transforms
+* Upsampling / downsampling - FreeImage::Modify
+* Color manipulation - Not Implemented
+* Channel processing - Not Implemented
+* Copy / Paste / Composite routines - FreeImage::Modify
+* Background filling - FreeImage::Modify
+* Miscellaneous algorithms - Not Implemented
+
+== Documentation
+Documentation is available via rdoc, and is installed automatically with the
+gem.  Note that much of the documentation is directly copied from
+the FreeImage API documentation available
+here[http://downloads.sourceforge.net/freeimage/FreeImage3151.pdf].
+
+free-image's online documentation is generated using Hanna.  To generate
+documentation from source:
+
+  gem install hanna-nouveau
+  rake rdoc
+  - or -
+  rdoc -o doc/rdoc -f hanna -m "README.rdoc" lib/**/*.rb README.rdoc
+
+
+== Support
+
+If you have any questions about using free-image, please ?
+
+== License
+See LICENSE for license information.
