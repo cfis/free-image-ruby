@@ -7,14 +7,14 @@ FILES = FileList[
   'LICENSE',
   'free-image.gemspec',
   'Rakefile',
-  'README.rdoc',
+  '*.rdoc',
   'lib/**/*.rb',
   'test/**/*'
 ]
 
 Gem::Specification.new do |spec|
   spec.name        = 'free-image'
-  spec.version     = '0.1.0'
+  spec.version     = '0.5.0'
   spec.summary     = 'Ruby Bindings for the Free Image Library'
   spec.description = <<-EOS
     FreeImage is an Open Source library project for developers who would like to support
@@ -29,4 +29,8 @@ Gem::Specification.new do |spec|
   spec.test_files = Dir.glob("test/test_*.rb")
   spec.required_ruby_version = '>= 1.8.7'
   spec.date = Time.now
+
+  spec.add_development_dependency('grancher')
+  spec.add_development_dependency('hanna-nouveau')
+  spec.add_development_dependency('open4')
 end

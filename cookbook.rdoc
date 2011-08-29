@@ -1,7 +1,8 @@
-= \FreeImage Cookbook
+= \Getting Started With \FreeImage
 Below are various recipes to get you up and running with \FreeImage as quickly
 as possible.  Note that the images the recipes use can be found in the
-test/images directory.
+test/images directory.  For more general information about \FreeImage, including
+installation instructions, please refer to README.rdoc.
 
 == Loading An Image
 The first step in using \FreeImage is to load an image.  \FreeImage can load
@@ -16,7 +17,7 @@ via the FreeImage::Bitmap.open method:
 The open method also takes two additional optional parameters, format and flags,
 that provide greater control over opening images if needed.
 
-Image[link:../../test/images/lena.png]
+Image[link:cookbook/lena.png]
 
 == Saving An Image
 Now let's say you want to save the image to :png format.  This is done
@@ -35,7 +36,7 @@ in the Modify[rdoc-ref:FreeImage::Modify] module.
   thumbnail = image.make_thumbnail(100)
   thumbnail.save('images/lena_thumbnail.png', :png)
 
-Thumbnail[link:../../test/images/lena_thumbnail.png]
+Thumbnail[link:cookbook/lena_thumbnail.png]
 
 == Putting a Border Around a Thumbnail
 Next, let's assume we want to put a red border around our thumbnail.  There
@@ -52,7 +53,7 @@ the enlarge_canvas[FreeImage::Modify.enlarge_canvas] method.
   thumbnail_border = thumbnail.enlarge_canvas(border, border, border, border, color)
   thumbnail_border.save('images/lena_thumbnail_border_1.png', :png)
 
-ThumbnailBorderEnlarge[link:../../test/images/lena_thumbnail_border_enlarge.png]
+ThumbnailBorderEnlarge[link:cookbook/lena_thumbnail_border_enlarge.png]
 
 In the second approach, let's create a image with a red background
 and then paste ontop of it our thumbnail:
@@ -70,7 +71,7 @@ and then paste ontop of it our thumbnail:
   red_image.save('images/test1.png', :png)
   thumbnail_border.save('images/lena_thumbnail_border_2.png', :png)
 
-ThumbnailBorderPaste[link:../../test/images/lena_thumbnail_border_paste.png]
+ThumbnailBorderPaste[link:cookbook/lena_thumbnail_border_paste.png]
 
 == Resampling An Image
 If you need additional control of how an image is resampled, then use the
@@ -85,12 +86,12 @@ by 400%.
     rescaled.save("images/lena_rescale_#{filter.to_s}.png", :png)
   end
 
-RescaleBox[link:../../test/images/lena_rescale_box.png]
-RescaleBicubic[link:../../test/images/lena_rescale_bicubic.png]
-RescaleBilinear[link:../../test/images/lena_rescale_bilinear.png]
-RescaleBspline[link:../../test/images/lena_rescale_bspline.png]
-RescaleCatmullrom[link:../../test/images/lena_rescale_catmullrom.png]
-RescaleLanczos3[link:../../test/images/lena_rescale_lanczos3.png]
+RescaleBox[link:cookbook/lena_rescale_box.png]
+RescaleBicubic[link:cookbook/lena_rescale_bicubic.png]
+RescaleBilinear[link:cookbook/lena_rescale_bilinear.png]
+RescaleBspline[link:cookbook/lena_rescale_bspline.png]
+RescaleCatmullrom[link:cookbook/lena_rescale_catmullrom.png]
+RescaleLanczos3[link:cookbook/lena_rescale_lanczos3.png]
 
 == Flipping An Image
 The Transform modules lets you flip or rotate an image. Let's say you want to
@@ -99,7 +100,7 @@ flip and image horizontally:
   image.flip_horizontal
   image.save('images/lena_flipped.png', :png)
 
-Thumbnail[link:../../test/images/lena_flipped.png]
+Thumbnail[link:cookbook/lena_flipped.png]
 
 == Rotating An Image
 Next, let's rotate an image. Two methods are provide, FreeImage::Bitmap#rotate and
@@ -112,7 +113,7 @@ FreeImage::Bitmap#rotate_ex.  The #rotate method is simpler to use:
   rotated = image.rotate(45, color)
   rotated.save("images/lena_rotate_45.png", :png)
 
-Thumbnail[link:../../test/images/lena_rotate_45.png]
+Thumbnail[link:cookbook/lena_rotate_45.png]
 
 Note however that the image size and geometry has changed. Thus, the #rotate
 function is best for rotating and image 90, 180 or 270 degrees.
@@ -128,15 +129,15 @@ a mirroring algorithm:
   rotated = image.rotate_ex(45, 0, 0, image.width/2, image.height/2, false)
   rotated.save("images/lena_rotate_ex_45_mirrored.png", :png)
 
-Thumbnail[link:../../test/images/lena_rotate_ex_45_masked.png]
-Thumbnail[link:../../test/images/lena_rotate_ex_45_mirrored.png]
+Thumbnail[link:cookbook/lena_rotate_ex_45_masked.png]
+Thumbnail[link:cookbook/lena_rotate_ex_45_mirrored.png]
 
 Now lets rotate around the top left corner:
 
   rotated = image.rotate_ex(45, 0, 0, 0, 0, true)
   rotated.save("images/lena_rotate_ex_45_top_left.png", :png)
 
-Thumbnail[link:../../test/images/lena_rotate_ex_45_top_left.png]
+Thumbnail[link:cookbook/lena_rotate_ex_45_top_left.png]
 
 == Compositing An Image
 \FreeImage also lets you composite an image with a background color or another image.
@@ -147,8 +148,8 @@ Here is an example of compositing the sample image with green.
   composite =  image.composite_with_color(color)
   composite.save("images/sample_composite_color.png", :png)
 
-Sample[link:../../test/images/sample.png]
-SampleCompositeColor[link:../../test/images/sample_composite_color.png]
+Sample[link:cookbook/sample.png]
+SampleCompositeColor[link:cookbook/sample_composite_color.png]
 
 == Manipulating An Image
 \FreeImage also allows you to directly access each pixel in an image.
@@ -168,7 +169,7 @@ blue in the top left corner to green in the bottom right
 
   image.save('images/gradient.png', :png)
 
-Gradient[link:../../test/images/gradient.png]
+Gradient[link:cookbook/gradient.png]
 
 Note you can use a similar technique as another way of drawing a border around a
 thumbnail.
@@ -222,4 +223,4 @@ to our example above of drawing a red border around a thumbnail.
 
   thumbnail.save("images/lena_thumbnail_border_scanline.png", :png)
 
-ThumbnailBorderScanline[link:../../test/images/lena_thumbnail_border_scanline.png]
+ThumbnailBorderScanline[link:cookbook/lena_thumbnail_border_scanline.png]

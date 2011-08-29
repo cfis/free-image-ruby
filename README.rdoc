@@ -1,4 +1,4 @@
-= free-image
+= FreeImage Ruby Bindings
 
 == Overview
 The free-image gem provides Ruby language bindings for the
@@ -36,7 +36,7 @@ free-image is via Ruby Gems.  To install:
 
 == Getting Started
 Using free-image is easy.  To get you started,  refer to the
-FreeImage cookbook[rdoc-ref:cookbook.rdoc].
+\FreeImage cookbook[rdoc-ref:cookbook.rdoc].
 
 
 == Implementation Status
