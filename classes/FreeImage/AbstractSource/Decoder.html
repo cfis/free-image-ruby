@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>FreeImage::AbstractSource::Decoder</title>
+    <meta content='text/html; charset=IBM437' http-equiv='Content-Type'>
+    <link href='../../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='class' id='wrapper'>
+      <div class='header'>
+        <h1 class='name'>
+          <span class='type'>module</span>
+          FreeImage::AbstractSource::Decoder
+        </h1>
+        <ol class='paths'>
+          <li>
+            <a target="docwin" href="../../../files/lib/free-image/sources/abstract_source_rb.html">lib/free-image/sources/abstract_source.rb</a>
+          </li>
+        </ol>
+        <div class='parent'>
+          Parent:
+          <strong><a target="docwin" href="../AbstractSource.html">AbstractSource</a></strong>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            
+            <p>The <a href="Decoder.html">Decoder</a> module defines various constants
+            that control how various image formats are loaded.</p>
+          </div>
+          <div id='context'>
+          </div>
+          <div id='section'>
+            <div id='constants-list'>
+              <h2>Constants</h2>
+              <div class='name-list'>
+                <table summary='Constants'>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>FIF_LOADNOPIXELS</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x8000</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Load the image header only (not supported by all plugins)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>GIF_DEFAULT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>GIF_LOAD256</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x1</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Load the image as a 256 color image with ununsed palette entries, if it's
+                      16 or 2 color</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>GIF_PLAYBACK</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x2</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>'Play' the GIF to generate each frame (as 32bpp) instead of returning raw
+                      frame data when loading</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>ICO_DEFAULT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>JPEG_ACCURATE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x2</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Load the file with the best quality, sacrificing some speed</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>JPEG_CMYK</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x4</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Load separated CMYK "as is" (use | to combine with other load flags)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>JPEG_DEFAULT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Loading (see <a href="Decoder.html#JPEG_FAST">JPEG_FAST</a>); saving (see
+                      JPEG_QUALITYGOOD|JPEG_SUBSAMPLING_420)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>JPEG_EXIFROTATE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x8</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Load and rotate according to Exif 'Orientation' tag if available</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>JPEG_FAST</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x1</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Load the file as fast as possible, sacrificing some quality</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>PCD_BASE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x1</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Load the bitmap sized 768 x 512</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>PCD_BASEDIV16</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x3</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Load the bitmap sized 192 x 128</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>PCD_BASEDIV4</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x2</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Load the bitmap sized 384 x 256</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>PCD_DEFAULT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>PNG_IGNOREGAMMA</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x1</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Loading: avoid gamma correction</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>PSD_CMYK</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x1</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Reads tags for separated CMYK (default is conversion to RGB)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>PSD_DEFAULT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>PSD_LAB</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x2</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Reads tags for CIELab (default is conversion to RGB)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>RAW_DEFAULT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Load the file as linear RGB 48-bit</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>RAW_DISPLAY</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x2</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Load the file as RGB 24-bit</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>RAW_HALFSIZE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x4</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Output a half-size color image</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>RAW_PREVIEW</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x1</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Try to load the embedded JPEG preview with included Exif Data or default to
+                      RGB 24-bit</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>TARGA_LOAD_RGB888</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x1</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>If set the loader converts RGB555 and ARGB8888 -&gt; RGB888.</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>TIFF_CMYK</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x1</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Reads/stores tags for separated CMYK (use | to combine with compression
+                      flags)</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a target="docwin" href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>

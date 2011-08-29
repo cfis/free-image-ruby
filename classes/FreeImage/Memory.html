@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>FreeImage::Memory</title>
+    <meta content='text/html; charset=IBM437' http-equiv='Content-Type'>
+    <link href='../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='class' id='wrapper'>
+      <div class='header'>
+        <h1 class='name'>
+          <span class='type'>class</span>
+          FreeImage::Memory
+        </h1>
+        <ol class='paths'>
+          <li>
+            <a target="docwin" href="../../files/lib/free-image/sources/memory_rb.html">lib/free-image/sources/memory.rb</a>
+          </li>
+        </ol>
+        <div class='parent'>
+          Parent:
+          <strong><a target="docwin" href="../FreeImage.html">FreeImage</a></strong>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            
+            <h2>Summary</h2>
+            
+            <p>Supports loading and saving images to a Ruby string.</p>
+            
+            <h2>Usage</h2>
+            
+            <pre># Read an image from a byte string&#x000A;bytes = ::File.read('test/fixtures/lena.png', :encoding =&gt; Encoding::BINARY)&#x000A;image = FreeImage::Memory.open(bytes)&#x000A;# Save an image to a byte string&#x000A;dest = FreeImage::Memory.new&#x000A;image.save(dest, :jpeg)&#x000A;dest.bytes</pre>
+          </div>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>Public Class</h3>
+            <ol>
+              <li><a target="docwin" href="#method-c-new">new</a></li>
+            </ol>
+            <h3>Public Instance</h3>
+            <ol>
+              <li><a target="docwin" href="#method-i-format">format</a></li>
+              <li><a target="docwin" href="#attribute-i-memory">memory</a></li>
+              <li><a target="docwin" href="#method-i-save">save</a></li>
+            </ol>
+          </div>
+          <div id='context'>
+          </div>
+          <div id='section'>
+            <div id='attribute-list'>
+              <h2 class='section-bar'>Attributes</h2>
+              <div class='name-list'>
+                <table>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>
+                      <a name='attribute-i-memory'>memory</a>
+                    </td>
+                    <td class='context-item-value'>[R]</td>
+                    <td class='context-item-desc'>
+                      
+                      <p><a href="MemoryStream.html">MemoryStream</a> used to read and write data</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id='methods'>
+              <h2>Public Class methods</h2>
+              <div class='method public-class' id='method-method-c-new'>
+                <a name='method-c-new'></a>
+                <div class='synopsis'>
+                  <span class='name'>new</span>
+                  <span class='arguments'>(bytes = nil)</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Create a new <a href="File.html">FreeImage::File</a> instance that can read
+                  and write image data from memory.</p>
+                  
+                  <h2>Parameters</h2>
+                  <table class="rdoc-list"><tr><td class="rdoc-term"><p>bytes</p></td>
+                  <td>
+                  <p>If specified, <a href="../FreeImage.html">FreeImage</a> will read image
+                  from the bytes string and treat it as readonly.  If not specified, then <a
+                  href="../FreeImage.html">FreeImage</a> will create a writable memory
+                  stream.</p>
+                  </td></tr></table>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-c-new-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-c-new-source'><span class="ruby-comment"># File lib/free-image/sources/memory.rb, line 141</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">bytes</span> = <span class="ruby-keyword">nil</span>)&#x000A;  <span class="ruby-ivar">@memory</span> = <span class="ruby-constant">MemoryStream</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">bytes</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <h2>Public Instance methods</h2>
+              <div class='method public-instance' id='method-method-i-format'>
+                <a name='method-i-format'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>memory.format -> :format</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns the image format for a memory stream. If the image format cannot be
+                  determined the :unknown will be returned.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-format-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-format-source'><span class="ruby-comment"># File lib/free-image/sources/memory.rb, line 150</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">format</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetFileTypeFromMemory</span>(<span class="ruby-ivar">@memory</span>, <span class="ruby-value">0</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-save'>
+                <a name='method-i-save'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>memory.save(format = nil, flags = 0) -> boolean</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Saves an image to memory.</p>
+                  
+                  <h2>Parameters</h2>
+                  <table class="rdoc-list"><tr><td class="rdoc-term"><p>format</p></td>
+                  <td>
+                  <p>The <a href="../FreeImage.html#method-i-formats">format</a> to save the
+                  image to.</p>
+                  </td></tr><tr><td class="rdoc-term"><p>flags</p></td>
+                  <td>
+                  <p>Format specific flags that control how a bitmap is saved.  These flags are
+                  defined</p>
+                  
+                  <pre>as constants on the AbstractSource::Encoder module.  Flags can be combined using&#x000A;Ruby's bitwise or operator (|)</pre>
+                  </td></tr></table>
+                  
+                  <h2>Usage</h2>
+                  
+                  <pre>image = Bimap.open('&lt;path_to_file&gt;')&#x000A;dst = FreeImage::Memory.new&#x000A;dst.save(image, :jpeg, AbtractSource::JPEG_QUALITYSUPERB | AbtractSource::JPEG_PROGRESSIVE)&#x000A;dst.bytes</pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-save-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-save-source'><span class="ruby-comment"># File lib/free-image/sources/memory.rb, line 175</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">save</span>(<span class="ruby-identifier">bitmap</span>, <span class="ruby-identifier">format</span>, <span class="ruby-identifier">flags</span> = <span class="ruby-value">0</span>)&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SaveToMemory</span>(<span class="ruby-identifier">format</span>, <span class="ruby-identifier">bitmap</span>, <span class="ruby-ivar">@memory</span>, <span class="ruby-identifier">flags</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a target="docwin" href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>

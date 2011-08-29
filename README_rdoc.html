@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>File: README.rdoc [FreeImage]</title>
+
+  <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
+
+  <script src="./js/jquery.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/thickbox-compressed.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/quicksearch.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/darkfish.js" type="text/javascript"
+    charset="utf-8"></script>
+</head>
+
+<body class="file">
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="./HISTORY.html">HISTORY</a></li>
+        
+          <li class="file"><a href="./LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="./cookbook_rdoc.html">cookbook.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="./FreeImage.html">FreeImage</a></li>
+        
+          <li><a href="./FreeImage/AbstractSource.html">FreeImage::AbstractSource</a></li>
+        
+          <li><a href="./FreeImage/AbstractSource/Decoder.html">FreeImage::AbstractSource::Decoder</a></li>
+        
+          <li><a href="./FreeImage/AbstractSource/Encoder.html">FreeImage::AbstractSource::Encoder</a></li>
+        
+          <li><a href="./FreeImage/Bitmap.html">FreeImage::Bitmap</a></li>
+        
+          <li><a href="./FreeImage/Boolean.html">FreeImage::Boolean</a></li>
+        
+          <li><a href="./FreeImage/Complex.html">FreeImage::Complex</a></li>
+        
+          <li><a href="./FreeImage/Conversions.html">FreeImage::Conversions</a></li>
+        
+          <li><a href="./FreeImage/File.html">FreeImage::File</a></li>
+        
+          <li><a href="./FreeImage/FreeImageError.html">FreeImage::FreeImageError</a></li>
+        
+          <li><a href="./FreeImage/ICC.html">FreeImage::ICC</a></li>
+        
+          <li><a href="./FreeImage/ICC/Profile.html">FreeImage::ICC::Profile</a></li>
+        
+          <li><a href="./FreeImage/IO.html">FreeImage::IO</a></li>
+        
+          <li><a href="./FreeImage/IOStruct.html">FreeImage::IOStruct</a></li>
+        
+          <li><a href="./FreeImage/Information.html">FreeImage::Information</a></li>
+        
+          <li><a href="./FreeImage/Memory.html">FreeImage::Memory</a></li>
+        
+          <li><a href="./FreeImage/MemoryStream.html">FreeImage::MemoryStream</a></li>
+        
+          <li><a href="./FreeImage/Modify.html">FreeImage::Modify</a></li>
+        
+          <li><a href="./FreeImage/Palette.html">FreeImage::Palette</a></li>
+        
+          <li><a href="./FreeImage/Pixels.html">FreeImage::Pixels</a></li>
+        
+          <li><a href="./FreeImage/RGB16.html">FreeImage::RGB16</a></li>
+        
+          <li><a href="./FreeImage/RGBA16.html">FreeImage::RGBA16</a></li>
+        
+          <li><a href="./FreeImage/RGBAF.html">FreeImage::RGBAF</a></li>
+        
+          <li><a href="./FreeImage/RGBF.html">FreeImage::RGBF</a></li>
+        
+          <li><a href="./FreeImage/RGBQuad.html">FreeImage::RGBQuad</a></li>
+        
+          <li><a href="./FreeImage/RGBTriple.html">FreeImage::RGBTriple</a></li>
+        
+          <li><a href="./FreeImage/Scanline.html">FreeImage::Scanline</a></li>
+        
+          <li><a href="./FreeImage/Transforms.html">FreeImage::Transforms</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    
+<h1>free-image</h1>
+
+<h2>Overview</h2>
+
+<p>The free-image gem provides Ruby language bindings for the <a
+href="http://freeimage.sourceforge.net/">FreeImage</a> library.  It is free
+software, released under the MIT License.</p>
+
+<p><a href="FreeImage.html">FreeImage</a> is an light-weight, open source
+image manipulation library that supports many popular graphics image <a
+href="FreeImage.html#method-i-formats">formats</a> such as PNG, JPEG, GIF,
+BMP, and TIFF.</p>
+
+<p>We think <a href="FreeImage.html">FreeImage</a> is a great library for
+applications that need to read, write, create and modify images and
+thumbnails because:</p>
+<ul><li>
+<p>Its easy to use</p>
+</li><li>
+<p>Its supports almost all popular image formats</p>
+</li><li>
+<p>Its a light-weight alternative to larger libraries such as ImageMagick,
+supporting basic manipulation functions but not advanced functionality</p>
+</li><li>
+<p>Its cross-platform</p>
+</li><li>
+<p>The ruby bindings are implemented using FFI, so work across all Ruby
+implementations and do not have to be compiled</p>
+</li><li>
+<p>Its much more comprehensive than ImageScience</p>
+</li><li>
+<p>Has comprehensive documentation</p>
+</li></ul>
+
+<p>Note that <a href="FreeImage.html">FreeImage</a> is not the right library
+for you if you need:</p>
+<ul><li>
+<p>Advanced image processing operations such as convolution and transforms</p>
+</li><li>
+<p>Bitmap drawing</p>
+</li><li>
+<p>Vector graphics</p>
+</li></ul>
+
+<h2>Installation</h2>
+
+<p>free-image requires Ruby 1.8.7 or higher.  The easiest way to install
+free-image is via Ruby Gems.  To install:</p>
+
+<pre>gem install free-image</pre>
+
+<h2>Getting Started</h2>
+
+<p>Using free-image is easy.  To get you started,  refer to the <a
+href="FreeImage.html">FreeImage</a> <a
+href="cookbook_rdoc.html">cookbook</a>.</p>
+
+<h2>Implementation Status</h2>
+
+<p>The <a href="FreeImage.html">FreeImage</a> API is divided into multiple
+parts.  As summarized below, the Ruby ffi bindings currently implement a
+subset of the available api. Patches are welcome to extend the coverage.</p>
+
+<h3>Bitmap functions</h3>
+<ul><li>
+<p>General - <a href="FreeImage/Bitmap.html">FreeImage::Bitmap</a></p>
+</li><li>
+<p>Bitmap management - <a href="FreeImage/Bitmap.html">FreeImage::Bitmap</a></p>
+</li><li>
+<p>Bitmap information - <a
+href="FreeImage/Information.html">FreeImage::Information</a>,
+FreeImage::Color::Palette</p>
+</li><li>
+<p>Filetype - <a href="FreeImage/File.html">FreeImage::File</a>, <a
+href="FreeImage/IO.html">FreeImage::IO</a>, <a
+href="FreeImage/Memory.html">FreeImage::Memory</a></p>
+</li><li>
+<p>Pixel access - FreeImage::Pixel</p>
+</li><li>
+<p>Conversion - <a
+href="FreeImage/Conversions.html">FreeImage::Conversions</a></p>
+</li><li>
+<p>Tone mapping - Not Implemented</p>
+</li><li>
+<p>ICC profile - <a href="FreeImage/ICC.html">FreeImage::ICC</a></p>
+</li><li>
+<p>Plugin - Not Implemented</p>
+</li><li>
+<p>Multipage - Not Implemented</p>
+</li><li>
+<p>Memory I/O streams - <a
+href="FreeImage/MemoryStream.html">FreeImage::MemoryStream</a></p>
+</li><li>
+<p>Compression - Not Implemented</p>
+</li><li>
+<p>Helper functions - FreeImage::Helper</p>
+</li></ul>
+
+<h3>Metadata Functions</h3>
+<ul><li>
+<p>Introduction - Not Implemented</p>
+</li><li>
+<p>Tag creation and destruction - Not Implemented</p>
+</li><li>
+<p>Tag accessors - Not Implemented</p>
+</li><li>
+<p>Metadata iterator - Not Implemented</p>
+</li><li>
+<p>Metadata accessors - Not Implemented</p>
+</li><li>
+<p>Metadata helper functions - Not Implemented</p>
+</li></ul>
+
+<h3>Toolkit Functions</h3>
+<ul><li>
+<p>Rotation and flipping - <a
+href="FreeImage/Transforms.html">FreeImage::Transforms</a></p>
+</li><li>
+<p>Upsampling / downsampling - <a
+href="FreeImage/Modify.html">FreeImage::Modify</a></p>
+</li><li>
+<p>Color manipulation - Not Implemented</p>
+</li><li>
+<p>Channel processing - Not Implemented</p>
+</li><li>
+<p>Copy / Paste / Composite routines - <a
+href="FreeImage/Modify.html">FreeImage::Modify</a></p>
+</li><li>
+<p>Background filling - <a href="FreeImage/Modify.html">FreeImage::Modify</a></p>
+</li><li>
+<p>Miscellaneous algorithms - Not Implemented</p>
+</li></ul>
+
+<h2>Documentation</h2>
+
+<p>Documentation is available via rdoc, and is installed automatically with
+the gem.  Note that much of the documentation is directly copied from the
+<a href="FreeImage.html">FreeImage</a> API documentation available <a
+href="http://downloads.sourceforge.net/freeimage/FreeImage3151.pdf">here</a>.</p>
+
+<p>free-image's online documentation is generated using Hanna.  To generate
+documentation from source:</p>
+
+<pre>gem install hanna-nouveau
+rake rdoc
+- or -
+rdoc -o doc/rdoc -f hanna -m &quot;README.rdoc&quot; lib/**/*.rb README.rdoc</pre>
+
+<h2>Support</h2>
+
+<p>If you have any questions about using free-image, please ?</p>
+
+<h2>License</h2>
+
+<p>See <a href="LICENSE.html">LICENSE</a> for license information.</p>
+
+  </div>
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+</body>
+</html>
+

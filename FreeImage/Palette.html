@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="IBM437"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>Class: FreeImage::Palette</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/free-image/palette_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/palette.rb">lib/free-image/palette.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-5B-5D">#[]</a></li>
+          
+          <li><a href="#method-i-colors_used">#colors_used</a></li>
+          
+          <li><a href="#method-i-each">#each</a></li>
+          
+          <li><a href="#method-i-size">#size</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Included Modules -->
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li><span class="include">Enumerable</span></li>
+        
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../HISTORY.html">HISTORY</a></li>
+        
+          <li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="../cookbook_rdoc.html">cookbook.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../FreeImage.html">FreeImage</a></li>
+        
+          <li><a href="../FreeImage/AbstractSource.html">FreeImage::AbstractSource</a></li>
+        
+          <li><a href="../FreeImage/AbstractSource/Decoder.html">FreeImage::AbstractSource::Decoder</a></li>
+        
+          <li><a href="../FreeImage/AbstractSource/Encoder.html">FreeImage::AbstractSource::Encoder</a></li>
+        
+          <li><a href="../FreeImage/Bitmap.html">FreeImage::Bitmap</a></li>
+        
+          <li><a href="../FreeImage/Boolean.html">FreeImage::Boolean</a></li>
+        
+          <li><a href="../FreeImage/Complex.html">FreeImage::Complex</a></li>
+        
+          <li><a href="../FreeImage/Conversions.html">FreeImage::Conversions</a></li>
+        
+          <li><a href="../FreeImage/File.html">FreeImage::File</a></li>
+        
+          <li><a href="../FreeImage/FreeImageError.html">FreeImage::FreeImageError</a></li>
+        
+          <li><a href="../FreeImage/ICC.html">FreeImage::ICC</a></li>
+        
+          <li><a href="../FreeImage/ICC/Profile.html">FreeImage::ICC::Profile</a></li>
+        
+          <li><a href="../FreeImage/IO.html">FreeImage::IO</a></li>
+        
+          <li><a href="../FreeImage/IOStruct.html">FreeImage::IOStruct</a></li>
+        
+          <li><a href="../FreeImage/Information.html">FreeImage::Information</a></li>
+        
+          <li><a href="../FreeImage/Memory.html">FreeImage::Memory</a></li>
+        
+          <li><a href="../FreeImage/MemoryStream.html">FreeImage::MemoryStream</a></li>
+        
+          <li><a href="../FreeImage/Modify.html">FreeImage::Modify</a></li>
+        
+          <li><a href="../FreeImage/Palette.html">FreeImage::Palette</a></li>
+        
+          <li><a href="../FreeImage/Pixels.html">FreeImage::Pixels</a></li>
+        
+          <li><a href="../FreeImage/RGB16.html">FreeImage::RGB16</a></li>
+        
+          <li><a href="../FreeImage/RGBA16.html">FreeImage::RGBA16</a></li>
+        
+          <li><a href="../FreeImage/RGBAF.html">FreeImage::RGBAF</a></li>
+        
+          <li><a href="../FreeImage/RGBF.html">FreeImage::RGBF</a></li>
+        
+          <li><a href="../FreeImage/RGBQuad.html">FreeImage::RGBQuad</a></li>
+        
+          <li><a href="../FreeImage/RGBTriple.html">FreeImage::RGBTriple</a></li>
+        
+          <li><a href="../FreeImage/Scanline.html">FreeImage::Scanline</a></li>
+        
+          <li><a href="../FreeImage/Transforms.html">FreeImage::Transforms</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">FreeImage::Palette</h1>
+
+    <div id="description" class="description">
+      
+<p>Represents a bitmaps palette. If the bitmap doesn’t have a palette (i.e.
+when its pixel bit depth is greater than 8), this function returns nil.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(bitmap)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="new-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/palette.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">bitmap</span>)
+  <span class="ruby-comment"># Keep reference to bitmap so its not gc'ed</span>
+  <span class="ruby-ivar">@bitmap</span> = <span class="ruby-identifier">bitmap</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="5B-5D-method" class="method-detail ">
+          <a name="method-i-5B-5D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">[]</span><span
+              class="method-args">(index)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the index color as an instance of <a
+href="RGBQuad.html">FreeImage::RGBQuad</a></p>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/palette.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">index</span>)
+  <span class="ruby-keyword">unless</span> (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">size</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">index</span>)
+    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">RangeError</span>, <span class="ruby-node">&quot;Value is out of range 0..#{self.size}. Value: #{index}&quot;</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetPalette</span>(<span class="ruby-ivar">@bitmap</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-constant">RGBQuad</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>[<span class="ruby-identifier">index</span>])
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- 5B-5D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-method -->
+
+      
+        <div id="colors_used-method" class="method-detail method-alias">
+          <a name="method-i-colors_used"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">colors_used</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Palette.html#method-i-size">size</a>
+          </div>
+          
+        </div><!-- colors_used-method -->
+
+      
+        <div id="each-method" class="method-detail ">
+          <a name="method-i-each"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">each</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="each-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/palette.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each</span>
+  <span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span> (<span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>])
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- each-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- each-method -->
+
+      
+        <div id="size-method" class="method-detail ">
+          <a name="method-i-size"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">size</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the palette-size for palletised bitmaps, and 0 for high-colour
+bitmaps.</p>
+            
+
+            
+            <div class="method-source-code" id="size-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/palette.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetColorsUsed</span>(<span class="ruby-ivar">@bitmap</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- size-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Palette.html#method-i-colors_used">colors_used</a>
+          </div>
+          
+
+          
+        </div><!-- size-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

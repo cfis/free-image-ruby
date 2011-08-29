@@ -1,0 +1,588 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>FreeImage::Information</title>
+    <meta content='text/html; charset=IBM437' http-equiv='Content-Type'>
+    <link href='../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='class' id='wrapper'>
+      <div class='header'>
+        <h1 class='name'>
+          <span class='type'>module</span>
+          FreeImage::Information
+        </h1>
+        <ol class='paths'>
+          <li>
+            <a target="docwin" href="../../files/lib/free-image/modules/information_rb.html">lib/free-image/modules/information.rb</a>
+          </li>
+        </ol>
+        <div class='parent'>
+          Parent:
+          <strong><a target="docwin" href="../FreeImage.html">FreeImage</a></strong>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            
+            <p>Once a bitmap is loaded into memory, you can use the following methods to
+            retrieve information about is type, dimensions, colors, etc.</p>
+          </div>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>Public Instance</h3>
+            <ol>
+              <li><a target="docwin" href="#method-i-background_color">background_color</a></li>
+              <li><a target="docwin" href="#method-i-background_color-3D">background_color=</a></li>
+              <li><a target="docwin" href="#method-i-bits_per_pixel">bits_per_pixel</a></li>
+              <li><a target="docwin" href="#method-i-blue_mask">blue_mask</a></li>
+              <li><a target="docwin" href="#method-i-color_type">color_type</a></li>
+              <li><a target="docwin" href="#method-i-dib_size">dib_size</a></li>
+              <li><a target="docwin" href="#method-i-dots_per_meter_x">dots_per_meter_x</a></li>
+              <li><a target="docwin" href="#method-i-dots_per_meter_x-3D">dots_per_meter_x=</a></li>
+              <li><a target="docwin" href="#method-i-dots_per_meter_y">dots_per_meter_y</a></li>
+              <li><a target="docwin" href="#method-i-dots_per_meter_y-3D">dots_per_meter_y=</a></li>
+              <li><a target="docwin" href="#method-i-green_mask">green_mask</a></li>
+              <li><a target="docwin" href="#method-i-has_background_color">has_background_color</a></li>
+              <li><a target="docwin" href="#method-i-has_pixels">has_pixels</a></li>
+              <li><a target="docwin" href="#method-i-height">height</a></li>
+              <li><a target="docwin" href="#method-i-image_type">image_type</a></li>
+              <li><a target="docwin" href="#method-i-line">line</a></li>
+              <li><a target="docwin" href="#method-i-palette">palette</a></li>
+              <li><a target="docwin" href="#method-i-pitch">pitch</a></li>
+              <li><a target="docwin" href="#method-i-red_mask">red_mask</a></li>
+              <li><a target="docwin" href="#method-i-transparency_count">transparency_count</a></li>
+              <li><a target="docwin" href="#method-i-transparent">transparent</a></li>
+              <li><a target="docwin" href="#method-i-transparent-3D">transparent=</a></li>
+              <li><a target="docwin" href="#method-i-transparent_index">transparent_index</a></li>
+              <li><a target="docwin" href="#method-i-transparent_index-3D">transparent_index=</a></li>
+              <li><a target="docwin" href="#method-i-width">width</a></li>
+            </ol>
+          </div>
+          <div id='context'>
+          </div>
+          <div id='section'>
+            <div id='aliases-list'>
+              <h2>Public Instance Aliases</h2>
+              <div class='name-list'>
+                <table summary='Public Instance Aliases'>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>bpp</td>
+                    <td>-&gt;</td>
+                    <td class='context-item-value'><a target="docwin" href="#method-i-bits_per_pixel">bits_per_pixel</a></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id='methods'>
+              <h2>Public Instance methods</h2>
+              <div class='method public-instance' id='method-method-i-background_color'>
+                <a name='method-i-background_color'></a>
+                <div class='synopsis'>
+                  <span class='name'>background_color</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns the background color of a bitmap. For 8-bit images, the color index
+                  in the palette is returned in the rgbReserved member of the bkcolor
+                  parameter.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-background_color-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-background_color-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 80</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">background_color</span>&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:pointer</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetBackgroundColor</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">ptr</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-constant">RGBQuad</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-background_color-3D'>
+                <a name='method-i-background_color-3D'></a>
+                <div class='synopsis'>
+                  <span class='name'>background_color=</span>
+                  <span class='arguments'>(value)</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Set the  background color of a bitmap. The color should be an instance of
+                  <a href="RGBQuad.html">RGBQuad</a>.</p>
+                  
+                  <p>When saving an image to PNG, this background color is transparently saved
+                  to the PNG file. When the bkcolor parameter is nil, the background color is
+                  removed from the image.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-background_color-3D-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-background_color-3D-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 93</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">background_color=</span>(<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetBackgroundColor</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">result</span>&#x000A;    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">RuntimeError</span>, <span class="ruby-string">&quot;Could not save background color&quot;</span>)&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-bits_per_pixel'>
+                <a name='method-i-bits_per_pixel'></a>
+                <div class='synopsis'>
+                  <span class='name'>bits_per_pixel</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns the size of one pixel in the bitmap in bits. For example if each
+                  pixel takes 32-bits of space in the bitmap, this function returns 32.
+                  Possible bit depths are 1, 4, 8, 16, 24, 32 for standard bitmaps and 16-,
+                  32-, 48-, 64-, 96- and 128-bit for non standard bitmaps</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-bits_per_pixel-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-bits_per_pixel-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 105</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">bits_per_pixel</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetBPP</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-blue_mask'>
+                <a name='method-i-blue_mask'></a>
+                <div class='synopsis'>
+                  <span class='name'>blue_mask</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns a bit pattern describing the blue color component of a pixel in a
+                  bitmap.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-blue_mask-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-blue_mask-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 113</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">blue_mask</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetBlueMask</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-color_type'>
+                <a name='method-i-color_type'></a>
+                <div class='synopsis'>
+                  <span class='name'>color_type</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-color_type-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-color_type-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 119</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">color_type</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetColorType</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-dib_size'>
+                <a name='method-i-dib_size'></a>
+                <div class='synopsis'>
+                  <span class='name'>dib_size</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns the size of the DIB-element of a bitmap in memory, which is the
+                  header size + palette size + data bits.  Note that this is not the real
+                  size of a bitmap, just the size of its DIB-element.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-dib_size-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-dib_size-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 128</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">dib_size</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetDIBSize</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-dots_per_meter_x'>
+                <a name='method-i-dots_per_meter_x'></a>
+                <div class='synopsis'>
+                  <span class='name'>dots_per_meter_x</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns the horizontal resolution, in pixels-per-meter, of the target
+                  device for the bitmap.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-dots_per_meter_x-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-dots_per_meter_x-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 136</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">dots_per_meter_x</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetDotsPerMeterX</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-dots_per_meter_x-3D'>
+                <a name='method-i-dots_per_meter_x-3D'></a>
+                <div class='synopsis'>
+                  <span class='name'>dots_per_meter_x=</span>
+                  <span class='arguments'>(value)</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Sets the horizontal resolution, in pixels-per-meter, of the target device
+                  for the bitmap.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-dots_per_meter_x-3D-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-dots_per_meter_x-3D-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 144</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">dots_per_meter_x=</span>(<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SetDotsPerMeterX</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-dots_per_meter_y'>
+                <a name='method-i-dots_per_meter_y'></a>
+                <div class='synopsis'>
+                  <span class='name'>dots_per_meter_y</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns the vertical resolution, in pixels-per-meter, of the target device
+                  for the bitmap.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-dots_per_meter_y-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-dots_per_meter_y-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 152</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">dots_per_meter_y</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetDotsPerMeterY</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-dots_per_meter_y-3D'>
+                <a name='method-i-dots_per_meter_y-3D'></a>
+                <div class='synopsis'>
+                  <span class='name'>dots_per_meter_y=</span>
+                  <span class='arguments'>(value)</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Sets the vertical resolution, in pixels-per-meter, of the target device for
+                  the bitmap.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-dots_per_meter_y-3D-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-dots_per_meter_y-3D-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 160</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">dots_per_meter_y=</span>(<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SetDotsPerMeterY</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-green_mask'>
+                <a name='method-i-green_mask'></a>
+                <div class='synopsis'>
+                  <span class='name'>green_mask</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns a bit pattern describing the green color component of a pixel in a
+                  bitmap.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-green_mask-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-green_mask-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 167</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">green_mask</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetGreenMask</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-has_background_color'>
+                <a name='method-i-has_background_color'></a>
+                <div class='synopsis'>
+                  <span class='name'>has_background_color</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns true when the image has a file background color, false otherwise</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-has_background_color-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-has_background_color-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 174</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">has_background_color</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_HasBackgroundColor</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-has_pixels'>
+                <a name='method-i-has_pixels'></a>
+                <div class='synopsis'>
+                  <span class='name'>has_pixels</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns true if the bitmap contains pixel data, otherwise false.  Bitmaps
+                  can be loaded using the FIF_LOAD_NOPIXELS load flag whic tells the decoder
+                  to read header data and available metadata and skip pixel data decoding.
+                  This reduces memory usage and load speed.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-has_pixels-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-has_pixels-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 184</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">has_pixels</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_HasPixels</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-height'>
+                <a name='method-i-height'></a>
+                <div class='synopsis'>
+                  <span class='name'>height</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns the height of the bitmap in pixel units</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-height-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-height-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 191</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">height</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetHeight</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-image_type'>
+                <a name='method-i-image_type'></a>
+                <div class='synopsis'>
+                  <span class='name'>image_type</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns the <a href="../FreeImage.html#method-i-image_types">image type</a>
+                  of a bitmap.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-image_type-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-image_type-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 198</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">image_type</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetImageType</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-line'>
+                <a name='method-i-line'></a>
+                <div class='synopsis'>
+                  <span class='name'>line</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns the width of the bitmap in bytes.  See also <a
+                  href="Information.html#method-i-pitch">FreeImage::Information.pitch</a>.
+                  There has been some criticism on the name of this function. Some people
+                  expect it to return a scanline in the pixel data, while it actually returns
+                  the width of the bitmap in bytes. As far as I know the term Line is common
+                  terminology for the width of a bitmap in bytes. It is at least used by
+                  Microsoft DirectX.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-line-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-line-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 209</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">line</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetLine</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-palette'>
+                <a name='method-i-palette'></a>
+                <div class='synopsis'>
+                  <span class='name'>palette</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns a bitmap's palette. If the bitmap doesn’t have a palette (i.e.
+                  when the pixel bit depth is greater than 8), this return nil.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-palette-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-palette-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 217</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">palette</span>&#x000A;  <span class="ruby-ivar">@palette</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Palette</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-pitch'>
+                <a name='method-i-pitch'></a>
+                <div class='synopsis'>
+                  <span class='name'>pitch</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns the width of the bitmap in bytes, rounded to the next 32-bit
+                  boundary, also known as pitch or stride or scan width. In <a
+                  href="../FreeImage.html">FreeImage</a> each scanline starts at a 32-bit
+                  boundary for performance reasons. This accessor is essential when using low
+                  level <a href="Pixels.html">pixel manipulation</a> functions.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-pitch-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-pitch-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 226</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">pitch</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetPitch</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-red_mask'>
+                <a name='method-i-red_mask'></a>
+                <div class='synopsis'>
+                  <span class='name'>red_mask</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns a bit pattern describing the red color component of a pixel in a
+                  bitmap.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-red_mask-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-red_mask-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 233</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">red_mask</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetRedMask</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-transparency_count'>
+                <a name='method-i-transparency_count'></a>
+                <div class='synopsis'>
+                  <span class='name'>transparency_count</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns the number of transparent colors in a palletized bitmap, otherwise
+                  returns 0.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-transparency_count-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-transparency_count-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 241</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">transparency_count</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetTransparencyCount</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-transparent'>
+                <a name='method-i-transparent'></a>
+                <div class='synopsis'>
+                  <span class='name'>transparent</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns true if the transparency table is enabled (1-, 4- or 8-bit images)
+                  or when the input dib contains alpha values (32-bit images, <a
+                  href="RGBA16.html">RGBA16</a> or <a href="RGBAF.html">RGBAF</a> images).
+                  Returns false otherwise.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-transparent-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-transparent-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 250</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">transparent</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_IsTransparent</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-transparent-3D'>
+                <a name='method-i-transparent-3D'></a>
+                <div class='synopsis'>
+                  <span class='name'>transparent=</span>
+                  <span class='arguments'>(value)</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Tells <a href="../FreeImage.html">FreeImage</a> if it should make use of
+                  the transparency table or the alpha channel that may accompany a bitmap.
+                  When calling this function with a bitmap whose bitdepth is different from
+                  1-, 4-, 8- or 32-bit, transparency is disabled whatever the value of the <a
+                  href="Boolean.html">Boolean</a> parameter.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-transparent-3D-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-transparent-3D-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 260</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">transparent=</span>(<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SetTransparent</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-transparent_index'>
+                <a name='method-i-transparent_index'></a>
+                <div class='synopsis'>
+                  <span class='name'>transparent_index</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns the palette entry used as transparent color for the image
+                  specified. Works for palletised images only and returns -1 for high color
+                  images or if the image has no color set to be transparent. Although it is
+                  possible for palletised images to have more than one transparent color,
+                  this function always returns the index of the first palette entry, set to
+                  be transparent.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-transparent_index-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-transparent_index-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 272</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">transparent_index</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetTransparentIndex</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-transparent_index-3D'>
+                <a name='method-i-transparent_index-3D'></a>
+                <div class='synopsis'>
+                  <span class='name'>transparent_index=</span>
+                  <span class='arguments'>(value)</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Sets the index of the palette entry to be used as transparent color for the
+                  image specified. This works on palletised images only and does nothing for
+                  high color images.</p>
+                  
+                  <p>Although it is possible for palletised images to have more than one
+                  transparent color, this method sets the palette entry specified as the
+                  single transparent color for the image. All other colors will be set to be
+                  non-transparent by this method.</p>
+                  
+                  <p>As with FreeImage::Bitmap.transparency_table=, this method also sets the
+                  image's transparency property to true for palletised images.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-transparent_index-3D-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-transparent_index-3D-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 288</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">transparent_index=</span>(<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SetTransparentIndex</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-width'>
+                <a name='method-i-width'></a>
+                <div class='synopsis'>
+                  <span class='name'>width</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns the width of the bitmap in pixel units</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-width-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-width-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 299</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">width</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetWidth</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a target="docwin" href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>

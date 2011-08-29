@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="IBM437"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>Module: FreeImage::Pixels</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/free-image/modules/pixels_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/modules/pixels.rb">lib/free-image/modules/pixels.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-bits">#bits</a></li>
+          
+          <li><a href="#method-i-pixel_color">#pixel_color</a></li>
+          
+          <li><a href="#method-i-pixel_index">#pixel_index</a></li>
+          
+          <li><a href="#method-i-scanline">#scanline</a></li>
+          
+          <li><a href="#method-i-set_pixel_color">#set_pixel_color</a></li>
+          
+          <li><a href="#method-i-set_pixel_index">#set_pixel_index</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../HISTORY.html">HISTORY</a></li>
+        
+          <li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="../cookbook_rdoc.html">cookbook.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../FreeImage.html">FreeImage</a></li>
+        
+          <li><a href="../FreeImage/AbstractSource.html">FreeImage::AbstractSource</a></li>
+        
+          <li><a href="../FreeImage/AbstractSource/Decoder.html">FreeImage::AbstractSource::Decoder</a></li>
+        
+          <li><a href="../FreeImage/AbstractSource/Encoder.html">FreeImage::AbstractSource::Encoder</a></li>
+        
+          <li><a href="../FreeImage/Bitmap.html">FreeImage::Bitmap</a></li>
+        
+          <li><a href="../FreeImage/Boolean.html">FreeImage::Boolean</a></li>
+        
+          <li><a href="../FreeImage/Complex.html">FreeImage::Complex</a></li>
+        
+          <li><a href="../FreeImage/Conversions.html">FreeImage::Conversions</a></li>
+        
+          <li><a href="../FreeImage/File.html">FreeImage::File</a></li>
+        
+          <li><a href="../FreeImage/FreeImageError.html">FreeImage::FreeImageError</a></li>
+        
+          <li><a href="../FreeImage/ICC.html">FreeImage::ICC</a></li>
+        
+          <li><a href="../FreeImage/ICC/Profile.html">FreeImage::ICC::Profile</a></li>
+        
+          <li><a href="../FreeImage/IO.html">FreeImage::IO</a></li>
+        
+          <li><a href="../FreeImage/IOStruct.html">FreeImage::IOStruct</a></li>
+        
+          <li><a href="../FreeImage/Information.html">FreeImage::Information</a></li>
+        
+          <li><a href="../FreeImage/Memory.html">FreeImage::Memory</a></li>
+        
+          <li><a href="../FreeImage/MemoryStream.html">FreeImage::MemoryStream</a></li>
+        
+          <li><a href="../FreeImage/Modify.html">FreeImage::Modify</a></li>
+        
+          <li><a href="../FreeImage/Palette.html">FreeImage::Palette</a></li>
+        
+          <li><a href="../FreeImage/Pixels.html">FreeImage::Pixels</a></li>
+        
+          <li><a href="../FreeImage/RGB16.html">FreeImage::RGB16</a></li>
+        
+          <li><a href="../FreeImage/RGBA16.html">FreeImage::RGBA16</a></li>
+        
+          <li><a href="../FreeImage/RGBAF.html">FreeImage::RGBAF</a></li>
+        
+          <li><a href="../FreeImage/RGBF.html">FreeImage::RGBF</a></li>
+        
+          <li><a href="../FreeImage/RGBQuad.html">FreeImage::RGBQuad</a></li>
+        
+          <li><a href="../FreeImage/RGBTriple.html">FreeImage::RGBTriple</a></li>
+        
+          <li><a href="../FreeImage/Scanline.html">FreeImage::Scanline</a></li>
+        
+          <li><a href="../FreeImage/Transforms.html">FreeImage::Transforms</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">FreeImage::Pixels</h1>
+
+    <div id="description" class="description">
+      
+<h2>Summary</h2>
+
+<p>The Pixel module provides methods that allow you to read, write and work
+pixel-by-pixel with image data. FreeImage not only can work with standard
+bitmap data (e.g. 1-, 4-, 8-, 16-, 24- and 32-bit) but also with scientific
+data such as 16-bit greyscale images, or images made up of long, double or
+complex values (often used in signal and image processing algorithms).</p>
+
+<p>The FreeImage coordinate system is upside down relative to usual graphics
+conventions. Thus, the scanlines are stored upside down, with the first
+scan in memory being the bottommost scan in the image.</p>
+
+<p>For additional information, please refer to the <a
+href="Scanline.html">FreeImage::Scanline</a> documentation.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="bits-method" class="method-detail ">
+          <a name="method-i-bits"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bits</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the data-bits of the bitmap. It is up to you to interpret these
+bytes correctly, according to the results of <a
+href="Information.html#method-i-bits_per_pixel">Information#bits_per_pixel</a>,
+<a href="Information.html#method-i-red_mask">Information#red_mask</a>, <a
+href="Information.html#method-i-green_mask">Information#green_mask</a> and
+<a href="Information.html#method-i-blue_mask">Information#blue_mask</a>.</p>
+
+<p>If the bitmap does not contain pixel data (see <a
+href="Information.html#method-i-has_pixels">Information#has_pixels</a>),
+nil will be returned.</p>
+
+<p>For a performance reason, the address returned by FreeImage_GetBits is
+aligned on a 16 bytes alignment boundary</p>
+            
+
+            
+            <div class="method-source-code" id="bits-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/pixels.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bits</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetBits</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">read_string</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- bits-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bits-method -->
+
+      
+        <div id="pixel_color-method" class="method-detail ">
+          <a name="method-i-pixel_color"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">pixel_color</span><span
+              class="method-args">(x, y)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Gets the pixel color of a 16-, 24- or 32-bit image at the specified
+coordinate.</p>
+
+<h2>Parameters</h2>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>x</p></td>
+<td>
+<p>The pixel position in horizontal direction</p>
+</td></tr><tr><td class="rdoc-term"><p>y</p></td>
+<td>
+<p>The pixel position in vertical direction.</p>
+</td></tr></table>
+            
+
+            
+            <div class="method-source-code" id="pixel_color-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/pixels.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pixel_color</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+  <span class="ruby-identifier">color</span> = <span class="ruby-constant">RGBQuad</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetPixelColor</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">color</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-identifier">result</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">color</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- pixel_color-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- pixel_color-method -->
+
+      
+        <div id="pixel_index-method" class="method-detail ">
+          <a name="method-i-pixel_index"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">pixel_index</span><span
+              class="method-args">(x, y)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Gets the pixel index of a palettized image at the specified coordinate.</p>
+
+<h2>Parameters</h2>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>x</p></td>
+<td>
+<p>The pixel position in horizontal direction</p>
+</td></tr><tr><td class="rdoc-term"><p>y</p></td>
+<td>
+<p>The pixel position in vertical direction.</p>
+</td></tr></table>
+            
+
+            
+            <div class="method-source-code" id="pixel_index-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/pixels.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pixel_index</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+  <span class="ruby-identifier">byte_type</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">find_type</span>(<span class="ruby-value">:byte</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">byte_type</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetPixelIndex</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">ptr</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">result</span>
+  
+  <span class="ruby-identifier">data</span> = <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">read_bytes</span>(<span class="ruby-identifier">byte_type</span>.<span class="ruby-identifier">size</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">byte_type</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">data</span>.<span class="ruby-identifier">ord</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">data</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- pixel_index-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- pixel_index-method -->
+
+      
+        <div id="scanline-method" class="method-detail ">
+          <a name="method-i-scanline"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">scanline</span><span
+              class="method-args">(index)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the requested row of image data as a <a
+href="Scanline.html">FreeImage::Scanline</a> instance.</p>
+
+<p>If the bitmap does not contain pixel data (see <a
+href="Information.html#method-i-has_pixels">Information#has_pixels</a>),
+nil will be returned.</p>
+            
+
+            
+            <div class="method-source-code" id="scanline-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/pixels.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">scanline</span>(<span class="ruby-identifier">index</span>)
+  <span class="ruby-keyword">unless</span> (<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">height</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">index</span>)
+    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">RangeError</span>, <span class="ruby-node">&quot;Index must be between 0 and #{self.height - 1}&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetScanLine</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">index</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+
+  <span class="ruby-identifier">ptr</span> <span class="ruby-operator">?</span> <span class="ruby-constant">Scanline</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">index</span>, <span class="ruby-identifier">ptr</span>) <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- scanline-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- scanline-method -->
+
+      
+        <div id="set_pixel_color-method" class="method-detail ">
+          <a name="method-i-set_pixel_color"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">set_pixel_color</span><span
+              class="method-args">(x, y, color)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Sets the pixel color of a 16-, 24- or 32-bit image at the specified
+coordinate.</p>
+
+<h2>Parameters</h2>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>x</p></td>
+<td>
+<p>The pixel position in horizontal direction</p>
+</td></tr><tr><td class="rdoc-term"><p>y</p></td>
+<td>
+<p>The pixel position in vertical direction.</p>
+</td></tr><tr><td class="rdoc-term"><p>color</p></td>
+<td>
+<p>The new color as a RGBAQuad instance.</p>
+</td></tr></table>
+
+<p>The function returns true on success and false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="set_pixel_color-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/pixels.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_pixel_color</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">color</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SetPixelColor</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">color</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- set_pixel_color-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- set_pixel_color-method -->
+
+      
+        <div id="set_pixel_index-method" class="method-detail ">
+          <a name="method-i-set_pixel_index"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">set_pixel_index</span><span
+              class="method-args">(x, y, index)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Sets the pixel index of a palettized image at the specified coordinate.</p>
+
+<h2>Parameters</h2>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>x</p></td>
+<td>
+<p>The pixel position in horizontal direction</p>
+</td></tr><tr><td class="rdoc-term"><p>y</p></td>
+<td>
+<p>The pixel position in vertical direction.</p>
+</td></tr></table>
+
+<p>The function returns true on success and false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="set_pixel_index-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/pixels.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_pixel_index</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">index</span>)
+  <span class="ruby-identifier">byte_type</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">find_type</span>(<span class="ruby-value">:byte</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">byte_type</span>.<span class="ruby-identifier">size</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">byte_type</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">put_bytes</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">index</span>.<span class="ruby-identifier">chr</span>, <span class="ruby-value">0</span>, <span class="ruby-identifier">byte_type</span>.<span class="ruby-identifier">size</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">put_bytes</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">index</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-value">0</span>, <span class="ruby-identifier">byte_type</span>.<span class="ruby-identifier">size</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SetPixelIndex</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">ptr</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- set_pixel_index-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- set_pixel_index-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="IBM437"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>Class: FreeImage::MemoryStream</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/free-image/sources/memory_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/sources/memory.rb">lib/free-image/sources/memory.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">FFI::AutoPointer</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-c-release">::release</a></li>
+          
+          <li><a href="#method-i-bytes">#bytes</a></li>
+          
+          <li><a href="#method-i-count">#count</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../HISTORY.html">HISTORY</a></li>
+        
+          <li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="../cookbook_rdoc.html">cookbook.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../FreeImage.html">FreeImage</a></li>
+        
+          <li><a href="../FreeImage/AbstractSource.html">FreeImage::AbstractSource</a></li>
+        
+          <li><a href="../FreeImage/AbstractSource/Decoder.html">FreeImage::AbstractSource::Decoder</a></li>
+        
+          <li><a href="../FreeImage/AbstractSource/Encoder.html">FreeImage::AbstractSource::Encoder</a></li>
+        
+          <li><a href="../FreeImage/Bitmap.html">FreeImage::Bitmap</a></li>
+        
+          <li><a href="../FreeImage/Boolean.html">FreeImage::Boolean</a></li>
+        
+          <li><a href="../FreeImage/Complex.html">FreeImage::Complex</a></li>
+        
+          <li><a href="../FreeImage/Conversions.html">FreeImage::Conversions</a></li>
+        
+          <li><a href="../FreeImage/File.html">FreeImage::File</a></li>
+        
+          <li><a href="../FreeImage/FreeImageError.html">FreeImage::FreeImageError</a></li>
+        
+          <li><a href="../FreeImage/ICC.html">FreeImage::ICC</a></li>
+        
+          <li><a href="../FreeImage/ICC/Profile.html">FreeImage::ICC::Profile</a></li>
+        
+          <li><a href="../FreeImage/IO.html">FreeImage::IO</a></li>
+        
+          <li><a href="../FreeImage/IOStruct.html">FreeImage::IOStruct</a></li>
+        
+          <li><a href="../FreeImage/Information.html">FreeImage::Information</a></li>
+        
+          <li><a href="../FreeImage/Memory.html">FreeImage::Memory</a></li>
+        
+          <li><a href="../FreeImage/MemoryStream.html">FreeImage::MemoryStream</a></li>
+        
+          <li><a href="../FreeImage/Modify.html">FreeImage::Modify</a></li>
+        
+          <li><a href="../FreeImage/Palette.html">FreeImage::Palette</a></li>
+        
+          <li><a href="../FreeImage/Pixels.html">FreeImage::Pixels</a></li>
+        
+          <li><a href="../FreeImage/RGB16.html">FreeImage::RGB16</a></li>
+        
+          <li><a href="../FreeImage/RGBA16.html">FreeImage::RGBA16</a></li>
+        
+          <li><a href="../FreeImage/RGBAF.html">FreeImage::RGBAF</a></li>
+        
+          <li><a href="../FreeImage/RGBF.html">FreeImage::RGBF</a></li>
+        
+          <li><a href="../FreeImage/RGBQuad.html">FreeImage::RGBQuad</a></li>
+        
+          <li><a href="../FreeImage/RGBTriple.html">FreeImage::RGBTriple</a></li>
+        
+          <li><a href="../FreeImage/Scanline.html">FreeImage::Scanline</a></li>
+        
+          <li><a href="../FreeImage/Transforms.html">FreeImage::Transforms</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">FreeImage::MemoryStream</h1>
+
+    <div id="description" class="description">
+      
+<p>Wrapper for a <a href="../FreeImage.html">FreeImage</a> memory stream which
+allows images to be read and written to memory.  <a
+href="Memory.html">Memory</a> streams are usefule for storing images as
+blobs in a database or writing them to an to a Internet stream.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(bytes = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Create a new memory stream.</p>
+
+<h2>Parameters</h2>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>bytes</p></td>
+<td>
+<p>If specified, a binary encoded Ruby string that stores image data.  <a
+href="../FreeImage.html">FreeImage</a> will treat the string as read-only. 
+If not specified, a writable <a href="MemoryStream.html">MemoryStream</a>
+is created.</p>
+</td></tr></table>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/sources/memory.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">bytes</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">bytes</span>
+    <span class="ruby-identifier">buf</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">from_string</span>(<span class="ruby-identifier">bytes</span>)
+    <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_OpenMemory</span>(<span class="ruby-identifier">buf</span>, <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">bytesize</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_OpenMemory</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-value">0</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">ptr</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+
+      
+        <div id="release-method" class="method-detail ">
+          <a name="method-c-release"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">release</span><span
+              class="method-args">(ptr)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="release-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/sources/memory.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">release</span>(<span class="ruby-identifier">ptr</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_CloseMemory</span>(<span class="ruby-identifier">ptr</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- release-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- release-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="bytes-method" class="method-detail ">
+          <a name="method-i-bytes"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bytes</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the bytes of the memory stream.</p>
+            
+
+            
+            <div class="method-source-code" id="bytes-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/sources/memory.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bytes</span>
+  <span class="ruby-identifier">size</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Type</span><span class="ruby-operator">::</span><span class="ruby-constant">CHAR</span>.<span class="ruby-identifier">size</span>
+
+  <span class="ruby-comment"># Reset memory to start</span>
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SeekMemory</span>(<span class="ruby-keyword">self</span>, <span class="ruby-value">0</span>, <span class="ruby-operator">::</span><span class="ruby-constant">IO</span><span class="ruby-operator">::</span><span class="ruby-constant">SEEK_SET</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+
+  <span class="ruby-identifier">buffer</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Type</span><span class="ruby-operator">::</span><span class="ruby-constant">CHAR</span>, <span class="ruby-identifier">size</span> * <span class="ruby-identifier">count</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-identifier">size</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ReadMemory</span>(<span class="ruby-identifier">buffer</span>, <span class="ruby-identifier">size</span>, <span class="ruby-identifier">count</span>, <span class="ruby-keyword">self</span>)
+  <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">null?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">read_string</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- bytes-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bytes-method -->
+
+      
+        <div id="count-method" class="method-detail ">
+          <a name="method-i-count"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">count</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the size of the memory stream.</p>
+            
+
+            
+            <div class="method-source-code" id="count-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/sources/memory.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">count</span>
+  <span class="ruby-comment"># Store current position</span>
+  <span class="ruby-identifier">pos</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_TellMemory</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+
+  <span class="ruby-comment"># Go to end of stream to get length</span>
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SeekMemory</span>(<span class="ruby-keyword">self</span>, <span class="ruby-value">0</span>, <span class="ruby-operator">::</span><span class="ruby-constant">IO</span><span class="ruby-operator">::</span><span class="ruby-constant">SEEK_END</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-identifier">count</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_TellMemory</span>(<span class="ruby-keyword">self</span>)
+
+  <span class="ruby-comment"># Restore position</span>
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SeekMemory</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">pos</span>, <span class="ruby-operator">::</span><span class="ruby-constant">IO</span><span class="ruby-operator">::</span><span class="ruby-constant">SEEK_SET</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+
+  <span class="ruby-identifier">count</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- count-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- count-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

@@ -1,0 +1,1006 @@
+<?xml version="1.0" encoding="IBM437"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>Module: FreeImage</title>
+
+  <link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+  <script src="./js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="./lib/free-image/bitmap_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/bitmap.rb">lib/free-image/bitmap.rb</a></li>
+          
+            <li><a href="./lib/free-image/enums/color_types_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/enums/color_types.rb">lib/free-image/enums/color_types.rb</a></li>
+          
+            <li><a href="./lib/free-image/enums/dithers_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/enums/dithers.rb">lib/free-image/enums/dithers.rb</a></li>
+          
+            <li><a href="./lib/free-image/enums/filters_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/enums/filters.rb">lib/free-image/enums/filters.rb</a></li>
+          
+            <li><a href="./lib/free-image/enums/formats_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/enums/formats.rb">lib/free-image/enums/formats.rb</a></li>
+          
+            <li><a href="./lib/free-image/enums/image_types_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/enums/image_types.rb">lib/free-image/enums/image_types.rb</a></li>
+          
+            <li><a href="./lib/free-image/errors_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/errors.rb">lib/free-image/errors.rb</a></li>
+          
+            <li><a href="./lib/free-image/modules/conversions_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/modules/conversions.rb">lib/free-image/modules/conversions.rb</a></li>
+          
+            <li><a href="./lib/free-image/modules/helper_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/modules/helper.rb">lib/free-image/modules/helper.rb</a></li>
+          
+            <li><a href="./lib/free-image/modules/icc_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/modules/icc.rb">lib/free-image/modules/icc.rb</a></li>
+          
+            <li><a href="./lib/free-image/modules/information_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/modules/information.rb">lib/free-image/modules/information.rb</a></li>
+          
+            <li><a href="./lib/free-image/modules/modify_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/modules/modify.rb">lib/free-image/modules/modify.rb</a></li>
+          
+            <li><a href="./lib/free-image/modules/pixels_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/modules/pixels.rb">lib/free-image/modules/pixels.rb</a></li>
+          
+            <li><a href="./lib/free-image/modules/transforms_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/modules/transforms.rb">lib/free-image/modules/transforms.rb</a></li>
+          
+            <li><a href="./lib/free-image/palette_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/palette.rb">lib/free-image/palette.rb</a></li>
+          
+            <li><a href="./lib/free-image/scanline_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/scanline.rb">lib/free-image/scanline.rb</a></li>
+          
+            <li><a href="./lib/free-image/sources/abstract_source_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/sources/abstract_source.rb">lib/free-image/sources/abstract_source.rb</a></li>
+          
+            <li><a href="./lib/free-image/sources/file_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/sources/file.rb">lib/free-image/sources/file.rb</a></li>
+          
+            <li><a href="./lib/free-image/sources/io_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/sources/io.rb">lib/free-image/sources/io.rb</a></li>
+          
+            <li><a href="./lib/free-image/sources/memory_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/sources/memory.rb">lib/free-image/sources/memory.rb</a></li>
+          
+            <li><a href="./lib/free-image/types/boolean_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/types/boolean.rb">lib/free-image/types/boolean.rb</a></li>
+          
+            <li><a href="./lib/free-image/types/complex_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/types/complex.rb">lib/free-image/types/complex.rb</a></li>
+          
+            <li><a href="./lib/free-image/types/ffi_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/types/ffi.rb">lib/free-image/types/ffi.rb</a></li>
+          
+            <li><a href="./lib/free-image/types/rgb16_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/types/rgb16.rb">lib/free-image/types/rgb16.rb</a></li>
+          
+            <li><a href="./lib/free-image/types/rgba16_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/types/rgba16.rb">lib/free-image/types/rgba16.rb</a></li>
+          
+            <li><a href="./lib/free-image/types/rgbaf_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/types/rgbaf.rb">lib/free-image/types/rgbaf.rb</a></li>
+          
+            <li><a href="./lib/free-image/types/rgbf_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/types/rgbf.rb">lib/free-image/types/rgbf.rb</a></li>
+          
+            <li><a href="./lib/free-image/types/rgb_quad_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/types/rgb_quad.rb">lib/free-image/types/rgb_quad.rb</a></li>
+          
+            <li><a href="./lib/free-image/types/rgb_triple_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/types/rgb_triple.rb">lib/free-image/types/rgb_triple.rb</a></li>
+          
+            <li><a href="./lib/free-image_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image.rb">lib/free-image.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">MODULE</span> <a href="FreeImage/Conversions.html">FreeImage::Conversions</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="FreeImage/ICC.html">FreeImage::ICC</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="FreeImage/Information.html">FreeImage::Information</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="FreeImage/Modify.html">FreeImage::Modify</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="FreeImage/Pixels.html">FreeImage::Pixels</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="FreeImage/Transforms.html">FreeImage::Transforms</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FreeImage/AbstractSource.html">FreeImage::AbstractSource</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FreeImage/Bitmap.html">FreeImage::Bitmap</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FreeImage/Boolean.html">FreeImage::Boolean</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FreeImage/Complex.html">FreeImage::Complex</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FreeImage/File.html">FreeImage::File</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FreeImage/FreeImageError.html">FreeImage::FreeImageError</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FreeImage/IO.html">FreeImage::IO</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FreeImage/IOStruct.html">FreeImage::IOStruct</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FreeImage/Memory.html">FreeImage::Memory</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FreeImage/MemoryStream.html">FreeImage::MemoryStream</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FreeImage/Palette.html">FreeImage::Palette</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FreeImage/RGB16.html">FreeImage::RGB16</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FreeImage/RGBA16.html">FreeImage::RGBA16</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FreeImage/RGBAF.html">FreeImage::RGBAF</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FreeImage/RGBF.html">FreeImage::RGBF</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FreeImage/RGBQuad.html">FreeImage::RGBQuad</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FreeImage/RGBTriple.html">FreeImage::RGBTriple</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FreeImage/Scanline.html">FreeImage::Scanline</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-check_last_error">::check_last_error</a></li>
+          
+          <li><a href="#method-c-copyright">::copyright</a></li>
+          
+          <li><a href="#method-c-library">::library</a></li>
+          
+          <li><a href="#method-c-little_endian-3F">::little_endian?</a></li>
+          
+          <li><a href="#method-c-msvc-3F">::msvc?</a></li>
+          
+          <li><a href="#method-c-version">::version</a></li>
+          
+          <li><a href="#method-i-color_types">#color_types</a></li>
+          
+          <li><a href="#method-i-dithers">#dithers</a></li>
+          
+          <li><a href="#method-i-filters">#filters</a></li>
+          
+          <li><a href="#method-i-formats">#formats</a></li>
+          
+          <li><a href="#method-i-image_types">#image_types</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="./HISTORY.html">HISTORY</a></li>
+        
+          <li class="file"><a href="./LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="./cookbook_rdoc.html">cookbook.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="./FreeImage.html">FreeImage</a></li>
+        
+          <li><a href="./FreeImage/AbstractSource.html">FreeImage::AbstractSource</a></li>
+        
+          <li><a href="./FreeImage/AbstractSource/Decoder.html">FreeImage::AbstractSource::Decoder</a></li>
+        
+          <li><a href="./FreeImage/AbstractSource/Encoder.html">FreeImage::AbstractSource::Encoder</a></li>
+        
+          <li><a href="./FreeImage/Bitmap.html">FreeImage::Bitmap</a></li>
+        
+          <li><a href="./FreeImage/Boolean.html">FreeImage::Boolean</a></li>
+        
+          <li><a href="./FreeImage/Complex.html">FreeImage::Complex</a></li>
+        
+          <li><a href="./FreeImage/Conversions.html">FreeImage::Conversions</a></li>
+        
+          <li><a href="./FreeImage/File.html">FreeImage::File</a></li>
+        
+          <li><a href="./FreeImage/FreeImageError.html">FreeImage::FreeImageError</a></li>
+        
+          <li><a href="./FreeImage/ICC.html">FreeImage::ICC</a></li>
+        
+          <li><a href="./FreeImage/ICC/Profile.html">FreeImage::ICC::Profile</a></li>
+        
+          <li><a href="./FreeImage/IO.html">FreeImage::IO</a></li>
+        
+          <li><a href="./FreeImage/IOStruct.html">FreeImage::IOStruct</a></li>
+        
+          <li><a href="./FreeImage/Information.html">FreeImage::Information</a></li>
+        
+          <li><a href="./FreeImage/Memory.html">FreeImage::Memory</a></li>
+        
+          <li><a href="./FreeImage/MemoryStream.html">FreeImage::MemoryStream</a></li>
+        
+          <li><a href="./FreeImage/Modify.html">FreeImage::Modify</a></li>
+        
+          <li><a href="./FreeImage/Palette.html">FreeImage::Palette</a></li>
+        
+          <li><a href="./FreeImage/Pixels.html">FreeImage::Pixels</a></li>
+        
+          <li><a href="./FreeImage/RGB16.html">FreeImage::RGB16</a></li>
+        
+          <li><a href="./FreeImage/RGBA16.html">FreeImage::RGBA16</a></li>
+        
+          <li><a href="./FreeImage/RGBAF.html">FreeImage::RGBAF</a></li>
+        
+          <li><a href="./FreeImage/RGBF.html">FreeImage::RGBF</a></li>
+        
+          <li><a href="./FreeImage/RGBQuad.html">FreeImage::RGBQuad</a></li>
+        
+          <li><a href="./FreeImage/RGBTriple.html">FreeImage::RGBTriple</a></li>
+        
+          <li><a href="./FreeImage/Scanline.html">FreeImage::Scanline</a></li>
+        
+          <li><a href="./FreeImage/Transforms.html">FreeImage::Transforms</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">FreeImage</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="CALLBACK">CALLBACK</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="COLOR_ALPHA_IS_INDEX">COLOR_ALPHA_IS_INDEX</a></dt>
+          
+          <dd class="description"><p>The color's rgbReserved member (alpha) contains the palette index to be
+used</p></dd>
+          
+        
+          <dt><a name="COLOR_FIND_EQUAL_COLOR">COLOR_FIND_EQUAL_COLOR</a></dt>
+          
+          <dd class="description"><p>For palettized images: lookup equal RGB color from palette</p></dd>
+          
+        
+          <dt><a name="COLOR_IS_RGBA_COLOR">COLOR_IS_RGBA_COLOR</a></dt>
+          
+          <dd class="description"><p>RGBQUAD color is a RGBA color (contains a valid alpha channel)</p></dd>
+          
+        
+          <dt><a name="COLOR_IS_RGB_COLOR">COLOR_IS_RGB_COLOR</a></dt>
+          
+          <dd class="description"><p>RGBQUAD color is a RGB color (contains no valid alpha channel)</p></dd>
+          
+        
+          <dt><a name="COLOR_PALETTE_SEARCH_MASK">COLOR_PALETTE_SEARCH_MASK</a></dt>
+          
+          <dd class="description"><p>No color lookup is performed</p></dd>
+          
+        
+          <dt><a name="LAST_ERROR">LAST_ERROR</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="check_last_error-method" class="method-detail ">
+          <a name="method-c-check_last_error"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">check_last_error</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="check_last_error-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/errors.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-identifier">error</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-constant">LAST_ERROR</span>]
+  <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-constant">LAST_ERROR</span>] = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">raise</span>(<span class="ruby-identifier">error</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">error</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- check_last_error-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- check_last_error-method -->
+
+      
+        <div id="copyright-method" class="method-detail ">
+          <a name="method-c-copyright"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">copyright &rarr; string</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+
+          <div class="method-description">
+            
+            <p>Returns a standard copyright message you can show in your program.</p>
+            
+
+            
+            <div class="method-source-code" id="copyright-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/helper.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">copyright</span>
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetCopyrightMessage</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- copyright-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- copyright-method -->
+
+      
+        <div id="library-method" class="method-detail ">
+          <a name="method-c-library"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">library</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="library-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">library</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span>.<span class="ruby-identifier">windows?</span>
+    <span class="ruby-string">'FreeImaged'</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-string">'free_image'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- library-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- library-method -->
+
+      
+        <div id="little_endian-3F-method" class="method-detail ">
+          <a name="method-c-little_endian-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">is_little_endian? &rarr; boolean</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+
+          <div class="method-description">
+            
+            <p>Returns TRUE if the platform running <a href="FreeImage.html">FreeImage</a>
+uses the Little Endian convention (Intel processors) and returns FALSE if
+it uses the Big Endian (Motorola processors).</p>
+            
+
+            
+            <div class="method-source-code" id="little_endian-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/helper.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">little_endian?</span>
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_IsLittleEndian</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- little_endian-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- little_endian-3F-method -->
+
+      
+        <div id="msvc-3F-method" class="method-detail ">
+          <a name="method-c-msvc-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">msvc?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="msvc-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">msvc?</span>
+  <span class="ruby-comment"># If this is windows we assume FreeImage was compiled with</span>
+  <span class="ruby-comment"># MSVC since that is the binary distibution provided on</span>
+  <span class="ruby-comment"># the web site.  If you have compiled FreeImage yourself</span>
+  <span class="ruby-comment"># on windows using another compiler, set this to false.</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># This is important because FreeImage defines different</span>
+  <span class="ruby-comment"># type sizes for MSVC - see types/ffi.rb</span>
+  <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span>.<span class="ruby-identifier">windows?</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- msvc-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- msvc-3F-method -->
+
+      
+        <div id="version-method" class="method-detail ">
+          <a name="method-c-version"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">version &rarr; string</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+
+          <div class="method-description">
+            
+            <p>Returns the current version of the <a href="FreeImage.html">FreeImage</a>
+library</p>
+            
+
+            
+            <div class="method-source-code" id="version-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/helper.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">version</span>
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetVersion</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- version-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- version-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="color_types-method" class="method-detail ">
+          <a name="method-i-color_types"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">color_types</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a href="FreeImage.html">FreeImage</a> supports the following color types:</p>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>:minis_black</p></td>
+<td>
+<p>Monochrome bitmap (1-bit) -&gt; first palette entry is black. Palletised
+bitmap (4 or 8-bit) and single channel non standard bitmap -&gt; the bitmap
+has a greyscale palette</p>
+</td></tr><tr><td class="rdoc-term"><p>:minis_white</p></td>
+<td>
+<p>Monochrome bitmap (1-bit) -&gt; first palette entry is white. Palletised
+bitmap (4 or 8-bit) and single channel non standard bitmap -&gt; the bitmap
+has an inverted greyscale palette</p>
+</td></tr><tr><td class="rdoc-term"><p>:palette</p></td>
+<td>
+<p>Palettized bitmap (1, 4 or 8 bit)</p>
+</td></tr><tr><td class="rdoc-term"><p>:rgb</p></td>
+<td>
+<p>High-color bitmap (16, 24 or 32 bit), <a
+href="FreeImage/RGB16.html">RGB16</a> or <a
+href="FreeImage/RGBF.html">RGBF</a></p>
+</td></tr><tr><td class="rdoc-term"><p>:rgb_alpha</p></td>
+<td>
+<p>High-color bitmap with an alpha channel (32 bit bitmap, <a
+href="FreeImage/RGBA16.html">RGBA16</a> or <a
+href="FreeImage/RGBAF.html">RGBAF</a>)</p>
+</td></tr><tr><td class="rdoc-term"><p>:cmyk</p></td>
+<td>
+<p>CMYK bitmap (32 bit only)</p>
+</td></tr></table>
+            
+
+            
+            <div class="method-source-code" id="color_types-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/enums/color_types.rb, line 17</span>
+  </pre>
+            </div><!-- color_types-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- color_types-method -->
+
+      
+        <div id="dithers-method" class="method-detail ">
+          <a name="method-i-dithers"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">dithers</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a href="FreeImage.html">FreeImage</a> supports the following dithering
+algorithms:</p>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>:fs</p></td>
+<td>
+<p>Floyd &amp; Steinberg error diffusion algorithm</p>
+</td></tr><tr><td class="rdoc-term"><p>:bayer4x4</p></td>
+<td>
+<p>Bayer ordered dispersed dot dithering (order 2 – 4x4 -dithering matrix)</p>
+</td></tr><tr><td class="rdoc-term"><p>:bayer8x8</p></td>
+<td>
+<p>Bayer ordered dispersed dot dithering (order 3 – 8x8 -dithering matrix)</p>
+</td></tr><tr><td class="rdoc-term"><p>:bayer16x16</p></td>
+<td>
+<p>Bayer ordered dispersed dot dithering (order 4 – 16x16 dithering matrix)</p>
+</td></tr><tr><td class="rdoc-term"><p>:cluster6x6</p></td>
+<td>
+<p>Ordered clustered dot dithering (order 3 - 6x6 matrix)</p>
+</td></tr><tr><td class="rdoc-term"><p>:cluster8x8</p></td>
+<td>
+<p>Ordered clustered dot dithering (order 4 - 8x8 matrix)</p>
+</td></tr><tr><td class="rdoc-term"><p>:cluster16x16</p></td>
+<td>
+<p>Ordered clustered dot dithering (order 8 - 16x16 matrix)</p>
+</td></tr></table>
+            
+
+            
+            <div class="method-source-code" id="dithers-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/enums/dithers.rb, line 16</span>
+  </pre>
+            </div><!-- dithers-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- dithers-method -->
+
+      
+        <div id="filters-method" class="method-detail ">
+          <a name="method-i-filters"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">filters</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a href="FreeImage.html">FreeImage</a> supports the following rescaling
+filters:</p>
+            
+
+            
+            <div class="method-source-code" id="filters-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/enums/filters.rb, line 6</span>
+<span class="ruby-identifier">enum</span> <span class="ruby-value">:filter</span>, [<span class="ruby-value">:box</span>, <span class="ruby-value">0</span>,
+               <span class="ruby-value">:bicubic</span>, <span class="ruby-value">1</span>,
+               <span class="ruby-value">:bilinear</span>, <span class="ruby-value">2</span>,
+               <span class="ruby-value">:bspline</span>, <span class="ruby-value">3</span>,
+               <span class="ruby-value">:catmullrom</span>, <span class="ruby-value">4</span>,
+               <span class="ruby-value">:lanczos3</span>, <span class="ruby-value">5</span>]
+</pre>
+            </div><!-- filters-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- filters-method -->
+
+      
+        <div id="formats-method" class="method-detail ">
+          <a name="method-i-formats"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">formats</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a href="FreeImage.html">FreeImage</a> supports over 30 bitmap types, which
+are indentified via symbols. Supported formats include:</p>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>:bmp</p></td>
+<td>
+<p>Windows or OS/2 <a href="FreeImage/Bitmap.html">Bitmap</a> <a
+href="FreeImage/File.html">File</a> (*.BMP)</p>
+</td></tr><tr><td class="rdoc-term"><p>:cut</p></td>
+<td>
+<p>Dr. Halo (*.CUT)</p>
+</td></tr><tr><td class="rdoc-term"><p>:dds</p></td>
+<td>
+<p>DirectDraw Surface (*.DDS)</p>
+</td></tr><tr><td class="rdoc-term"><p>:exr</p></td>
+<td>
+<p>ILM OpenEXR (*.EXR)</p>
+</td></tr><tr><td class="rdoc-term"><p>:faxg3</p></td>
+<td>
+<p>Raw Fax format CCITT G3 (*.G3)</p>
+</td></tr><tr><td class="rdoc-term"><p>:gif</p></td>
+<td>
+<p>Graphics Interchange Format (*.GIF)</p>
+</td></tr><tr><td class="rdoc-term"><p>:hdr</p></td>
+<td>
+<p>High Dynamic Range (*.HDR)</p>
+</td></tr><tr><td class="rdoc-term"><p>:ico</p></td>
+<td>
+<p>Windows Icon (*.ICO)</p>
+</td></tr><tr><td class="rdoc-term"><p>:iff</p></td>
+<td>
+<p>Amiga IFF (*.IFF, *.LBM)</p>
+</td></tr><tr><td class="rdoc-term"><p>:jpeg</p></td>
+<td>
+<p>Independent JPEG Group (*.JPG, *.JIF, *.JPEG, *.JPE)</p>
+</td></tr><tr><td class="rdoc-term"><p>:jng</p></td>
+<td>
+<p>JPEG Network Graphics (*.JNG)</p>
+</td></tr><tr><td class="rdoc-term"><p>:j2k</p></td>
+<td>
+<p>JPEG-2000 codestream (*.J2K, *.J2C)</p>
+</td></tr><tr><td class="rdoc-term"><p>:jp2</p></td>
+<td>
+<p>JPEG-2000 <a href="FreeImage/File.html">File</a> Format (*.JP2)</p>
+</td></tr><tr><td class="rdoc-term"><p>:koala</p></td>
+<td>
+<p>Commodore 64 Koala format (*.KOA)</p>
+</td></tr><tr><td class="rdoc-term"><p>:lbm</p></td>
+<td>
+<p>Amiga IFF (*.IFF, *.LBM)</p>
+</td></tr><tr><td class="rdoc-term"><p>:mng</p></td>
+<td>
+<p>Multiple Network Graphics (*.MNG)</p>
+</td></tr><tr><td class="rdoc-term"><p>:pbm</p></td>
+<td>
+<p>Portable <a href="FreeImage/Bitmap.html">Bitmap</a> (ASCII) (*.PBM)</p>
+</td></tr><tr><td class="rdoc-term"><p>:pbmraw</p></td>
+<td>
+<p>Portable <a href="FreeImage/Bitmap.html">Bitmap</a> (BINARY) (*.PBM)</p>
+</td></tr><tr><td class="rdoc-term"><p>:pcd</p></td>
+<td>
+<p>Kodak PhotoCD (*.PCD)</p>
+</td></tr><tr><td class="rdoc-term"><p>:pcsx</p></td>
+<td>
+<p>Zsoft Paintbrush PCX bitmap format (*.PCX)</p>
+</td></tr><tr><td class="rdoc-term"><p>:pfm</p></td>
+<td>
+<p>Portable Floatmap (*.PFM)</p>
+</td></tr><tr><td class="rdoc-term"><p>:pgm</p></td>
+<td>
+<p>Portable Graymap (ASCII) (*.PGM)</p>
+</td></tr><tr><td class="rdoc-term"><p>:pgmraw</p></td>
+<td>
+<p>Portable Graymap (BINARY) (*.PGM)</p>
+</td></tr><tr><td class="rdoc-term"><p>:pict</p></td>
+<td>
+<p>Macintosh PICT (*.PCT, *.PICT, *.PIC)</p>
+</td></tr><tr><td class="rdoc-term"><p>:png</p></td>
+<td>
+<p>Portable Network Graphics (*.PNG)</p>
+</td></tr><tr><td class="rdoc-term"><p>:ppm</p></td>
+<td>
+<p>Portable Pixelmap (ASCII) (*.PPM)</p>
+</td></tr><tr><td class="rdoc-term"><p>:ppmraw</p></td>
+<td>
+<p>Portable Pixelmap (BINARY) (*.PPM)</p>
+</td></tr><tr><td class="rdoc-term"><p>:psd</p></td>
+<td>
+<p>Adobe Photoshop (*.PSD)</p>
+</td></tr><tr><td class="rdoc-term"><p>:ras</p></td>
+<td>
+<p>Sun Rasterfile (*.RAS)</p>
+</td></tr><tr><td class="rdoc-term"><p>:raw</p></td>
+<td>
+<p>RAW camera image (many extensions)</p>
+</td></tr><tr><td class="rdoc-term"><p>:sgi</p></td>
+<td>
+<p>Silicon Graphics SGI image format (*.SGI)</p>
+</td></tr><tr><td class="rdoc-term"><p>:targa</p></td>
+<td>
+<p>Truevision Targa files (*.TGA, *.TARGA)</p>
+</td></tr><tr><td class="rdoc-term"><p>:tiff</p></td>
+<td>
+<p>Tagged Image <a href="FreeImage/File.html">File</a> Format (*.TIF, *.TIFF)</p>
+</td></tr><tr><td class="rdoc-term"><p>:wbmp</p></td>
+<td>
+<p>Wireless <a href="FreeImage/Bitmap.html">Bitmap</a> (*.WBMP)</p>
+</td></tr><tr><td class="rdoc-term"><p>:xbm</p></td>
+<td>
+<p>X11 <a href="FreeImage/Bitmap.html">Bitmap</a> Format (*.XBM)</p>
+</td></tr><tr><td class="rdoc-term"><p>:xpm</p></td>
+<td>
+<p>X11 Pitmap Format (*.XPM)</p>
+</td></tr></table>
+            
+
+            
+            <div class="method-source-code" id="formats-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/enums/formats.rb, line 46</span>
+  </pre>
+            </div><!-- formats-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- formats-method -->
+
+      
+        <div id="image_types-method" class="method-detail ">
+          <a name="method-i-image_types"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">image_types</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a href="FreeImage.html">FreeImage</a> supports the following image types:</p>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>:unknown</p></td>
+<td>
+<p>Unknown format (returned value only, never use it as input value)</p>
+</td></tr><tr><td class="rdoc-term"><p>:bitmap</p></td>
+<td>
+<p>Standard image: 1-, 4-, 8-, 16-, 24-, 32-bit</p>
+</td></tr><tr><td class="rdoc-term"><p>:uint16</p></td>
+<td>
+<p>Array of unsigned short: unsigned 16-bit</p>
+</td></tr><tr><td class="rdoc-term"><p>:int16</p></td>
+<td>
+<p>Array of short: signed 16-bit</p>
+</td></tr><tr><td class="rdoc-term"><p>:uint32</p></td>
+<td>
+<p>Array of unsigned long: unsigned 32-bit</p>
+</td></tr><tr><td class="rdoc-term"><p>:int32</p></td>
+<td>
+<p>Array of long: signed 32-bit</p>
+</td></tr><tr><td class="rdoc-term"><p>:float</p></td>
+<td>
+<p>Array of float: 32-bit IEEE floating point</p>
+</td></tr><tr><td class="rdoc-term"><p>:double</p></td>
+<td>
+<p>Array of double: 64-bit IEEE floating point</p>
+</td></tr><tr><td class="rdoc-term"><p>:complex</p></td>
+<td>
+<p>Array of FICOMPLEX: 2 x 64-bit IEEE floating point</p>
+</td></tr><tr><td class="rdoc-term"><p>:rgb16</p></td>
+<td>
+<p>48-bit rgb image: 3 x 16-bit</p>
+</td></tr><tr><td class="rdoc-term"><p>:rgba16</p></td>
+<td>
+<p>64-bit rgbA image: 4 x 16-bit</p>
+</td></tr><tr><td class="rdoc-term"><p>:rgbf</p></td>
+<td>
+<p>96-bit rgb float image: 3 x 32-bit IEEE floating point</p>
+</td></tr><tr><td class="rdoc-term"><p>:rgbaf</p></td>
+<td>
+<p>128-bit rgbA float image: 4 x 32-bit IEEE floating point</p>
+</td></tr></table>
+            
+
+            
+            <div class="method-source-code" id="image_types-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/enums/image_types.rb, line 22</span>
+  </pre>
+            </div><!-- image_types-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- image_types-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

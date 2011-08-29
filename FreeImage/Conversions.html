@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="IBM437"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>Module: FreeImage::Conversions</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/free-image/modules/conversions_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/modules/conversions.rb">lib/free-image/modules/conversions.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-convert_to_16bits_555">#convert_to_16bits_555</a></li>
+          
+          <li><a href="#method-i-convert_to_16bits_565">#convert_to_16bits_565</a></li>
+          
+          <li><a href="#method-i-convert_to_24bits">#convert_to_24bits</a></li>
+          
+          <li><a href="#method-i-convert_to_32bits">#convert_to_32bits</a></li>
+          
+          <li><a href="#method-i-convert_to_4bits">#convert_to_4bits</a></li>
+          
+          <li><a href="#method-i-convert_to_8bits">#convert_to_8bits</a></li>
+          
+          <li><a href="#method-i-convert_to_greyscale">#convert_to_greyscale</a></li>
+          
+          <li><a href="#method-i-convert_to_standard_type">#convert_to_standard_type</a></li>
+          
+          <li><a href="#method-i-convert_to_type">#convert_to_type</a></li>
+          
+          <li><a href="#method-i-dither">#dither</a></li>
+          
+          <li><a href="#method-i-threshold">#threshold</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../HISTORY.html">HISTORY</a></li>
+        
+          <li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="../cookbook_rdoc.html">cookbook.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../FreeImage.html">FreeImage</a></li>
+        
+          <li><a href="../FreeImage/AbstractSource.html">FreeImage::AbstractSource</a></li>
+        
+          <li><a href="../FreeImage/AbstractSource/Decoder.html">FreeImage::AbstractSource::Decoder</a></li>
+        
+          <li><a href="../FreeImage/AbstractSource/Encoder.html">FreeImage::AbstractSource::Encoder</a></li>
+        
+          <li><a href="../FreeImage/Bitmap.html">FreeImage::Bitmap</a></li>
+        
+          <li><a href="../FreeImage/Boolean.html">FreeImage::Boolean</a></li>
+        
+          <li><a href="../FreeImage/Complex.html">FreeImage::Complex</a></li>
+        
+          <li><a href="../FreeImage/Conversions.html">FreeImage::Conversions</a></li>
+        
+          <li><a href="../FreeImage/File.html">FreeImage::File</a></li>
+        
+          <li><a href="../FreeImage/FreeImageError.html">FreeImage::FreeImageError</a></li>
+        
+          <li><a href="../FreeImage/ICC.html">FreeImage::ICC</a></li>
+        
+          <li><a href="../FreeImage/ICC/Profile.html">FreeImage::ICC::Profile</a></li>
+        
+          <li><a href="../FreeImage/IO.html">FreeImage::IO</a></li>
+        
+          <li><a href="../FreeImage/IOStruct.html">FreeImage::IOStruct</a></li>
+        
+          <li><a href="../FreeImage/Information.html">FreeImage::Information</a></li>
+        
+          <li><a href="../FreeImage/Memory.html">FreeImage::Memory</a></li>
+        
+          <li><a href="../FreeImage/MemoryStream.html">FreeImage::MemoryStream</a></li>
+        
+          <li><a href="../FreeImage/Modify.html">FreeImage::Modify</a></li>
+        
+          <li><a href="../FreeImage/Palette.html">FreeImage::Palette</a></li>
+        
+          <li><a href="../FreeImage/Pixels.html">FreeImage::Pixels</a></li>
+        
+          <li><a href="../FreeImage/RGB16.html">FreeImage::RGB16</a></li>
+        
+          <li><a href="../FreeImage/RGBA16.html">FreeImage::RGBA16</a></li>
+        
+          <li><a href="../FreeImage/RGBAF.html">FreeImage::RGBAF</a></li>
+        
+          <li><a href="../FreeImage/RGBF.html">FreeImage::RGBF</a></li>
+        
+          <li><a href="../FreeImage/RGBQuad.html">FreeImage::RGBQuad</a></li>
+        
+          <li><a href="../FreeImage/RGBTriple.html">FreeImage::RGBTriple</a></li>
+        
+          <li><a href="../FreeImage/Scanline.html">FreeImage::Scanline</a></li>
+        
+          <li><a href="../FreeImage/Transforms.html">FreeImage::Transforms</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">FreeImage::Conversions</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="convert_to_16bits_555-method" class="method-detail ">
+          <a name="method-i-convert_to_16bits_555"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">convert_to_16bits_555</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Converts a bitmap to 16 bits, where each pixel has a color pattern of 5
+bits red, 5 bits green and 5 bits blue. One bit in each pixel is unused.</p>
+            
+
+            
+            <div class="method-source-code" id="convert_to_16bits_555-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_16bits_555</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertTo16Bits555</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- convert_to_16bits_555-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- convert_to_16bits_555-method -->
+
+      
+        <div id="convert_to_16bits_565-method" class="method-detail ">
+          <a name="method-i-convert_to_16bits_565"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">convert_to_16bits_565</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Converts a bitmap to 16 bits, where each pixel has a color pattern of 5
+bits red, 6 bits green and 5 bits blue. One bit in each pixel is unused.</p>
+            
+
+            
+            <div class="method-source-code" id="convert_to_16bits_565-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_16bits_565</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertTo16Bits565</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- convert_to_16bits_565-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- convert_to_16bits_565-method -->
+
+      
+        <div id="convert_to_24bits-method" class="method-detail ">
+          <a name="method-i-convert_to_24bits"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">convert_to_24bits</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Converts a bitmap to 24 bits. For 48-bit RGB images, conversion is done by
+dividing each 16-bit channel by 256. A nil value is returned for other
+non-standard bitmap types.</p>
+            
+
+            
+            <div class="method-source-code" id="convert_to_24bits-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_24bits</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertTo24Bits</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- convert_to_24bits-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- convert_to_24bits-method -->
+
+      
+        <div id="convert_to_32bits-method" class="method-detail ">
+          <a name="method-i-convert_to_32bits"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">convert_to_32bits</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Converts a bitmap to 32 bits. For 48-bit RGB images, conversion is done by
+dividing each 16-bit channel by 256 and by setting the alpha channel to an
+opaque value (0xFF). For 64-bit RGBA images, conversion is done by dividing
+each 16-bit channel by 256. A nil value is returned for other non-standard
+bitmap types.</p>
+            
+
+            
+            <div class="method-source-code" id="convert_to_32bits-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_32bits</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertTo32Bits</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- convert_to_32bits-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- convert_to_32bits-method -->
+
+      
+        <div id="convert_to_4bits-method" class="method-detail ">
+          <a name="method-i-convert_to_4bits"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">convert_to_4bits</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Converts a bitmap to 4 bits. If the bitmap is a high-color (16, 24 or
+32-bit), monochrome or greyscale bitmap (1 or 8-bit) the end result will be
+a greyscale bitmap. A 1-bit bitmap will become a palletized bitmap.</p>
+
+<p>Note that "greyscale" means that the resulting bitmap will have grey
+colors, but the palette won't be a linear greyscale palette. Thus, <a
+href="Information.html#method-i-color_type">FreeImage::Bitmap.color_type</a>
+will return a :palette.</p>
+            
+
+            
+            <div class="method-source-code" id="convert_to_4bits-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_4bits</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertTo4Bits</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- convert_to_4bits-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- convert_to_4bits-method -->
+
+      
+        <div id="convert_to_8bits-method" class="method-detail ">
+          <a name="method-i-convert_to_8bits"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">convert_to_8bits</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Converts a bitmap to 8 bits. If the bitmap is a high-color (16, 24 or
+32-bit), monochrome or greyscale bitmap (1 or 4-bit) the end result will be
+a greyscale bitmap. A 1-bit or 4-bit bitmap will become a palletized
+bitmap.</p>
+
+<p>For 16-bit greyscale images (images whose type is :uint16), conversion is
+done by dividing the 16-bit channel by 256 (see also <a
+href="Bitmap.html">FreeImage::Bitmap</a>.ConvertToStandardType). A nil
+value is returned for other non-standard bitmap types.</p>
+            
+
+            
+            <div class="method-source-code" id="convert_to_8bits-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_8bits</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertTo8Bits</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- convert_to_8bits-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- convert_to_8bits-method -->
+
+      
+        <div id="convert_to_greyscale-method" class="method-detail ">
+          <a name="method-i-convert_to_greyscale"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">convert_to_greyscale</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Converts a bitmap to a 8-bit greyscale image with a linear ramp. Contrary
+to the <a
+href="Conversions.html#method-i-convert_to_8bits">FreeImage::Conversions#convert_to_8bits</a>
+function, 1-, 4- and 8-bit palletized bitmaps are correctly converted, as
+well as images with a :minis_white color type.</p>
+            
+
+            
+            <div class="method-source-code" id="convert_to_greyscale-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_greyscale</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertToGreyscale</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- convert_to_greyscale-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- convert_to_greyscale-method -->
+
+      
+        <div id="convert_to_standard_type-method" class="method-detail ">
+          <a name="method-i-convert_to_standard_type"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">convert_to_standard_type</span><span
+              class="method-args">(scale_linear = true)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Converts a non standard image whose color type is :minis_black to a
+standard 8-bit greyscale image.  When the scale_linear parameter is true,
+conversion is done by scaling linearly each pixel value from [min, max] to
+an integer value between [0..255], where min and max are the minimum and
+maximum pixel values in the image. When scale_linear is false, conversion
+is done by rounding each pixel value to an integer between [0..255].
+Rounding is done using the following formula:</p>
+
+<pre>dst_pixel = (BYTE) MIN(255, MAX(0, q)) where int q = int(src_pixel + 0.5)</pre>
+
+<p>For standard bitmaps, a clone of the original bitmap is returned. For
+complex images, the magnitude is extracted as a double image and then
+converted according to the scale parameter.</p>
+            
+
+            
+            <div class="method-source-code" id="convert_to_standard_type-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_standard_type</span>(<span class="ruby-identifier">scale_linear</span> = <span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertToStandardType</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">scale_linear</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- convert_to_standard_type-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- convert_to_standard_type-method -->
+
+      
+        <div id="convert_to_type-method" class="method-detail ">
+          <a name="method-i-convert_to_type"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">convert_to_type</span><span
+              class="method-args">(dst_image_type, scale_linear = true)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Converts a bitmap to the specified destination image type.  When the
+image_type is equal to :bitmap, the function calls
+FreeImage::Converstions#convert_to_standard_type. Otherwise, conversion is
+done using standard C language casting conventions. When a conversion is
+not allowed, a nil value is returned and an error is thrown. Please refer
+to the <a href="../FreeImage.html">FreeImage</a> documentation for allowed
+conversions.</p>
+            
+
+            
+            <div class="method-source-code" id="convert_to_type-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_type</span>(<span class="ruby-identifier">dst_image_type</span>, <span class="ruby-identifier">scale_linear</span> = <span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertToType</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">dst_image_type</span>, <span class="ruby-identifier">scale_linear</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- convert_to_type-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- convert_to_type-method -->
+
+      
+        <div id="dither-method" class="method-detail ">
+          <a name="method-i-dither"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">dither</span><span
+              class="method-args">(algorithm)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Converts a bitmap to 1-bit monochrome bitmap using the specified <a
+href="../FreeImage.html#method-i-dithers">dithering</a> algorithm. For
+1-bit input bitmaps, the function clones the input bitmap and builds a
+monochrome palette.  Otherwise the function first converts the bitmap to a
+8-bit greyscale bitmap.</p>
+            
+
+            
+            <div class="method-source-code" id="dither-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dither</span>(<span class="ruby-identifier">algorithm</span>)
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_Dither</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">algorithm</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- dither-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- dither-method -->
+
+      
+        <div id="threshold-method" class="method-detail ">
+          <a name="method-i-threshold"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">threshold</span><span
+              class="method-args">(value)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Converts a bitmap to 1-bit monochrome bitmap using a threshold value
+between 0 and 255.  The function first converts the bitmap to a 8-bit
+greyscale bitmap. Then any brightness level that is less than the threshold
+is set to zero and any value above is set to 1. For 1-bit input bitmaps,
+the function clones the input bitmap and builds a monochrome palette.</p>
+            
+
+            
+            <div class="method-source-code" id="threshold-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">threshold</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">value</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">unless</span> (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">255</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">RangeError</span>, <span class="ruby-node">&quot;Value is out of range 0..255. Value: #{value}&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_Threshold</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- threshold-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- threshold-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

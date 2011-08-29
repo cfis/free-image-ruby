@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>File: cookbook.rdoc [FreeImage]</title>
+
+  <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
+
+  <script src="./js/jquery.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/thickbox-compressed.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/quicksearch.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/darkfish.js" type="text/javascript"
+    charset="utf-8"></script>
+</head>
+
+<body class="file">
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="./HISTORY.html">HISTORY</a></li>
+        
+          <li class="file"><a href="./LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="./cookbook_rdoc.html">cookbook.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="./FreeImage.html">FreeImage</a></li>
+        
+          <li><a href="./FreeImage/AbstractSource.html">FreeImage::AbstractSource</a></li>
+        
+          <li><a href="./FreeImage/AbstractSource/Decoder.html">FreeImage::AbstractSource::Decoder</a></li>
+        
+          <li><a href="./FreeImage/AbstractSource/Encoder.html">FreeImage::AbstractSource::Encoder</a></li>
+        
+          <li><a href="./FreeImage/Bitmap.html">FreeImage::Bitmap</a></li>
+        
+          <li><a href="./FreeImage/Boolean.html">FreeImage::Boolean</a></li>
+        
+          <li><a href="./FreeImage/Complex.html">FreeImage::Complex</a></li>
+        
+          <li><a href="./FreeImage/Conversions.html">FreeImage::Conversions</a></li>
+        
+          <li><a href="./FreeImage/File.html">FreeImage::File</a></li>
+        
+          <li><a href="./FreeImage/FreeImageError.html">FreeImage::FreeImageError</a></li>
+        
+          <li><a href="./FreeImage/ICC.html">FreeImage::ICC</a></li>
+        
+          <li><a href="./FreeImage/ICC/Profile.html">FreeImage::ICC::Profile</a></li>
+        
+          <li><a href="./FreeImage/IO.html">FreeImage::IO</a></li>
+        
+          <li><a href="./FreeImage/IOStruct.html">FreeImage::IOStruct</a></li>
+        
+          <li><a href="./FreeImage/Information.html">FreeImage::Information</a></li>
+        
+          <li><a href="./FreeImage/Memory.html">FreeImage::Memory</a></li>
+        
+          <li><a href="./FreeImage/MemoryStream.html">FreeImage::MemoryStream</a></li>
+        
+          <li><a href="./FreeImage/Modify.html">FreeImage::Modify</a></li>
+        
+          <li><a href="./FreeImage/Palette.html">FreeImage::Palette</a></li>
+        
+          <li><a href="./FreeImage/Pixels.html">FreeImage::Pixels</a></li>
+        
+          <li><a href="./FreeImage/RGB16.html">FreeImage::RGB16</a></li>
+        
+          <li><a href="./FreeImage/RGBA16.html">FreeImage::RGBA16</a></li>
+        
+          <li><a href="./FreeImage/RGBAF.html">FreeImage::RGBAF</a></li>
+        
+          <li><a href="./FreeImage/RGBF.html">FreeImage::RGBF</a></li>
+        
+          <li><a href="./FreeImage/RGBQuad.html">FreeImage::RGBQuad</a></li>
+        
+          <li><a href="./FreeImage/RGBTriple.html">FreeImage::RGBTriple</a></li>
+        
+          <li><a href="./FreeImage/Scanline.html">FreeImage::Scanline</a></li>
+        
+          <li><a href="./FreeImage/Transforms.html">FreeImage::Transforms</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    
+<h1>FreeImage Cookbook</h1>
+
+<p>Below are various recipes to get you up and running with FreeImage as
+quickly as possible.  Note that the images the recipes use can be found in
+the test/images directory.</p>
+
+<h2>Loading An Image</h2>
+
+<p>The first step in using FreeImage is to load an image.  FreeImage can load
+images from files, strings or IO streams.  The simplest way to do this is
+via the <a
+href="FreeImage/Bitmap.html#method-c-open">FreeImage::Bitmap.open</a>
+method:</p>
+
+<pre>image = FreeImage::Bitmap.open('images/lena.tiff')
+image = FreeImage::Bitmap.open(io_object)
+image = FreeImage::Bitmap.open(FreeImage::Memory.new(string))</pre>
+
+<p>The open method also takes two additional optional parameters, format and
+flags, that provide greater control over opening images if needed.</p>
+
+<p><img src="../../test/images/lena.png" /></p>
+
+<h2>Saving An Image</h2>
+
+<p>Now let's say you want to save the image to :png format.  This is done via
+the <a
+href="FreeImage/Bitmap.html#method-i-save">FreeImage::Bitmap.save</a>
+method.  The save method takes a destination, which can be a files, strings
+or IO stream, and an image format.</p>
+
+<pre>image.save('images/lena.png', :png)</pre>
+
+<h2>Creating a Thumbnail</h2>
+
+<p>Next, let's assume our application needs to show a list of thumbnails for
+the images it stores.  This can be done using the <a
+href="FreeImage/Modify.html#method-i-make_thumbnail">make_thumbnail</a>
+method in the <a href="FreeImage/Modify.html">Modify</a> module.</p>
+
+<pre>thumbnail = image.make_thumbnail(100)
+thumbnail.save('images/lena_thumbnail.png', :png)</pre>
+
+<p><img src="../../test/images/lena_thumbnail.png" /></p>
+
+<h2>Putting a Border Around a Thumbnail</h2>
+
+<p>Next, let's assume we want to put a red border around our thumbnail.  There
+are various approaches to do doing this.  In the first approach, we'll use
+the <a href="FreeImage/Modify.html#method-i-enlarge_canvas"><a
+href="FreeImage::Modify.enlarge_canvas">enlarge_canvas</a></a> method.</p>
+
+<pre># Border size
+border = 4
+
+# Specify the red color
+color = FreeImage::RGBQuad.create(255, 0, 0)
+
+# Add 4 pixel red border around the thumbnail
+thumbnail_border = thumbnail.enlarge_canvas(border, border, border, border, color)
+thumbnail_border.save('images/lena_thumbnail_border_1.png', :png)</pre>
+
+<p><img src="../../test/images/lena_thumbnail_border_enlarge.png" /></p>
+
+<p>In the second approach, let's create a image with a red background and then
+paste ontop of it our thumbnail:</p>
+
+<pre># Create a red image that is the same size as the thumbnail
+red_image = FreeImage::Bitmap.create(thumbnail.width, thumbnail.height, thumbnail.bits_per_pixel)
+red_image_new.fill_background(color)
+
+# Now copy a subimage from the thumbnail that is 2 borders less wide and tall
+subimage = thumbnail.copy(border, border, thumbnail.width - border, thumbnail.height - border)
+
+# Now paste the submimage into the red image.  Specify an alpha over 255
+# to disable alpha blending
+red_image.paste(subimage, border, border, 300)
+red_image.save('images/test1.png', :png)
+thumbnail_border.save('images/lena_thumbnail_border_2.png', :png)</pre>
+
+<p><img src="../../test/images/lena_thumbnail_border_paste.png" /></p>
+
+<h2>Resampling An Image</h2>
+
+<p>If you need additional control of how an image is resampled, then use the
+<a
+href="FreeImage/Modify.html#method-i-rescale">FreeImage::Bitmap#rescale</a>
+method, which lets you specify a filtering algorithm.  To see how each
+filter works, let's scale up the thumbnail by 400%.</p>
+
+<pre>thumbnail = FreeImage::Bitmap.open('images/lena_thumbnail.png')
+
+FreeImage.enum_type(:filter).symbols.each do |filter|
+  rescaled = thumbnail.rescale(thumbnail.width * 4, thumbnail.height * 4, filter)
+  rescaled.save(&quot;images/lena_rescale_#{filter.to_s}.png&quot;, :png)
+end</pre>
+
+<p><img src="../../test/images/lena_rescale_box.png" /> <img
+src="../../test/images/lena_rescale_bicubic.png" /> <img
+src="../../test/images/lena_rescale_bilinear.png" /> <img
+src="../../test/images/lena_rescale_bspline.png" /> <img
+src="../../test/images/lena_rescale_catmullrom.png" /> <img
+src="../../test/images/lena_rescale_lanczos3.png" /></p>
+
+<h2>Flipping An Image</h2>
+
+<p>The Transform modules lets you flip or rotate an image. Let's say you want
+to flip and image horizontally:</p>
+
+<pre>image.flip_horizontal
+image.save('images/lena_flipped.png', :png)</pre>
+
+<p><img src="../../test/images/lena_flipped.png" /></p>
+
+<h2>Rotating An Image</h2>
+
+<p>Next, let's rotate an image. Two methods are provide, <a
+href="FreeImage/Transforms.html#method-i-rotate">FreeImage::Bitmap#rotate</a>
+and <a
+href="FreeImage/Transforms.html#method-i-rotate_ex">FreeImage::Bitmap#rotate_ex</a>.
+The rotate method is simpler to use:</p>
+
+<pre>image = FreeImage::Bitmap.open('images/lena.png', :png)
+
+# Rotate the image 45 degrees using white as the background fill color
+color = FreeImage::RGBQuad.create(255, 255, 255, 0)
+rotated = image.rotate(45, color)
+rotated.save(&quot;images/lena_rotate_45.png&quot;, :png)</pre>
+
+<p><img src="../../test/images/lena_rotate_45.png" /></p>
+
+<p>Note however that the image size and geometry has changed. Thus, the rotate
+function is best for rotating and image 90, 180 or 270 degrees.</p>
+
+<p>Let's now rotate the image using the rotate_ex method while using a mask:</p>
+
+<pre>rotated = image.rotate_ex(45, 0, 0, image.width/2, image.height/2, true)
+rotated.save(&quot;images/lena_rotate_ex_45_masked.png&quot;, :png)</pre>
+
+<p>And now let's rotate the image without a mask, so data is filled in using a
+mirroring algorithm:</p>
+
+<pre>rotated = image.rotate_ex(45, 0, 0, image.width/2, image.height/2, false)
+rotated.save(&quot;images/lena_rotate_ex_45_mirrored.png&quot;, :png)</pre>
+
+<p><img src="../../test/images/lena_rotate_ex_45_masked.png" /> <img
+src="../../test/images/lena_rotate_ex_45_mirrored.png" /></p>
+
+<p>Now lets rotate around the top left corner:</p>
+
+<pre>rotated = image.rotate_ex(45, 0, 0, 0, 0, true)
+rotated.save(&quot;images/lena_rotate_ex_45_top_left.png&quot;, :png)</pre>
+
+<p><img src="../../test/images/lena_rotate_ex_45_top_left.png" /></p>
+
+<h2>Compositing An Image</h2>
+
+<p>FreeImage also lets you composite an image with a background color or
+another image. Here is an example of compositing the sample image with
+green.</p>
+
+<pre>image = FreeImage::Bitmap.open('images/sample.png')
+color = FreeImage::RGBQuad.create(0, 255, 0, 0)
+composite =  image.composite_with_color(color)
+composite.save(&quot;images/sample_composite_color.png&quot;, :png)</pre>
+
+<p><img src="../../test/images/sample.png" /> <img
+src="../../test/images/sample_composite_color.png" /></p>
+
+<h2>Manipulating An Image</h2>
+
+<p>FreeImage also allows you to directly access each pixel in an image. Say
+for example we want to create an image that has a gradient from blue in the
+top left corner to green in the bottom right</p>
+
+<pre>image = FreeImage::Bitmap.create(300, 300, 24)
+color = FreeImage::RGBQuad.new
+
+image.width.times do |x|
+  image.height.times do |y|
+    color[:green] = (x.to_f/image.width) * 255
+    color[:blue] =  (y.to_f/image.height) * 255
+    image.set_pixel_color(x, y, color)
+  end
+end
+
+image.save('images/gradient.png', :png)</pre>
+
+<p><img src="../../test/images/gradient.png" /></p>
+
+<p>Note you can use a similar technique as another way of drawing a border
+around a thumbnail.</p>
+
+<h2>Using Scanlines</h2>
+
+<p><a href="FreeImage/Scanline.html">Scanlines</a> provide low level access to
+image data.   The only lower-level access is working with the actual raw
+bytes, which you can do via the FreeeImage::Bitmap#bytes method, but its
+not recommended.</p>
+
+<p>A scanline represents one row of image data, starting from the bottom. 
+Let's go back to our example above of drawing a red border around a
+thumbnail.</p>
+
+<pre># Helper method
+def set_to_red(color)
+  color[:red] = 255
+  color[:green] = 0
+  color[:blue] = 0
+end
+
+# Create a thumbnail
+image = FreeImage::Bitmap.open('images/lena.png')
+thumbnail = image.make_thumbnail(100)
+
+# Draw bottom border
+(0..3).each do |index|
+  scanline = thumbnail.scanline(index)
+  scanline.each do |color|
+    set_to_red(color)
+  end
+end
+
+# Draw top border
+((thumbnail.height - 5)..(thumbnail.height - 1)).each do |index|
+  scanline = thumbnail.scanline(index)
+  scanline.each do |color|
+    set_to_red(color)
+  end
+end
+
+# Draw left and right borders
+(1..(thumbnail.height - 2)).each do |index|
+  scanline = thumbnail.scanline(index)
+  (0..4).each do |index|
+    set_to_red(scanline[index])
+  end
+
+  ((thumbnail.width - 5)..(thumbnail.width - 1)).each do |index|
+    set_to_red(scanline[index])
+  end
+end
+
+thumbnail.save(&quot;images/lena_thumbnail_border_scanline.png&quot;, :png)</pre>
+
+<p><img src="../../test/images/lena_thumbnail_border_scanline.png" /></p>
+
+  </div>
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+</body>
+</html>
+

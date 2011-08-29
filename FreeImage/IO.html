@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="IBM437"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>Class: FreeImage::IO</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/free-image/sources/io_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/free-image/sources/io.rb">lib/free-image/sources/io.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="AbstractSource.html">FreeImage::AbstractSource</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-format">#format</a></li>
+          
+          <li><a href="#method-i-save">#save</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../HISTORY.html">HISTORY</a></li>
+        
+          <li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="../cookbook_rdoc.html">cookbook.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../FreeImage.html">FreeImage</a></li>
+        
+          <li><a href="../FreeImage/AbstractSource.html">FreeImage::AbstractSource</a></li>
+        
+          <li><a href="../FreeImage/AbstractSource/Decoder.html">FreeImage::AbstractSource::Decoder</a></li>
+        
+          <li><a href="../FreeImage/AbstractSource/Encoder.html">FreeImage::AbstractSource::Encoder</a></li>
+        
+          <li><a href="../FreeImage/Bitmap.html">FreeImage::Bitmap</a></li>
+        
+          <li><a href="../FreeImage/Boolean.html">FreeImage::Boolean</a></li>
+        
+          <li><a href="../FreeImage/Complex.html">FreeImage::Complex</a></li>
+        
+          <li><a href="../FreeImage/Conversions.html">FreeImage::Conversions</a></li>
+        
+          <li><a href="../FreeImage/File.html">FreeImage::File</a></li>
+        
+          <li><a href="../FreeImage/FreeImageError.html">FreeImage::FreeImageError</a></li>
+        
+          <li><a href="../FreeImage/ICC.html">FreeImage::ICC</a></li>
+        
+          <li><a href="../FreeImage/ICC/Profile.html">FreeImage::ICC::Profile</a></li>
+        
+          <li><a href="../FreeImage/IO.html">FreeImage::IO</a></li>
+        
+          <li><a href="../FreeImage/IOStruct.html">FreeImage::IOStruct</a></li>
+        
+          <li><a href="../FreeImage/Information.html">FreeImage::Information</a></li>
+        
+          <li><a href="../FreeImage/Memory.html">FreeImage::Memory</a></li>
+        
+          <li><a href="../FreeImage/MemoryStream.html">FreeImage::MemoryStream</a></li>
+        
+          <li><a href="../FreeImage/Modify.html">FreeImage::Modify</a></li>
+        
+          <li><a href="../FreeImage/Palette.html">FreeImage::Palette</a></li>
+        
+          <li><a href="../FreeImage/Pixels.html">FreeImage::Pixels</a></li>
+        
+          <li><a href="../FreeImage/RGB16.html">FreeImage::RGB16</a></li>
+        
+          <li><a href="../FreeImage/RGBA16.html">FreeImage::RGBA16</a></li>
+        
+          <li><a href="../FreeImage/RGBAF.html">FreeImage::RGBAF</a></li>
+        
+          <li><a href="../FreeImage/RGBF.html">FreeImage::RGBF</a></li>
+        
+          <li><a href="../FreeImage/RGBQuad.html">FreeImage::RGBQuad</a></li>
+        
+          <li><a href="../FreeImage/RGBTriple.html">FreeImage::RGBTriple</a></li>
+        
+          <li><a href="../FreeImage/Scanline.html">FreeImage::Scanline</a></li>
+        
+          <li><a href="../FreeImage/Transforms.html">FreeImage::Transforms</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">FreeImage::IO</h1>
+
+    <div id="description" class="description">
+      
+<h2>Summary</h2>
+
+<p>Supports loading and saving images to a Ruby <a href="IO.html">IO</a>
+stream.</p>
+
+<h2>Usage</h2>
+
+<pre># Read an image from an io stream string
+file = ::File.open('test/fixtures/lena.png', :encoding =&gt; Encoding::BINARY)
+image = FreeImage::IO.open(file)
+
+# Save an image to a byte string
+dest = FreeImage::IO.new(::File.open('test/fixtures/lena_new.png', :encoding =&gt; Encoding::BINARY))
+image.save(dest, :jpeg)
+dest.bytes</pre>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(io)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Create a new <a href="IO.html">FreeImage::IO</a> instance that can read and
+write image data from a Ruby <a href="IO.html">IO</a> stream.</p>
+
+<h2>Parameters</h2>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>io</p></td>
+<td>
+<p>A standard Ruby io stream such as a file.</p>
+</td></tr></table>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/sources/io.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">io</span>)
+  <span class="ruby-ivar">@io</span> = <span class="ruby-identifier">io</span>
+
+  <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:int</span>)
+  <span class="ruby-ivar">@handle</span>.<span class="ruby-identifier">put_int</span>(<span class="ruby-value">0</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">object_id</span>)
+
+  <span class="ruby-ivar">@ffi_io</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">IOStruct</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@ffi_io</span>[<span class="ruby-value">:read_proc</span>] = <span class="ruby-identifier">method</span>(<span class="ruby-value">:read</span>)
+  <span class="ruby-ivar">@ffi_io</span>[<span class="ruby-value">:write_proc</span>] = <span class="ruby-identifier">method</span>(<span class="ruby-value">:write</span>)
+  <span class="ruby-ivar">@ffi_io</span>[<span class="ruby-value">:seek_proc</span>] = <span class="ruby-identifier">method</span>(<span class="ruby-value">:seek</span>)
+  <span class="ruby-ivar">@ffi_io</span>[<span class="ruby-value">:tell_proc</span>] = <span class="ruby-identifier">method</span>(<span class="ruby-value">:tell</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="format-method" class="method-detail ">
+          <a name="method-i-format"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">image_type &rarr; :format</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+
+          <div class="method-description">
+            
+            <p>Returns the image format for a memory stream. If the image format cannot be
+determined the :unknown will be returned.</p>
+            
+
+            
+            <div class="method-source-code" id="format-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/sources/io.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">format</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetFileTypeFromHandle</span>(<span class="ruby-ivar">@ffi_io</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-value">0</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EINVAL</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-value">:unknown</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- format-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- format-method -->
+
+      
+        <div id="save-method" class="method-detail ">
+          <a name="method-i-save"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">save(format = nil, flags = 0) &rarr; boolean</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+
+          <div class="method-description">
+            
+            <p>Saves an image to a file.</p>
+
+<h2>Parameters</h2>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>format</p></td>
+<td>
+<p>The <a href="../FreeImage.html#method-i-formats">format</a> to save the
+image to.</p>
+</td></tr><tr><td class="rdoc-term"><p>flags</p></td>
+<td>
+<p>Format specific flags that control how a bitmap is saved.  These flags are
+defined</p>
+
+<pre>as constants on the AbstractSource::Encoder module.  Flags can be combined using
+Ruby's bitwise or operator (|)</pre>
+</td></tr></table>
+
+<h2>Usage</h2>
+
+<pre>image = Bimap.open('&lt;path_to_file&gt;')
+source = FreeImage::File.new('&lt;path_to_new_file&gt;')
+source.save(image, :jpeg, AbtractSource::JPEG_QUALITYSUPERB | AbtractSource::JPEG_PROGRESSIVE)</pre>
+            
+
+            
+            <div class="method-source-code" id="save-source">
+<pre>
+<span class="ruby-comment"># File lib/free-image/sources/io.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">save</span>(<span class="ruby-identifier">bitmap</span>, <span class="ruby-identifier">format</span>, <span class="ruby-identifier">flags</span> = <span class="ruby-value">0</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SaveToHandle</span>(<span class="ruby-identifier">format</span>, <span class="ruby-identifier">bitmap</span>, <span class="ruby-ivar">@ffi_io</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">flags</span>)
+  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- save-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- save-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

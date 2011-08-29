@@ -1,0 +1,526 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>FreeImage::AbstractSource::Encoder</title>
+    <meta content='text/html; charset=IBM437' http-equiv='Content-Type'>
+    <link href='../../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='class' id='wrapper'>
+      <div class='header'>
+        <h1 class='name'>
+          <span class='type'>module</span>
+          FreeImage::AbstractSource::Encoder
+        </h1>
+        <ol class='paths'>
+          <li>
+            <a target="docwin" href="../../../files/lib/free-image/sources/abstract_source_rb.html">lib/free-image/sources/abstract_source.rb</a>
+          </li>
+        </ol>
+        <div class='parent'>
+          Parent:
+          <strong><a target="docwin" href="../AbstractSource.html">AbstractSource</a></strong>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            
+            <p>The <a href="Encoder.html">Encoder</a> module defines various constants
+            that control how various image formats are saved.</p>
+          </div>
+          <div id='context'>
+          </div>
+          <div id='section'>
+            <div id='constants-list'>
+              <h2>Constants</h2>
+              <div class='name-list'>
+                <table summary='Constants'>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>BMP_DEFAULT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>BMP_SAVE_RLE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x1</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>EXR_B44</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0020</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save with lossy 44% float compression - goes to 22% when combined with <a
+                      href="Encoder.html#EXR_LC">EXR_LC</a></p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>EXR_DEFAULT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save data as half with piz-based wavelet compression</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>EXR_FLOAT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0001</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save data as float instead of as half (not recommended)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>EXR_LC</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0040</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save images with one luminance and two chroma channels, rather than as RGB
+                      (lossy compression)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>EXR_NONE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0002</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save with no compression</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>EXR_PIZ</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0008</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save with piz-based wavelet compression</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>EXR_PXR24</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0010</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save with lossy 24-bit float compression</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>EXR_ZIP</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0004</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save with zlib compression, in blocks of 16 scan lines</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>J2K_DEFAULT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save with a 16:1 rate</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>JP2_DEFAULT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save with a 16:1 rate</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>JPEG_BASELINE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x40000</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save basic JPEG, without metadata or any markers</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>JPEG_DEFAULT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Loading (see JPEG_FAST); saving (see <a
+                      href="Encoder.html#JPEG_QUALITYGOOD">JPEG_QUALITYGOOD</a>|<a
+                      href="Encoder.html#JPEG_SUBSAMPLING_420">JPEG_SUBSAMPLING_420</a>)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>JPEG_OPTIMIZE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x20000</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>On saving, compute optimal Huffman coding tables (can reduce a few percent
+                      of file size)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>JPEG_PROGRESSIVE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x2000</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save as a progressive-JPEG (use | to combine with other save flags)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>JPEG_QUALITYAVERAGE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0400</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save with average quality (25:1)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>JPEG_QUALITYBAD</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0800</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save with bad quality (10:1)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>JPEG_QUALITYGOOD</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0100</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save with good quality (75:1)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>JPEG_QUALITYNORMAL</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0200</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save with normal quality (50:1)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>JPEG_QUALITYSUPERB</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x80</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save with superb quality (100:1)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>JPEG_SUBSAMPLING_411</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x1000</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save with high 4x1 chroma subsampling (4:1:1)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>JPEG_SUBSAMPLING_420</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x4000</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save with medium 2x2 medium chroma subsampling (4:2:0) - default value</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>JPEG_SUBSAMPLING_422</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x8000</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save with low 2x1 chroma subsampling (4:2:2)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>JPEG_SUBSAMPLING_444</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x10000</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save with no chroma subsampling (4:4:4)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>PNG_DEFAULT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>PNG_INTERLACED</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0200</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save using Adam7 interlacing (use | to combine with other save flags)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>PNG_Z_BEST_COMPRESSION</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0009</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save using ZLib level 9 compression flag (default value is 6)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>PNG_Z_BEST_SPEED</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0001</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save using ZLib level 1 compression flag (default value is 6)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>PNG_Z_DEFAULT_COMPRESSION</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0006</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save using ZLib level 6 compression flag (default recommended value)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>PNG_Z_NO_COMPRESSION</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0100</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save without ZLib compression</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>PNM_DEFAULT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>PNM_SAVE_ASCII</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x1</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>If set the writer saves in ASCII format (i.e. P1, P2 or P3)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>PNM_SAVE_RAW</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>If set the writer saves in RAW format (i.e. P4, P5 or P6)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>TARGA_DEFAULT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>TARGA_SAVE_RLE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x2</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>If set, the writer saves with RLE compression</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>TIFF_ADOBE_DEFLATE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0400</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save using ADOBE DEFLATE compression</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>TIFF_CCITTFAX3</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x1000</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save using CCITT Group 3 fax encoding</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>TIFF_CCITTFAX4</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x2000</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save using CCITT Group 4 fax encoding</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>TIFF_CMYK</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0001</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Reads/stores tags for separated CMYK (use | to combine with compression
+                      flags)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>TIFF_DEFAULT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>TIFF_DEFLATE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0200</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save using DEFLATE compression (a.k.a. ZLIB compression)</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>TIFF_JPEG</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x8000</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save using JPEG compression</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>TIFF_LOGLUV</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x10000</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save using LogLuv compression</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>TIFF_LZW</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x4000</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save using LZW compression</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>TIFF_NONE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0800</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save without any compression</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>TIFF_PACKBITS</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0x0100</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Save using PACKBITS compression</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a target="docwin" href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>
