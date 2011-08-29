@@ -1,16 +1,4 @@
 # encoding: utf-8
-require 'rake'
-
-# ------- Default Package ----------
-FILES = FileList[
-  'HISTORY',
-  'LICENSE',
-  'free-image.gemspec',
-  'Rakefile',
-  '*.rdoc',
-  'lib/**/*.rb',
-  'test/**/*'
-]
 
 Gem::Specification.new do |spec|
   spec.name        = 'free-image'
@@ -25,7 +13,15 @@ Gem::Specification.new do |spec|
   EOS
   spec.authors = [ 'Charlie Savage']
   spec.platform = Gem::Platform::RUBY
-  spec.files = FILES.to_a
+  spec.files = [
+      'HISTORY',
+      'LICENSE',
+      'free-image.gemspec',
+      'Rakefile',
+      Dir.glob('*.rdoc'),
+      Dir.glob('lib/**/*.rb'),
+      Dir.glob('test/**/*')
+    ].flatten.uniq
   spec.test_files = Dir.glob("test/test_*.rb")
   spec.required_ruby_version = '>= 1.8.7'
   spec.date = Time.now
