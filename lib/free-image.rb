@@ -46,7 +46,15 @@ module FreeImage
   end
 
   extend ::FFI::Library
-  ffi_lib(*free_image_library_paths)
+
+  if free_image_library_paths.any?
+    ffi_lib(*free_image_library_paths)
+  elsif FFI::Platform.windows?
+    ffi_lib("FreeImaged")
+  else
+    ffi_lib("free_image")
+  end
+
   ffi_convention :stdcall if FFI::Platform.windows?
 end
 
