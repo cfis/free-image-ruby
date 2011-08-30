@@ -13,20 +13,17 @@ Gem::Specification.new do |spec|
   EOS
   spec.authors = [ 'Charlie Savage']
   spec.platform = Gem::Platform::RUBY
-  spec.files = [
-      'HISTORY',
-      'LICENSE',
-      'free-image.gemspec',
-      'Rakefile',
-      Dir.glob('*.rdoc'),
-      Dir.glob('lib/**/*.rb'),
-      Dir.glob('test/**/*')
-    ].flatten.uniq
+  spec.files = Dir.glob(['HISTORY',
+                         'LICENSE',
+                         'free-image.gemspec',
+                         'Rakefile',
+                         '*.rdoc',
+                         'lib/**/*.rb',
+                         'test/**/*'])
   spec.test_files = Dir.glob("test/test_*.rb")
   spec.required_ruby_version = '>= 1.8.7'
   spec.date = Time.now
 
-  spec.add_development_dependency('grancher')
   spec.add_development_dependency('hanna-nouveau')
   spec.add_development_dependency('open4')
 end

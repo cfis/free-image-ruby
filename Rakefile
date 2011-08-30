@@ -6,7 +6,6 @@ require "rake/testtask"
 require "rubygems/package_task"
 require "rdoc/task"
 require "fileutils"
-require "grancher"
 
 GEM_NAME = "free-image"
 
@@ -45,21 +44,4 @@ end
 Rake::TestTask.new do |t|
   t.libs << "test"
   t.verbose = true
-end
-
-desc "Publish rdoc to Github"
-task :grancher do
-  gem 'win32-open3-19'
-  require 'open3'
-  require 'popen4'
-  grancher = Grancher.new do |g|
-    # push gh-pages
-    g.branch  = 'gh-pages'
-    # to origin
-    g.push_to = 'origin'
-    # copy the doc directory
-    g.directory 'doc'
-  end
-  grancher.commit
-  grancher.push if @grancher.push_to
 end
