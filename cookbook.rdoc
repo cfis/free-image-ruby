@@ -17,6 +17,17 @@ via the FreeImage::Bitmap.open method:
 The open method also takes two additional optional parameters, format and flags,
 that provide greater control over opening images if needed.
 
+Once you are done with an image, you can either let Ruby's garbage collector
+free its associated memory or call the FreeImage::Bitmap#free method.
+
+Alternatively, you can pass a block to the open method similary to File.open. The
+semantics are also the same, once you the block completes, the image will be
+automaically freed for you.
+
+  FreeImage::Bitmap.open('images/lena.png') do |image|
+    ... do some stuff..
+  end
+
 Image[link:cookbook/lena.png]
 
 == Saving An Image

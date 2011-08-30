@@ -85,7 +85,16 @@ module FreeImage
     # The source parameter can be a File, Memory or IO stream.  It can
     # also be a string which is interpreted as a fully qualified file path.
     def self.open(source)
-      figure_source(source).open
+      bitmap = figure_source(source).open
+      unless block_given?
+        bitmap
+      else
+        begin
+          yield bitmap
+        ensure
+          bitmap.free
+        end
+      end
     end
 
     # Closes an image and releases its associated memory
