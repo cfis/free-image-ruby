@@ -27,10 +27,10 @@ class MemoryTest < Test::Unit::TestCase
   end
 
   def test_load_unknown
-    error = assert_raise(TypeError) do
+    error = assert_raise(FreeImage::Error) do
       memory('not_an_image.txt').open
     end
-    assert_equal("Unknown image format",
+    assert_equal("Cannot load :unknown image format",
                  error.message)
   end
 

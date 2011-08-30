@@ -22,12 +22,11 @@ class FIFileTest < Test::Unit::TestCase
     assert_kind_of(FreeImage::Bitmap, bitmap)
   end
 
-  def test_load_unknown
-    error = assert_raise(TypeError) do
+  def test_load_format
+    error = assert_raise(FreeImage::Error) do
       file('not_an_image.txt').open
     end
-    assert_equal("Unknown image format",
-                 error.message)
+    assert_equal('Cannot load :unknown image format', error.to_s)
   end
 
   def test_load_wrong_format

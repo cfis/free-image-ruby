@@ -76,7 +76,7 @@ class InformationTest < Test::Unit::TestCase
   end
 
   def test_image_type
-    assert_equal(:uint16, sample_image.image_type)
+    assert_equal(:bitmap, sample_image.image_type)
   end
 
   def test_line

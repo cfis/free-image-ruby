@@ -157,12 +157,12 @@ module FreeImage
 
       # Do we know the format?
       if format == :unknown
-        raise(TypeError, "Unknown image format")
+        raise(Error.new(:unknown, "Cannot load :unknown image format"))
       end
 
       # Can we load the image?
       unless FreeImage.FreeImage_FIFSupportsReading(format)
-        raise(TypeError, "Cannot load image")
+        raise(Error.new("Cannot load image"))
       end
 
       ptr = load(format, flags)
