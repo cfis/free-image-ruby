@@ -55,7 +55,7 @@ class ConverstionsTest < Test::Unit::TestCase
   def test_convert_to_type
     bitmap = sample_image.convert_to_type(:rgb16)
     assert_kind_of(FreeImage::Bitmap, bitmap)
-    assert_equal(128, bitmap.bits_per_pixel)
+    assert_equal(48, bitmap.bits_per_pixel)
   end
 
   def test_dither

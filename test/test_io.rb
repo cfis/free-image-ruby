@@ -32,7 +32,7 @@ class IoTest < Test::Unit::TestCase
   end
 
   def test_load_wrong_format
-    error = assert_raise(FreeImage::FreeImageError) do
+    error = assert_raise(FreeImage::Error) do
       io.open(:jpeg)
     end
     assert_equal("Not a JPEG file: starts with 0x89 0x50", error.to_s)

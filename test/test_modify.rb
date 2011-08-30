@@ -25,14 +25,14 @@ class ModifyTest < Test::Unit::TestCase
     bitmap = FreeImage::Bitmap.open(image_path('sample.png'))
     color = FreeImage::RGBQuad.create(15, 30, 45)
 
-    result = bitmap.fill_background(color)
+    result = bitmap.fill_background!(color)
     assert(result)
   end
 
   def test_paste
     bitmap1 = FreeImage::Bitmap.open(image_path('sample.png'))
     bitmap2 = FreeImage::Bitmap.open(image_path('sample.png'))
-    result = bitmap1.paste(bitmap2, 0, 0, 0.5)
+    result = bitmap1.paste!(bitmap2, 0, 0, 0.5)
 
     assert_kind_of(TrueClass, result)
     assert_equal(240, bitmap2.width)

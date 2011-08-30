@@ -18,13 +18,13 @@ class TrasformsTest < Test::Unit::TestCase
 
   def test_flip_horizontal
     bitmap1 = FreeImage::Bitmap.open(image_path('sample.png'))
-    result = bitmap1.flip_horizontal
+    result = bitmap1.flip_horizontal!
     assert_kind_of(TrueClass, result)
   end
 
   def test_flip_vertical
     bitmap1 = FreeImage::Bitmap.open(image_path('sample.png'))
-    result = bitmap1.flip_vertical
+    result = bitmap1.flip_vertical!
     assert_kind_of(TrueClass, result)
   end
 end
