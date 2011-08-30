@@ -13,7 +13,7 @@ module FreeImage
     attach_function('FreeImage_SetOutputMessage', [:output_message_callback], :void)
   end
 
-  class FreeImageError < StandardError
+  class Error < StandardError
     attr_reader :format
 
     def initialize(format, message)
@@ -31,7 +31,7 @@ module FreeImage
     # because FreeImage won't be able to clean up any resources it needs to.
     # Instead, the calling code must call check_last_error.
     message = ptr.get_string(0)
-    Thread.current[LAST_ERROR] = FreeImageError.new(format, message)
+    Thread.current[LAST_ERROR] = Error.new(format, message)
   end
   FreeImage_SetOutputMessage(CALLBACK)
 
