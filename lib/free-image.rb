@@ -21,7 +21,7 @@ module FreeImage
       elsif FFI::Platform::IS_WINDOWS
         ENV['PATH'].split(File::PATH_SEPARATOR)
       else
-        [ '/usr/local/{lib64,lib}', '/opt/local/{lib64,lib}', '/usr/{lib64,lib}' ]
+        [ '/usr/local/{lib64,lib32,lib}', '/opt/local/{lib64,lib32,lib}', '/usr/{lib64,lib32,lib}' ]
       end
     end
   end
