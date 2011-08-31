@@ -1,6 +1,6 @@
 = \Getting Started With \FreeImage
 Below are various recipes to get you up and running with \FreeImage as quickly
-as possible.  Note that the images the recipes use can be found in the
+as possible.  The example images tcan be found in the
 test/images directory.  For more general information about \FreeImage, including
 installation instructions, please refer to README.rdoc.
 
@@ -17,16 +17,17 @@ via the FreeImage::Bitmap.open method:
 The open method also takes two additional optional parameters, format and flags,
 that provide greater control over opening images if needed.
 
-Once you are done with an image, you can either let Ruby's garbage collector
-free its associated memory or call the FreeImage::Bitmap#free method.
-
-Alternatively, you can pass a block to the open method similary to File.open. The
-semantics are also the same, once you the block completes, the image will be
-automaically freed for you.
+The open method works similary to File.open, meaning you can pass it a block.
 
   FreeImage::Bitmap.open('images/lena.png') do |image|
     ... do some stuff..
   end
+
+Once the block completes, the image will be automatically freed for you.  If you don't
+pass block, then the image will be freed by Ruby's Garbage Collector once it goes out
+of scope or you can call the FreeImage::Bitmap#free method.  Once you do that though,
+remember the image no longer exists and further usage of it will result in
+segmentation faults.
 
 Image[link:cookbook/lena.png]
 
@@ -39,10 +40,9 @@ or IO[rdoc-ref::FreeImage::IO] stream, and an image format.
   image.save('images/lena.png', :png)
 
 == Creating a Thumbnail
-Next, let's assume our application needs to show a list of
-thumbnails for the images it stores.  This can be done using
-the make_thumbnail[rdoc-ref:FreeImage::Modify.make_thumbnail] method
-in the Modify[rdoc-ref:FreeImage::Modify] module.
+Next, let's assume our application needs to show a list of thumbnails for the images
+ it stores.  This can be done using the make_thumbnail[rdoc-ref:FreeImage::Modify.make_thumbnail]
+method in the Modify[rdoc-ref:FreeImage::Modify] module.
 
   thumbnail = image.make_thumbnail(100)
   thumbnail.save('images/lena_thumbnail.png', :png)
@@ -50,14 +50,14 @@ in the Modify[rdoc-ref:FreeImage::Modify] module.
 Thumbnail[link:cookbook/lena_thumbnail.png]
 
 == Putting a Border Around a Thumbnail
-Next, let's assume we want to put a red border around our thumbnail.  There
+Once we have created a thumbnail, let's outline it with a red border.  There
 are various approaches to do doing this.  In the first approach, we'll use
 the enlarge_canvas[FreeImage::Modify.enlarge_canvas] method.
 
   # Border size
   border = 4
 
-  # Specify the red color
+  # Specify the color as red
   color = FreeImage::RGBQuad.create(255, 0, 0)
 
   # Add 4 pixel red border around the thumbnail
@@ -67,7 +67,7 @@ the enlarge_canvas[FreeImage::Modify.enlarge_canvas] method.
 ThumbnailBorderEnlarge[link:cookbook/lena_thumbnail_border_enlarge.png]
 
 In the second approach, let's create a image with a red background
-and then paste ontop of it our thumbnail:
+and then paste it on top of our thumbnail:
 
   # Create a red image that is the same size as the thumbnail
   red_image = FreeImage::Bitmap.create(thumbnail.width, thumbnail.height, thumbnail.bits_per_pixel)
@@ -76,7 +76,7 @@ and then paste ontop of it our thumbnail:
   # Now copy a subimage from the thumbnail that is 2 borders less wide and tall
   subimage = thumbnail.copy(border, border, thumbnail.width - border, thumbnail.height - border)
 
-  # Now paste the submimage into the red image.  Specify an alpha over 255
+  # Now paste the subimage into the red image.  Specify an alpha over 255
   # to disable alpha blending
   red_image.paste(subimage, border, border, 300)
   red_image.save('images/test1.png', :png)
@@ -85,7 +85,7 @@ and then paste ontop of it our thumbnail:
 ThumbnailBorderPaste[link:cookbook/lena_thumbnail_border_paste.png]
 
 == Resampling An Image
-If you need additional control of how an image is resampled, then use the
+If you need additional control over how an image is resampled, use the
 FreeImage::Bitmap#rescale method, which lets you specify a filtering
 algorithm.  To see how each filter works, let's scale up the thumbnail
 by 400%.
@@ -106,7 +106,7 @@ RescaleLanczos3[link:cookbook/lena_rescale_lanczos3.png]
 
 == Flipping An Image
 The Transform modules lets you flip or rotate an image. Let's say you want to
-flip and image horizontally:
+flip your image horizontally:
 
   image.flip_horizontal
   image.save('images/lena_flipped.png', :png)
@@ -126,7 +126,7 @@ FreeImage::Bitmap#rotate_ex.  The #rotate method is simpler to use:
 
 Thumbnail[link:cookbook/lena_rotate_45.png]
 
-Note however that the image size and geometry has changed. Thus, the #rotate
+Notice that the image size and geometry has changed?  Thus, the #rotate
 function is best for rotating and image 90, 180 or 270 degrees.
 
 Let's now rotate the image using the #rotate_ex method while using a mask:
@@ -143,7 +143,7 @@ a mirroring algorithm:
 Thumbnail[link:cookbook/lena_rotate_ex_45_masked.png]
 Thumbnail[link:cookbook/lena_rotate_ex_45_mirrored.png]
 
-Now lets rotate around the top left corner:
+Last, lets rotate the image around the top left corner:
 
   rotated = image.rotate_ex(45, 0, 0, 0, 0, true)
   rotated.save("images/lena_rotate_ex_45_top_left.png", :png)
@@ -152,7 +152,7 @@ Thumbnail[link:cookbook/lena_rotate_ex_45_top_left.png]
 
 == Compositing An Image
 \FreeImage also lets you composite an image with a background color or another image.
-Here is an example of compositing the sample image with green.
+Here is an example of compositing an image with the color green.
 
   image = FreeImage::Bitmap.open('images/sample.png')
   color = FreeImage::RGBQuad.create(0, 255, 0, 0)
@@ -164,7 +164,7 @@ SampleCompositeColor[link:cookbook/sample_composite_color.png]
 
 == Manipulating An Image
 \FreeImage also allows you to directly access each pixel in an image.
-Say for example we want to create an image that has a gradient from
+As an example, let's create an image that has a gradient from
 blue in the top left corner to green in the bottom right
 
   image = FreeImage::Bitmap.create(300, 300, 24)
@@ -182,8 +182,8 @@ blue in the top left corner to green in the bottom right
 
 Gradient[link:cookbook/gradient.png]
 
-Note you can use a similar technique as another way of drawing a border around a
-thumbnail.
+You can use a similar technique as another solution to drawing a border around a
+thumbnail as discussed above.
 
 == Using Scanlines
 Scanlines[rdoc-ref:FreeImage::Scanline] provide low level access to image data.  
@@ -204,7 +204,7 @@ to our example above of drawing a red border around a thumbnail.
   image = FreeImage::Bitmap.open('images/lena.png')
   thumbnail = image.make_thumbnail(100)
 
-  # Draw bottom border
+  # Draw bottom border 4 pixels tall
   (0..3).each do |index|
     scanline = thumbnail.scanline(index)
     scanline.each do |color|
@@ -212,7 +212,7 @@ to our example above of drawing a red border around a thumbnail.
     end
   end
 
-  # Draw top border
+  # Draw top border 4 pixels tall
   ((thumbnail.height - 5)..(thumbnail.height - 1)).each do |index|
     scanline = thumbnail.scanline(index)
     scanline.each do |color|
@@ -220,9 +220,11 @@ to our example above of drawing a red border around a thumbnail.
     end
   end
 
-  # Draw left and right borders
-  (1..(thumbnail.height - 2)).each do |index|
+  # We could skip top and bottom 4 scanlines since
+  # already drew them.
+  thumbnail.height.each do |index|
     scanline = thumbnail.scanline(index)
+    # Draw left and right borders 4 pixels wide
     (0..4).each do |index|
       set_to_red(scanline[index])
     end
