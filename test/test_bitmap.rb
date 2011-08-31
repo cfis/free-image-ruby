@@ -28,7 +28,7 @@ class BitmapTest < Test::Unit::TestCase
 
   def test_open_yield_error
     assert_raise(ArgumentError) do
-      result = FreeImage::Bitmap.open('images/lena.png') do |bitmap|
+      FreeImage::Bitmap.open('images/lena.png') do |bitmap|
         raise(ArgumentError, "Let's mess things up")
       end
     end

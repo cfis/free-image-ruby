@@ -97,7 +97,10 @@ module FreeImage
       end
     end
 
-    # Closes an image and releases its associated memory
+    # Closes an image and releases its associated memory.  This
+    # is called by the ruby Garbage collector and should not
+    # be called directly.  If you would like to free an image
+    # after using it, please use Bitmap#free.
     def self.release(ptr) #:nodoc:
       FreeImage.FreeImage_Unload(ptr)
     end
