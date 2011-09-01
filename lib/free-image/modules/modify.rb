@@ -45,6 +45,10 @@ module FreeImage
   # filling background colors.
   #
   module Modify
+    # :call-seq:
+    #   image.composite(background_bitmap) -> bitmap
+    #   image.composite(background_bitmap) {|img| block} -> bitmap
+    #
     # Composites a transparent foreground image against a background image.
     # The equation for computing a composited sample value is:
     #
@@ -53,12 +57,20 @@ module FreeImage
     # Where alpha and the input and output sample values are expressed as fractions
     # in the range 0 to 1. For color images, the computation is done separately
     # for R, G, and B samples.
-    def composite(background_bitmap)
+    #
+    # If an optional block is provided, it will be passed the new image as an argument.  The
+    # image will be automatically closed when the block completes.
+    #
+    def composite(background_bitmap, &block)
       ptr = FreeImage.FreeImage_Composite(self, false, nil, background_bitmap)
       FreeImage.check_last_error
-      self.class.new(ptr)
+      self.class.new(ptr, &block)
     end
 
+    # :call-seq:
+    #   image.composite_with_color(background_color) -> bitmap
+    #   image.composite_with_color(background_color) {|img| block} -> bitmap
+    #
     # Composites a transparent foreground image against a background color.
     # The equation for computing a composited sample value is:
     #
@@ -67,25 +79,41 @@ module FreeImage
     # Where alpha and the input and output sample values are expressed as fractions
     # in the range 0 to 1. For color images, the computation is done separately
     # for R, G, and B samples.
-    def composite_with_color(background_color)
+    #
+    # If an optional block is provided, it will be passed the new image as an argument.  The
+    # image will be automatically closed when the block completes.
+    #
+    def composite_with_color(background_color, &block)
       ptr = FreeImage.FreeImage_Composite(self, false, background_color, nil)
       FreeImage.check_last_error
-      self.class.new(ptr)
+      self.class.new(ptr, &block)
     end
 
+    # :call-seq:
+    #   image.copy(left, top, right, bottom) -> bitmap
+    #   image.copy(left, top, right, bottom) {|img| block} -> bitmap
+    #
     # Copy a subpart of the current image. The rectangle defined by the
     # left, top, right, bottom parameters is first normalized such that the
     # value of the left coordinate is less than the right and the top is less
     # than the bottom. Then, the returned bitmap is defined by a width equal to
     # (right - left) and a height equal to (bottom - top).
     #
-    # The function returns the subimage if successful and returns nil otherwise.
-    def copy(left, top, right, bottom)
+    # If an optional block is provided, it will be passed the new image as an argument.  The
+    # image will be automatically closed when the block completes.
+    # 
+    # The function returns the subimage if successful and othewise it returns nil.
+    #
+    def copy(left, top, right, bottom, &block)
       ptr = FreeImage.FreeImage_Copy(self, left, top, right, bottom)
       FreeImage.check_last_error
-      self.class.new(ptr)
+      self.class.new(ptr, &block)
     end
 
+    # :call-seq:
+    #   image.enlarge_canvas(left, top, right, bottom, color, options = 0) -> bitmap
+    #   image.enlarge_canvas(left, top, right, bottom, color, options = 0) {|img| block} -> bitmap
+    #
     # Enlarges or shrinks an image selectively per side and fills newly added areas with the
     # specified background color.  The common use case is to add borders to an image.
     #
@@ -117,12 +145,15 @@ module FreeImage
     # options:: Used to control color search process for palletized images. See
     #           #fill_background for more details.
     #
+    # If an optional block is provided, it will be passed the new image as an argument.  The
+    # image will be automatically closed when the block completes.
+    # 
     # Returns a new image on success or nil.
     #
-    def enlarge_canvas(left, top, right, bottom, color, options = 0)
+    def enlarge_canvas(left, top, right, bottom, color, options = 0, &block)
       ptr = FreeImage.FreeImage_EnlargeCanvas(self, left, top, right, bottom, color, options)
       FreeImage.check_last_error
-      self.class.new(ptr)
+      self.class.new(ptr, &block)
     end
 
     # Sets all pixels of an image to the specified color.
@@ -161,6 +192,7 @@ module FreeImage
 
     # :call-seq:
     #   bitmap.make_thumbnail(max_pixel_size, convert = true) -> bitmap
+    #   bitmap.make_thumbnail(max_pixel_size, convert = true) {|img| block} -> bitmap
     #
     # Creates a thumbnail image that fits inside a square of size max_pixel_size,
     # keeping the original aspect ratio intact.  Downsampling is done using a bilinear
@@ -174,10 +206,13 @@ module FreeImage
     #           to standard images (i.e. 8-, 24 or 32-bit images).  The
     #           default value is true.
     #
-    def make_thumbnail(max_pixel_size, convert = true)
+    # If an optional block is provided, it will be passed the new image as an argument.  The
+    # image will be automatically closed when the block completes.
+    #
+    def make_thumbnail(max_pixel_size, convert = true, &block)
       ptr = FreeImage.FreeImage_MakeThumbnail(self, max_pixel_size, convert)
       FreeImage.check_last_error
-      self.class.new(ptr)
+      self.class.new(ptr, &block)
     end
 
     # Combines or blends a subpart of another image with the current image.
@@ -201,6 +236,7 @@ module FreeImage
 
     # :call-seq:
     #   bitmap.rescale(width, height, filter) -> bitmap
+    #   bitmap.rescale(width, height, filter) {|img| block} -> bitmap -> bitmap
     #
     # Resamples an image to the desired width and height. Resampling changes the
     # pixel dimensions (and therefore display size) of an image.
@@ -252,10 +288,13 @@ module FreeImage
     #             rare applications using band-limited photographic images with
     #             no sharp edges.
     #
-    def rescale(width, height, filter = :bilinear)
+    # If an optional block is provided, it will be passed the new image as an argument.  The
+    # image will be automatically closed when the block completes.
+    #
+    def rescale(width, height, filter = :bilinear, &block)
       ptr = FreeImage.FreeImage_Rescale(self, width, height, filter)
       FreeImage.check_last_error
-      self.class.new(ptr)
+      self.class.new(ptr, &block)
     end
   end
 end

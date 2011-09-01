@@ -14,6 +14,7 @@ module FreeImage
   module Transforms
     # call-seq:
     #   bitmap.rotate(angle, bk_color) -> bitmap
+    #   bitmap.rotate(angle, bk_color) -> {|img| block} -> bitmap
     #
     # Rotates an image around the center of the image area by means of 3 shears.
     # The rotated image retains the same size and aspect ratio of source image
@@ -29,14 +30,18 @@ module FreeImage
     #  angle::    Specifies the angle of rotation in degrees
     #  bk_color:: The color used to fill the background.
     #
-    def rotate(angle, bk_color = nil)
+    # If an optional block is provided, it will be passed the new image as an argument.  The
+    # image will be automatically closed when the block completes.
+    #
+    def rotate(angle, bk_color = nil, &block)
       ptr = FreeImage.FreeImage_Rotate(self, angle, bk_color)
       FreeImage.check_last_error
-      self.class.new(ptr)
+      self.class.new(ptr, &block)
     end
 
     # call-seq:
     #   bitmap.rotate_ex(aangle, x_shift, y_shift, x_origin, y_origin, use_mask = false) -> bitmap
+    #   bitmap.rotate_ex(aangle, x_shift, y_shift, x_origin, y_origin, use_mask = false) {|img| block} -> bitmap
     #
     # Rotates an image using a 3rd order (cubic) B-Spline. The rotated image will have
     # the same width and height as the source image, so that this function is better
@@ -52,10 +57,13 @@ module FreeImage
     #  use_mask:: When true, irrelevant parts of the image are set to black,
     #             otherwise, a mirroring technique is used to fill irrelevant pixels.
     #
-    def rotate_ex(angle, x_shift, y_shift, x_origin, y_origin, use_mask = false);
+    # If an optional block is provided, it will be passed the new image as an argument.  The
+    # image will be automatically closed when the block completes.
+    #
+    def rotate_ex(angle, x_shift, y_shift, x_origin, y_origin, use_mask = false, &block)
       ptr = FreeImage.FreeImage_RotateEx(self, angle, x_shift, y_shift, x_origin, y_origin, use_mask)
       FreeImage.check_last_error
-      self.class.new(ptr)
+      self.class.new(ptr, &block)
     end
 
     # call-seq:

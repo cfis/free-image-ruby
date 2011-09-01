@@ -86,14 +86,28 @@ module FreeImage
     # also be a string which is interpreted as a fully qualified file path.
     def self.open(source)
       bitmap = figure_source(source).open
-      unless block_given?
-        bitmap
-      else
+      if block_given?
         begin
           yield bitmap
         ensure
           bitmap.free
         end
+      else
+        bitmap
+      end
+    end
+
+    def self.new(ptr, source = nil)
+      bitmap = super(ptr, source)
+
+      if block_given?
+        begin
+          yield bitmap
+        ensure
+          bitmap.free
+        end
+      else
+        bitmap
       end
     end
 
@@ -112,11 +126,19 @@ module FreeImage
       super(ptr)
     end
 
+    # :call-seq:
+    #   image.clone -> bitmap
+    #   image.clone {|img| block} -> bitmap
+    # 
     # Creates an exact copy of the current image.
-    def clone
+    #
+    # If an optional block is provided, it will be passed the new image as an argument.  The
+    # image will be automatically closed when the block completes.
+    #
+    def clone(&block)
       ptr = FreeImage.FreeImage_Clone(self)
       FreeImage.check_last_error
-      self.class.new(ptr)
+      self.class.new(ptr, &block)
     end
 
     # Save the image to the specified source.
@@ -145,10 +167,6 @@ module FreeImage
       else
         raise(ArgumentError, "Unknown source type: #{source.class.name}")
       end
-    end
-
-    def figure_color_klass
-      
     end
   end
 end

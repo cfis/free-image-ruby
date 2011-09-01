@@ -34,6 +34,18 @@ class BitmapTest < Test::Unit::TestCase
     end
   end
 
+  def test_clone
+    image = lena_image
+    clone = image.clone
+    assert(!clone.equal?(image))
+  end
+
+  def test_clone_block
+    lena_image.clone do |image|
+      assert_not_nil(image)
+    end
+  end
+
   def test_free
     1000.times do
       image = sample_image

@@ -17,7 +17,7 @@ via the FreeImage::Bitmap.open method:
 The open method also takes two additional optional parameters, format and flags,
 that provide greater control over opening images if needed.
 
-The open method works similary to File.open, meaning you can pass it a block.
+The open method works similary to File.open, meaning you can also pass it a block.
 
   FreeImage::Bitmap.open('images/lena.png') do |image|
     ... do some stuff..
@@ -25,9 +25,8 @@ The open method works similary to File.open, meaning you can pass it a block.
 
 Once the block completes, the image will be automatically freed for you.  If you don't
 pass block, then the image will be freed by Ruby's Garbage Collector once it goes out
-of scope or you can call the FreeImage::Bitmap#free method.  Once you do that though,
-remember the image no longer exists and further usage of it will result in
-segmentation faults.
+of scope.  For more information about memory management, refer to
+the readme [rdoc-ref:README.rdoc].
 
 Image[link:cookbook/lena.png]
 

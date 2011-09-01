@@ -33,11 +33,32 @@ free-image is via Ruby Gems.  To install:
 
  gem install free-image
 
-
 == Getting Started
-Using free-image is easy.  To get you started,  refer to the
-\FreeImage cookbook[rdoc-ref:cookbook.rdoc].
+Getting started is easy - first work through the examples in the cookbook[rdoc-ref:cookbook.rdoc].
+Once you've done that, the refer to rdocs for extensive documentation.
 
+== Memory Management
+Opening and working with images consumes some memory.  Generally you won't have to
+worry about this.  When an image goes out of scope, it will be garbage collected
+and the underlying image memory will be freed.
+
+Having said that, \FreeImage also lets you control when the memory is freed.
+Any method that creates a new image also takes a block.  When the block finishes,
+the underlying image memory is freed.  This works the same way as the File.open
+method.  For example:
+
+  FreeImage::Bitmap.open('images/lena.png') do |image|
+    thumbnail = image.make_thumbail do |thumbail|
+      thumbnail.save('images/thumbnail.png', :png)
+    end
+  end
+
+When the inner block finishes the thumbnail image is freed and when the outer
+block finished the lena image is freed.
+
+If you need even more control, you can  use FreeImage::Bitmap#free which frees 
+the underlying image.  Be careful though - once the image is freed further usage
+of it will result in a segmentation fault.
 
 == Implementation Status
 The FreeImage API is divided into multiple parts.  As summarized below, the Ruby ffi
@@ -74,7 +95,7 @@ extend the coverage.
 * Channel processing - Not Implemented
 * Copy / Paste / Composite routines - FreeImage::Modify
 * Background filling - FreeImage::Modify
-* Miscellaneous algorithms - Not Implemented
+* Miscellaneous algorithms - FreeImage::Helper
 
 == Documentation
 Documentation is available via rdoc, and is installed automatically with the
