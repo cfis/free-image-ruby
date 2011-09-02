@@ -52,7 +52,7 @@ module FreeImage
   elsif FFI::Platform.windows?
     ffi_lib("FreeImaged")
   else
-    ffi_lib("free_image")
+    ffi_lib("freeimage")
   end
 
   ffi_convention :stdcall if FFI::Platform.windows?
