@@ -14,9 +14,9 @@ module FreeImage
   # :double:: Array of double: 64-bit IEEE floating point
   # :complex:: Array of FICOMPLEX: 2 x 64-bit IEEE floating point
   # :rgb16:: 48-bit rgb image: 3 x 16-bit
-  # :rgba16:: 64-bit rgbA image: 4 x 16-bit
+  # :rgba16:: 64-bit rgba image: 4 x 16-bit
   # :rgbf:: 96-bit rgb float image: 3 x 32-bit IEEE floating point
-  # :rgbaf:: 128-bit rgbA float image: 4 x 32-bit IEEE floating point
+  # :rgbaf:: 128-bit rgba float image: 4 x 32-bit IEEE floating point
   #
   # :method: image_types
   
