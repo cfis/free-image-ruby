@@ -166,6 +166,13 @@ module FreeImage
       end
 
       ptr = load(format, flags)
+
+      # Make sure we didn't get a null pointer.  This can
+      # happen - see test_file for example#test_corrupt_wrong_format
+      if ptr.null?
+        error = Error.new(:unknown, "Could not load the image")
+        raise(error)
+      end
       Bitmap.new(ptr, self)
     end
   end

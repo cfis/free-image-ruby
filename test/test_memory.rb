@@ -72,4 +72,14 @@ class MemoryTest < Test::Unit::TestCase
     end
     assert_equal("Cannot load :unknown image format", error.message)
   end
+
+  def test_corrupt_wrong_format
+    data = image_data('corrupt.jpg')
+    memory = FreeImage::Memory.new(data)
+
+    error = assert_raise(FreeImage::Error) do
+      memory.open(:png)
+    end
+    assert_equal("Could not load the image", error.message)
+  end
 end

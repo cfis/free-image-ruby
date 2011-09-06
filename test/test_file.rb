@@ -8,7 +8,7 @@ class FIFileTest < Test::Unit::TestCase
     path = image_path(image)
     FreeImage::File.new(path)
   end
-  
+
   def test_format
     assert_equal(:png, file.format)
   end
@@ -56,5 +56,15 @@ class FIFileTest < Test::Unit::TestCase
       file.open
     end
     assert_equal("Not a JPEG file: starts with 0xaa 0xc0", error.message)
+  end
+
+  def test_corrupt_wrong_format
+    path = image_path('corrupt.jpg')
+    file = FreeImage::File.new(path)
+    error = assert_raise(FreeImage::Error) do
+      # Be sneaky - say png!
+      file.open(:png)
+    end
+    assert_equal("Could not load the image", error.message)
   end
 end
