@@ -1,5 +1,15 @@
 = Release History
 
+== 0.6.1 / 2011-09-06 Charlie Savage
+
+* Use release version on windows of FreeImage, not debug version.
+
+== 0.6.0 / 2011-09-02 Charlie Savage
+
+* Update documentation
+* Add alternate library names
+* Add support for blocks in all methods that return bitmaps
+
 == 0.5.0 / 2011-08-28 Charlie Savage
 
 * Initial Commit
