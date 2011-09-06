@@ -34,6 +34,14 @@ class BitmapTest < Test::Unit::TestCase
     end
   end
 
+  def test_new_from_nil
+    ptr = FFI::Pointer::NULL
+    error = assert_raise(FreeImage::Error) do
+      FreeImage::Bitmap.new(ptr)
+    end
+    assert_equal("Cannot create a bitmap from a null pointer", error.message)
+  end
+
   def test_clone
     image = lena_image
     clone = image.clone

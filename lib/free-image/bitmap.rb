@@ -98,6 +98,12 @@ module FreeImage
     end
 
     def self.new(ptr, source = nil)
+      # Ptr must be set
+      if ptr.null?
+        error = Error.new(:unknown, "Cannot create a bitmap from a null pointer")
+        raise(error)
+      end
+
       bitmap = super(ptr, source)
 
       if block_given?
