@@ -48,4 +48,13 @@ class FIFileTest < Test::Unit::TestCase
     tmp_file.close
     tmp_file.unlink
   end
+
+  def test_corrupt
+    path = image_path('corrupt.jpg')
+    file = FreeImage::File.new(path)
+    error = assert_raise(FreeImage::Error) do
+      file.open
+    end
+    assert_equal("Not a JPEG file: starts with 0xaa 0xc0", error.message)
+  end
 end

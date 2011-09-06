@@ -50,4 +50,15 @@ class IoTest < Test::Unit::TestCase
     tmp_file.close
     tmp_file.unlink
   end
+
+  def test_corrupt
+    path = image_path('corrupt.jpg')
+    file = File.open(path)
+    io = FreeImage::IO.new(file)
+
+    error = assert_raise(FreeImage::Error) do
+      io.open
+    end
+    assert_equal("Cannot load :unknown image format", error.message)
+  end
 end
