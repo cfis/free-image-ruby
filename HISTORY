@@ -1,5 +1,10 @@
 = Release History
 
+== 0.6.2 / 2011-09-06 Charlie Savage
+
+* Add null pointer checks when loading images
+* Add null pointer check when creating a new image
+
 == 0.6.1 / 2011-09-06 Charlie Savage
 
 * Use release version on windows of FreeImage, not debug version.
