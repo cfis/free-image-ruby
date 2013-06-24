@@ -1,7 +1,7 @@
 module FreeImage
   # DLL_API FIBITMAP *DLL_CALLCONV FreeImage_Rotate(FIBITMAP *dib, double angle, const void *bkcolor FI_DEFAULT(NULL));
   attach_function('FreeImage_Rotate', [:pointer, :double, :pointer], :pointer)
-    
+
   # DLL_API FIBITMAP *DLL_CALLCONV FreeImage_RotateEx(FIBITMAP *dib, double angle, double x_shift, double y_shift, double x_origin, double y_origin, BOOL use_mask);
   attach_function('FreeImage_RotateEx', [:pointer, :double, :double, :double, :double, :double, FreeImage::Boolean], :pointer)
 
@@ -80,10 +80,10 @@ module FreeImage
     # call-seq:
     #   bitmap.flip_vertical -> boolean
     #
-    # Flip the input image vertically horizontally along the horizontal axis.
+    # Flip the input image vertically along the horizontal axis.
     #
     def flip_vertical!
-      result = FreeImage.FreeImage_FlipHorizontal(self)
+      result = FreeImage.FreeImage_FlipVertical(self)
       FreeImage.check_last_error
       result
     end
