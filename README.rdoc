@@ -34,7 +34,7 @@ free-image is via Ruby Gems.  To install:
  gem install free-image
 
 == Getting Started
-Getting started is easy - first work through the examples in the cookbook[rdoc-ref:cookbook.rdoc].
+Getting started is easy - first work through the examples in the {cookbook}[http://cfis.github.io/free-image-ruby/].
 Once you've done that, the refer to rdocs for extensive documentation.
 
 == Memory Management
