@@ -25,6 +25,7 @@ Gem::Specification.new do |spec|
   spec.date = Time.now
 
   spec.add_dependency('ffi', '>=1.0.10')
+  spec.add_development_dependency('rake')
   spec.add_development_dependency('hanna-nouveau')
   spec.add_development_dependency('open4')
 end

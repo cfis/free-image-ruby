@@ -1,6 +1,5 @@
 # encoding: UTF-8
-
-require './test_helper'
+require File.join(File.dirname(__FILE__),'test_helper')
 require 'test/unit'
 
 class FreeImageTest < Test::Unit::TestCase
@@ -10,6 +9,6 @@ class FreeImageTest < Test::Unit::TestCase
   end
   
   def test_version
-    assert_equal("3.15.1", FreeImage.version)
+    assert_equal(['3','15'], FreeImage.version.split('.')[0..1])
   end
 end

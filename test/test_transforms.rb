@@ -1,6 +1,5 @@
 # encoding: UTF-8
-
-require './test_helper'
+require File.join(File.dirname(__FILE__),'test_helper')
 require 'test/unit'
 
 class TrasformsTest < Test::Unit::TestCase

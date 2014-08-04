@@ -1,6 +1,5 @@
 # encoding: UTF-8
-
-require './test_helper'
+require File.join(File.dirname(__FILE__),'test_helper')
 require 'test/unit'
 
 class BitmapTest < Test::Unit::TestCase
@@ -15,12 +14,12 @@ class BitmapTest < Test::Unit::TestCase
   end
 
   def test_open
-    bitmap = FreeImage::Bitmap.open('images/lena.png')
+    bitmap = FreeImage::Bitmap.open(image_path('lena.png'))
     assert_kind_of(FreeImage::Bitmap, bitmap)
   end
 
   def test_open_yield
-    result = FreeImage::Bitmap.open('images/lena.png') do |bitmap|
+    result = FreeImage::Bitmap.open(image_path('lena.png')) do |bitmap|
       assert_kind_of(FreeImage::Bitmap, bitmap)
     end
     assert_equal(true, result)
@@ -28,7 +27,7 @@ class BitmapTest < Test::Unit::TestCase
 
   def test_open_yield_error
     assert_raise(ArgumentError) do
-      FreeImage::Bitmap.open('images/lena.png') do |bitmap|
+      FreeImage::Bitmap.open(image_path('lena.png')) do |bitmap|
         raise(ArgumentError, "Let's mess things up")
       end
     end

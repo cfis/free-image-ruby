@@ -42,6 +42,10 @@ end
 
 # Test Task
 Rake::TestTask.new do |t|
+  t.pattern = 'test/**/test_*.rb'
+  t.libs << "lib"
   t.libs << "test"
   t.verbose = true
 end
+
+task default: :test
