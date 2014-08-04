@@ -71,6 +71,7 @@ require 'free-image/types/rgba16'
 require 'free-image/types/rgbf'
 require 'free-image/types/rgbaf'
 require 'free-image/types/complex'
+require 'free-image/types/info_header'
 
 # Enums
 require 'free-image/enums/color_types'

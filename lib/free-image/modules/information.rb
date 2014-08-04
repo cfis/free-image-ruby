@@ -47,6 +47,12 @@ module FreeImage
   #DLL_API unsigned DLL_CALLCONV FreeImage_GetGreenMask(FIBITMAP *dib);
   attach_function('FreeImage_GetGreenMask', [:pointer], :ulong)
 
+  #DLL_API BITMAPINFOHEADER DLL_CALLCONV FreeImage_GetInfoHeader(FIBITMAP *dib);
+  attach_function('FreeImage_GetInfoHeader', [:pointer], FreeImage::InfoHeader)
+
+  #DLL_API BOOL DLL_CALLCONV FreeImage_hasRGBMasks(FIBITMAP *dib);
+  attach_function('FreeImage_HasRGBMasks', [:pointer], FreeImage::Boolean)
+
   #DLL_API unsigned DLL_CALLCONV FreeImage_GetTransparencyCount(FIBITMAP *dib);
   attach_function('FreeImage_GetTransparencyCount', [:pointer], :ulong)
 
@@ -186,7 +192,13 @@ module FreeImage
       FreeImage.check_last_error
       result
     end
-    
+
+    def has_rgb_masks
+      result = FreeImage.FreeImage_HasRGBMasks(self)
+      FreeImage.check_last_error
+      result
+    end    
+
     # Returns the height of the bitmap in pixel units
     def height
       result = FreeImage.FreeImage_GetHeight(self)
@@ -200,7 +212,13 @@ module FreeImage
       FreeImage.check_last_error
       result
     end
-    
+
+    def info_header
+      result = FreeImage::InfoHeader.new(FreeImage.FreeImage_GetInfoHeader(self))
+      FreeImage.check_last_error
+      result
+    end
+
     # Returns the width of the bitmap in bytes.  See also FreeImage::Information.pitch.
     # There has been some criticism on the name of this function. Some people expect it to
     # return a scanline in the pixel data, while it actually returns the width of the bitmap in

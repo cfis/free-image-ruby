@@ -4,6 +4,11 @@ require File.join(File.dirname(__FILE__),'test_helper')
 require 'test/unit'
 
 class InformationTest < Test::Unit::TestCase
+  def test_background_color_16bit
+    background_color = bit16_bmp.background_color
+    assert_kind_of(FreeImage::RGBQuad, background_color)
+  end
+
   def test_background_color
     background_color = sample_image.background_color
     assert_kind_of(FreeImage::RGBQuad, background_color)
@@ -25,13 +30,20 @@ class InformationTest < Test::Unit::TestCase
     assert_equal(8, sample_image.bits_per_pixel)
   end
 
+  # color masks are not stored post FreeImage-16.5.4 unless
+  # the image is a 16 bit BMP (with BI_BITFIELDS)
   def test_blue_mask
     assert_equal(0, sample_image.blue_mask)
-    assert_equal(FreeImage::RGBQuad::BLUE_MASK, lena_image.blue_mask)
+    assert_equal(0, lena_image.blue_mask)
+    assert_equal(FreeImage::RGB16::BLUE_MASK, bit16_bmp.blue_mask)
+    assert_equal(FreeImage::RGB16::BLUE_MASK, bit16_bmp(555).blue_mask)
+    assert_equal(FreeImage::RGB16::BLUE_MASK, bit16_bmp(565).blue_mask)
   end
   
   def test_color_type
     assert_equal(:palette, sample_image.color_type)
+    assert_equal(:rgb, bit16_bmp(555).color_type)
+    assert_equal(:rgb, bit16_bmp(565).color_type)
   end
 
   def test_dib_size
@@ -58,9 +70,14 @@ class InformationTest < Test::Unit::TestCase
     assert_equal(4000, image.dots_per_meter_y)
   end
 
+  # color masks are not stored post FreeImage-16.5.4 unless
+  # the image is a 16 bit BMP (with BI_BITFIELDS)
   def test_green_mask
     assert_equal(0, sample_image.green_mask)
-    assert_equal(FreeImage::RGBQuad::GREEN_MASK, lena_image.green_mask)
+    assert_equal(0, lena_image.green_mask)
+    assert_equal(FreeImage::RGB16::GREEN_MASK, bit16_bmp.green_mask)
+    assert_equal(FreeImage::RGB16::GREEN_MASK, bit16_bmp(555).green_mask)
+    assert_equal(FreeImage::RGB16BF565::GREEN_MASK, bit16_bmp(565).green_mask)
   end
 
   def test_has_background_color
@@ -71,12 +88,28 @@ class InformationTest < Test::Unit::TestCase
     assert(sample_image.has_pixels)
   end
 
+  def test_has_rgb_masks
+    assert_equal(false, sample_image.has_rgb_masks)
+    assert_equal(false, lena_image.has_rgb_masks)
+    assert(bit16_bmp.has_rgb_masks)
+  end
+
   def test_height
     assert_equal(215, sample_image.height)
   end
 
   def test_image_type
     assert_equal(:bitmap, sample_image.image_type)
+  end
+
+  def test_info_header
+    image = sample_image
+    info = image.info_header
+    assert_equal(215, info[:biHeight])
+    assert_equal(240, info[:biWidth])
+    assert_equal(2835, info[:biXPelsPerMeter])
+    assert_equal(2835, info[:biYPelsPerMeter])
+    assert_equal(0, info[:biCompression])
   end
 
   def test_line
@@ -87,9 +120,14 @@ class InformationTest < Test::Unit::TestCase
     assert_equal(240, sample_image.pitch)
   end
 
+  # color masks are not stored post FreeImage-16.5.4 unless
+  # the image is a 16 bit BMP (with BI_BITFIELDS)
   def test_red_mask
     assert_equal(0, sample_image.red_mask)
-    assert_equal(FreeImage::RGBQuad::RED_MASK, lena_image.red_mask)
+    assert_equal(0, lena_image.red_mask)
+    assert_equal(FreeImage::RGB16::RED_MASK, bit16_bmp.red_mask)
+    assert_equal(FreeImage::RGB16::RED_MASK, bit16_bmp(555).red_mask)
+    assert_equal(FreeImage::RGB16BF565::RED_MASK, bit16_bmp(565).red_mask)
   end
 
   def test_transparent
