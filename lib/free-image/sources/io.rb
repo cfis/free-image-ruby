@@ -74,8 +74,8 @@ module FreeImage
     def initialize(io)
       @io = io
 
-      @handle = FFI::MemoryPointer.new(:int)
-      @handle.put_int(0, self.object_id)
+      @handle = FFI::MemoryPointer.new(:ulong)
+      @handle.put_ulong(0, self.object_id)
 
       @ffi_io = FreeImage::IOStruct.new
       @ffi_io[:read_proc] = method(:read)
