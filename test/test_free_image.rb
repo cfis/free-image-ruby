@@ -9,6 +9,6 @@ class FreeImageTest < Test::Unit::TestCase
   end
   
   def test_version
-    assert_equal(['3','15'], FreeImage.version.split('.')[0..1])
+    assert_equal(['3','16'], FreeImage.version.split('.')[0..1])
   end
 end
