@@ -31,7 +31,6 @@ class InformationTest < Test::Unit::TestCase
   end
 
   def test_blue_mask
-    assert_equal(FreeImage::RGBQuad::BLUE_MASK, sample_image.blue_mask)
     assert_equal(FreeImage::RGBQuad::BLUE_MASK, lena_image.blue_mask)
     assert_equal(FreeImage::RGB16::BLUE_MASK, bit16_bmp.blue_mask)
     assert_equal(FreeImage::RGB16::BLUE_MASK, bit16_bmp(555).blue_mask)
@@ -69,8 +68,6 @@ class InformationTest < Test::Unit::TestCase
   end
 
   def test_green_mask
-    assert_equal(FreeImage::RGBQuad::GREEN_MASK, sample_image.green_mask)
-    assert_equal(FreeImage::RGBQuad::GREEN_MASK, lena_image.green_mask)
     assert_equal(FreeImage::RGB16::GREEN_MASK, bit16_bmp.green_mask)
     assert_equal(FreeImage::RGB16::GREEN_MASK, bit16_bmp(555).green_mask)
     assert_equal(FreeImage::RGB16BF565::GREEN_MASK, bit16_bmp(565).green_mask)
@@ -117,7 +114,6 @@ class InformationTest < Test::Unit::TestCase
   end
 
   def test_red_mask
-    assert_equal(FreeImage::RGBQuad::RED_MASK, sample_image.red_mask)
     assert_equal(FreeImage::RGBQuad::RED_MASK, lena_image.red_mask)
     assert_equal(FreeImage::RGB16::RED_MASK, bit16_bmp.red_mask)
     assert_equal(FreeImage::RGB16::RED_MASK, bit16_bmp(555).red_mask)

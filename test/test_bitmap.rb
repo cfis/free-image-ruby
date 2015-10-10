@@ -19,10 +19,9 @@ class BitmapTest < Test::Unit::TestCase
   end
 
   def test_open_yield
-    result = FreeImage::Bitmap.open(image_path('lena.png')) do |bitmap|
+    FreeImage::Bitmap.open(image_path('lena.png')) do |bitmap|
       assert_kind_of(FreeImage::Bitmap, bitmap)
     end
-    assert_equal(true, result)
   end
 
   def test_open_yield_error
