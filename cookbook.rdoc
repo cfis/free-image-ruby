@@ -161,6 +161,17 @@ Here is an example of compositing an image with the color green.
 Sample[link:cookbook/sample.png]
 SampleCompositeColor[link:cookbook/sample_composite_color.png]
 
+And here is an example of compositing two images together:
+
+    image = FreeImage::Bitmap.open(image_path('sample.png'))
+    background = FreeImage::Bitmap.open(image_path('gradient.png'))
+    # Need to make sure the background image is the same size
+    background = background.rescale(image.width, image.height, :box)
+    composite = image.composite(background)
+
+Sample[link:cookbook/sample.png]
+SampleCompositeColor[link:cookbook/sample_composite.png]
+
 == Manipulating An Image
 \FreeImage also allows you to directly access each pixel in an image.
 As an example, let's create an image that has a gradient from

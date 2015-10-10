@@ -55,4 +55,22 @@ class ModifyTest < Test::Unit::TestCase
     assert_equal(100, bitmap2.width)
     assert_equal(90, bitmap2.height)
   end
+
+  def test_composite
+    image = FreeImage::Bitmap.open(image_path('sample.png'))
+    color = FreeImage::RGBQuad.create(0, 255, 0, 0)
+    composite = image.composite_with_color(color)
+    assert(composite)
+  end
+
+  def test_composite_with_color
+    image = FreeImage::Bitmap.open(image_path('sample.png'))
+
+    # Get background that is 24 bits and the same size as the original image
+    background = FreeImage::Bitmap.open(image_path('gradient.png'))
+    background = background.rescale(image.width, image.height, :box)
+
+    composite = image.composite(background)
+    assert(composite)
+  end
 end
