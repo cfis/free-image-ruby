@@ -9,6 +9,7 @@
 * Ruby object_id is a 32-bit value (Benjamin Armintor)
 * Fix C type translation for bytes on osx/intel (Benjamin Armintor)
 * Test suite clean up  (Benjamin Armintor)
+* Minor documentation updates (Charlie Savage)
 
 == 0.6.2 / 2011-09-06
 
