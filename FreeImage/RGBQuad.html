@@ -1,318 +1,228 @@
-<?xml version="1.0" encoding="IBM437"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+
+<html>
 <head>
-  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+<meta charset="UTF-8">
 
-  <title>Class: FreeImage::RGBQuad</title>
+<title>class FreeImage::RGBQuad - FreeImage</title>
 
-  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
 
-  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
 
-</head>
-<body id="top" class="class">
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
 
-  <div id="metadata">
-    <div id="home-metadata">
-      <div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../index.html">Home</a>
-          <a href="../index.html#classes">Classes</a>
-          <a href="../index.html#methods">Methods</a>
-        </h3>
-      </div>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
     </div>
 
-    <div id="file-metadata">
-      <div id="file-list-section" class="section">
-        <h3 class="section-header">In Files</h3>
-        <div class="section-body">
-          <ul>
-          
-            <li><a href="../lib/free-image/types/rgb_quad_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/free-image/types/rgb_quad.rb">lib/free-image/types/rgb_quad.rb</a></li>
-          
-          </ul>
-        </div>
-      </div>
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
 
-      
-    </div>
-
-    <div id="class-metadata">
-      
-      <!-- Parent Class -->
-      <div id="parent-class-section" class="section">
-        <h3 class="section-header">Parent</h3>
-        
-        <p class="link">FFI::Struct</p>
-        
-      </div>
-      
-
-      
-
-      
-
-      
-      <!-- Method Quickref -->
-      <div id="method-list-section" class="section">
-        <h3 class="section-header">Methods</h3>
-        <ul class="link-list">
-          
-          <li><a href="#method-c-create">::create</a></li>
-          
-          <li><a href="#method-i-3D-3D">#==</a></li>
-          
-          <li><a href="#method-i-eql-3F">#eql?</a></li>
-          
-          <li><a href="#method-i-to_s">#to_s</a></li>
-          
-        </ul>
-      </div>
-      
-
-      
-    </div>
-
-    <div id="project-metadata">
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="../HISTORY.html">HISTORY</a></li>
-        
-          <li class="file"><a href="../LICENSE.html">LICENSE</a></li>
-        
-          <li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
-        
-          <li class="file"><a href="../cookbook_rdoc.html">cookbook.rdoc</a></li>
-        
-        </ul>
-      </div>
-      
-
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class/Module Index
-          <span class="search-toggle"><img src="../images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
-
-        <ul class="link-list">
-        
-          <li><a href="../FreeImage.html">FreeImage</a></li>
-        
-          <li><a href="../FreeImage/AbstractSource.html">FreeImage::AbstractSource</a></li>
-        
-          <li><a href="../FreeImage/AbstractSource/Decoder.html">FreeImage::AbstractSource::Decoder</a></li>
-        
-          <li><a href="../FreeImage/AbstractSource/Encoder.html">FreeImage::AbstractSource::Encoder</a></li>
-        
-          <li><a href="../FreeImage/Bitmap.html">FreeImage::Bitmap</a></li>
-        
-          <li><a href="../FreeImage/Boolean.html">FreeImage::Boolean</a></li>
-        
-          <li><a href="../FreeImage/Complex.html">FreeImage::Complex</a></li>
-        
-          <li><a href="../FreeImage/Conversions.html">FreeImage::Conversions</a></li>
-        
-          <li><a href="../FreeImage/File.html">FreeImage::File</a></li>
-        
-          <li><a href="../FreeImage/FreeImageError.html">FreeImage::FreeImageError</a></li>
-        
-          <li><a href="../FreeImage/ICC.html">FreeImage::ICC</a></li>
-        
-          <li><a href="../FreeImage/ICC/Profile.html">FreeImage::ICC::Profile</a></li>
-        
-          <li><a href="../FreeImage/IO.html">FreeImage::IO</a></li>
-        
-          <li><a href="../FreeImage/IOStruct.html">FreeImage::IOStruct</a></li>
-        
-          <li><a href="../FreeImage/Information.html">FreeImage::Information</a></li>
-        
-          <li><a href="../FreeImage/Memory.html">FreeImage::Memory</a></li>
-        
-          <li><a href="../FreeImage/MemoryStream.html">FreeImage::MemoryStream</a></li>
-        
-          <li><a href="../FreeImage/Modify.html">FreeImage::Modify</a></li>
-        
-          <li><a href="../FreeImage/Palette.html">FreeImage::Palette</a></li>
-        
-          <li><a href="../FreeImage/Pixels.html">FreeImage::Pixels</a></li>
-        
-          <li><a href="../FreeImage/RGB16.html">FreeImage::RGB16</a></li>
-        
-          <li><a href="../FreeImage/RGBA16.html">FreeImage::RGBA16</a></li>
-        
-          <li><a href="../FreeImage/RGBAF.html">FreeImage::RGBAF</a></li>
-        
-          <li><a href="../FreeImage/RGBF.html">FreeImage::RGBF</a></li>
-        
-          <li><a href="../FreeImage/RGBQuad.html">FreeImage::RGBQuad</a></li>
-        
-          <li><a href="../FreeImage/RGBTriple.html">FreeImage::RGBTriple</a></li>
-        
-          <li><a href="../FreeImage/Scanline.html">FreeImage::Scanline</a></li>
-        
-          <li><a href="../FreeImage/Transforms.html">FreeImage::Transforms</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
-
-      
-    </div>
   </div>
 
-  <div id="documentation">
-    <h1 class="class">FreeImage::RGBQuad</h1>
+  
 
-    <div id="description" class="description">
-      
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">FreeImage::FFI::Struct
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-create">::create</a>
+    
+    <li ><a href="#method-i-3D-3D">#==</a>
+    
+    <li ><a href="#method-i-eql-3F">#eql?</a>
+    
+    <li ><a href="#method-i-to_s">#to_s</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-FreeImage::RGBQuad">
+  <h1 id="class-FreeImage::RGBQuad" class="class">
+    class FreeImage::RGBQuad
+  </h1>
+
+  <section class="description">
+    
 <p>Used to specify a color for a :bitmap image type.</p>
 
-    </div><!-- description -->
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
 
     
+
     
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="ALPHA">ALPHA
+        
+        <dd>
+        
+      
+        <dt id="ALPHA_MASK">ALPHA_MASK
+        
+        <dd>
+        
+      
+        <dt id="ALPHA_SHIFT">ALPHA_SHIFT
+        
+        <dd>
+        
+      
+        <dt id="BLUE">BLUE
+        
+        <dd>
+        
+      
+        <dt id="BLUE_MASK">BLUE_MASK
+        
+        <dd>
+        
+      
+        <dt id="BLUE_SHIFT">BLUE_SHIFT
+        
+        <dd>
+        
+      
+        <dt id="GREEN">GREEN
+        
+        <dd>
+        
+      
+        <dt id="GREEN_MASK">GREEN_MASK
+        
+        <dd>
+        
+      
+        <dt id="GREEN_SHIFT">GREEN_SHIFT
+        
+        <dd>
+        
+      
+        <dt id="RED">RED
+        
+        <dd><p>Little Endian (x86 / MS Windows, Linux) : BGR(A) order</p>
+        
+      
+        <dt id="RED_MASK">RED_MASK
+        
+        <dd>
+        
+      
+        <dt id="RED_SHIFT">RED_SHIFT
+        
+        <dd>
+        
+      
+        <dt id="RGB_MASK">RGB_MASK
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
     
-    <div id="5Buntitled-5D" class="documentation-section">
-      
 
-      
+    
 
-      
-      <!-- Constants -->
-      <div id="constants-list" class="section">
-        <h3 class="section-header">Constants</h3>
-        <dl>
-        
-          <dt><a name="ALPHA">ALPHA</a></dt>
-          
-          <dd class="description"></dd>
-          
-        
-          <dt><a name="ALPHA_MASK">ALPHA_MASK</a></dt>
-          
-          <dd class="description"></dd>
-          
-        
-          <dt><a name="ALPHA_SHIFT">ALPHA_SHIFT</a></dt>
-          
-          <dd class="description"></dd>
-          
-        
-          <dt><a name="BLUE">BLUE</a></dt>
-          
-          <dd class="description"></dd>
-          
-        
-          <dt><a name="BLUE_MASK">BLUE_MASK</a></dt>
-          
-          <dd class="description"></dd>
-          
-        
-          <dt><a name="BLUE_SHIFT">BLUE_SHIFT</a></dt>
-          
-          <dd class="description"></dd>
-          
-        
-          <dt><a name="GREEN">GREEN</a></dt>
-          
-          <dd class="description"></dd>
-          
-        
-          <dt><a name="GREEN_MASK">GREEN_MASK</a></dt>
-          
-          <dd class="description"></dd>
-          
-        
-          <dt><a name="GREEN_SHIFT">GREEN_SHIFT</a></dt>
-          
-          <dd class="description"></dd>
-          
-        
-          <dt><a name="RED">RED</a></dt>
-          
-          <dd class="description"><p>Little Endian (x86 / MS Windows, Linux) : BGR(A) order</p></dd>
-          
-        
-          <dt><a name="RED_MASK">RED_MASK</a></dt>
-          
-          <dd class="description"></dd>
-          
-        
-          <dt><a name="RED_SHIFT">RED_SHIFT</a></dt>
-          
-          <dd class="description"></dd>
-          
-        
-          <dt><a name="RGB_MASK">RGB_MASK</a></dt>
-          
-          <dd class="description"></dd>
-          
-        
-        </dl>
-      </div>
-      
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
 
-      
-
-      <!-- Methods -->
-      
-      <div id="public-class-method-details" class="method-section section">
-        <h3 class="section-header">Public Class Methods</h3>
-
-      
-        <div id="create-method" class="method-detail ">
-          <a name="method-c-create"></a>
-
+    
+      <div id="method-c-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">(red, green, blue, reserved = 0)</span>
           
-          <div class="method-heading">
-            <span class="method-name">create</span><span
-              class="method-args">(red, green, blue, reserved = 0)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+          <span class="method-click-advice">click to toggle source</span>
           
+        </div>
+        
 
-          <div class="method-description">
-            
-            <p>Creates a new <a href="RGBQuad.html">RGBQuad</a> color</p>
+        <div class="method-description">
+          
+          <p>Creates a new <a href="RGBQuad.html">RGBQuad</a> color</p>
 
-<h2>Parameters</h2>
-<table class="rdoc-list"><tr><td class="rdoc-term"><p>red</p></td>
-<td>
+<h2 id="method-c-create-label-Parameters">Parameters<span><a href="#method-c-create-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<dl class="rdoc-list note-list"><dt>red
+<dd>
 <p>Value for red, should be between 0 and 255</p>
-</td></tr><tr><td class="rdoc-term"><p>green</p></td>
-<td>
+</dd><dt>green
+<dd>
 <p>Value for green, should be between 0 and 255</p>
-</td></tr><tr><td class="rdoc-term"><p>blue</p></td>
-<td>
+</dd><dt>blue
+<dd>
 <p>Value for blue, should be between 0 and 255</p>
-</td></tr><tr><td class="rdoc-term"><p>reserved</p></td>
-<td>
+</dd><dt>reserved
+<dd>
 <p>Reserved value, by default is 0</p>
-</td></tr></table>
-            
+</dd></dl>
+          
+          
 
-            
-            <div class="method-source-code" id="create-source">
-<pre>
-<span class="ruby-comment"># File lib/free-image/types/rgb_quad.rb, line 59</span>
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File lib/free-image/types/rgb_quad.rb, line 59</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">red</span>, <span class="ruby-identifier">green</span>, <span class="ruby-identifier">blue</span>, <span class="ruby-identifier">reserved</span> = <span class="ruby-value">0</span>)
   <span class="ruby-identifier">result</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">result</span>[<span class="ruby-value">:red</span>] = <span class="ruby-identifier">red</span>
@@ -321,71 +231,72 @@
   <span class="ruby-identifier">result</span>[<span class="ruby-value">:reserved</span>] = <span class="ruby-identifier">reserved</span>
   <span class="ruby-identifier">result</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- create-source -->
-            
           </div>
-
           
+        </div>
 
-          
-        </div><!-- create-method -->
+        
 
-      
-      </div><!-- public-class-method-details -->
+        
+      </div>
+
     
-      <div id="public-instance-method-details" class="method-section section">
-        <h3 class="section-header">Public Instance Methods</h3>
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
 
-      
-        <div id="3D-3D-method" class="method-detail method-alias">
-          <a name="method-i-3D-3D"></a>
-
+    
+      <div id="method-i-3D-3D" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">==</span><span
+            class="method-args">(other)</span>
           
-          <div class="method-heading">
-            <span class="method-name">==</span><span
-              class="method-args">(other)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+        </div>
+        
+
+        <div class="method-description">
           
-
-          <div class="method-description">
-            
-            
-            
-
-            
-          </div>
-
+          
+          
           
 
           
-          <div class="aliases">
-            Alias for: <a href="RGBQuad.html#method-i-eql-3F">eql?</a>
-          </div>
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="RGBQuad.html#method-i-eql-3F">eql?</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-eql-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eql?</span><span
+            class="method-args">(other)</span>
           
-        </div><!-- 3D-3D-method -->
-
-      
-        <div id="eql-3F-method" class="method-detail ">
-          <a name="method-i-eql-3F"></a>
-
+          <span class="method-click-advice">click to toggle source</span>
           
-          <div class="method-heading">
-            <span class="method-name">eql?</span><span
-              class="method-args">(other)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
           
 
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="eql-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/free-image/types/rgb_quad.rb, line 68</span>
+          
+          <div class="method-source-code" id="eql-3F-source">
+            <pre><span class="ruby-comment"># File lib/free-image/types/rgb_quad.rb, line 68</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-identifier">other</span>.<span class="ruby-identifier">instance_of?</span>(<span class="ruby-constant">RGBQuad</span>) <span class="ruby-keyword">and</span>
   <span class="ruby-keyword">self</span>[<span class="ruby-value">:red</span>]   <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>[<span class="ruby-value">:red</span>] <span class="ruby-keyword">and</span>
@@ -393,66 +304,62 @@
   <span class="ruby-keyword">self</span>[<span class="ruby-value">:blue</span>]  <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>[<span class="ruby-value">:blue</span>] <span class="ruby-keyword">and</span>
   <span class="ruby-keyword">self</span>[<span class="ruby-value">:reserved</span>]  <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>[<span class="ruby-value">:reserved</span>]
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- eql-3F-source -->
-            
-          </div>
-
-          
-          <div class="aliases">
-            Also aliased as: <a href="RGBQuad.html#method-i-3D-3D">==</a>
           </div>
           
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="RGBQuad.html#method-i-3D-3D">==</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
 
           
-        </div><!-- eql-3F-method -->
-
-      
-        <div id="to_s-method" class="method-detail ">
-          <a name="method-i-to_s"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">to_s</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="to_s-source">
-<pre>
-<span class="ruby-comment"># File lib/free-image/types/rgb_quad.rb, line 77</span>
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/free-image/types/rgb_quad.rb, line 77</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
   <span class="ruby-node">&quot;RGBQuad - Red: #{self[:red]}, Green: #{self[:green]}, Blue: #{self[:blue]}, Alpha: #{self[:reserved]}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- to_s-source -->
-            
           </div>
-
           
+        </div>
 
-          
-        </div><!-- to_s-method -->
+        
 
-      
-      </div><!-- public-instance-method-details -->
+        
+      </div>
+
     
-    </div><!-- 5Buntitled-5D -->
+    </section>
   
+  </section>
+</main>
 
-  </div><!-- documentation -->
 
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
-  </div>
-
-</body>
-</html>
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
 

@@ -1,203 +1,110 @@
-<?xml version="1.0" encoding="IBM437"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+
+<html>
 <head>
-  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+<meta charset="UTF-8">
 
-  <title>Class: FreeImage::Scanline</title>
+<title>class FreeImage::Scanline - FreeImage</title>
 
-  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
 
-  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
 
-</head>
-<body id="top" class="class">
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
 
-  <div id="metadata">
-    <div id="home-metadata">
-      <div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../index.html">Home</a>
-          <a href="../index.html#classes">Classes</a>
-          <a href="../index.html#methods">Methods</a>
-        </h3>
-      </div>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
     </div>
 
-    <div id="file-metadata">
-      <div id="file-list-section" class="section">
-        <h3 class="section-header">In Files</h3>
-        <div class="section-body">
-          <ul>
-          
-            <li><a href="../lib/free-image/scanline_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/free-image/scanline.rb">lib/free-image/scanline.rb</a></li>
-          
-          </ul>
-        </div>
-      </div>
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
 
-      
-    </div>
-
-    <div id="class-metadata">
-      
-      <!-- Parent Class -->
-      <div id="parent-class-section" class="section">
-        <h3 class="section-header">Parent</h3>
-        
-        <p class="link">Object</p>
-        
-      </div>
-      
-
-      
-
-      
-
-      
-      <!-- Method Quickref -->
-      <div id="method-list-section" class="section">
-        <h3 class="section-header">Methods</h3>
-        <ul class="link-list">
-          
-          <li><a href="#method-c-new">::new</a></li>
-          
-          <li><a href="#method-i-5B-5D">#[]</a></li>
-          
-          <li><a href="#method-i-bytesize">#bytesize</a></li>
-          
-          <li><a href="#method-i-each">#each</a></li>
-          
-          <li><a href="#method-i-pixelsize">#pixelsize</a></li>
-          
-        </ul>
-      </div>
-      
-
-      
-      <!-- Included Modules -->
-      <div id="includes-section" class="section">
-        <h3 class="section-header">Included Modules</h3>
-        <ul class="link-list">
-        
-        
-          <li><span class="include">Enumerable</span></li>
-        
-        
-        </ul>
-      </div>
-      
-    </div>
-
-    <div id="project-metadata">
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="../HISTORY.html">HISTORY</a></li>
-        
-          <li class="file"><a href="../LICENSE.html">LICENSE</a></li>
-        
-          <li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
-        
-          <li class="file"><a href="../cookbook_rdoc.html">cookbook.rdoc</a></li>
-        
-        </ul>
-      </div>
-      
-
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class/Module Index
-          <span class="search-toggle"><img src="../images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
-
-        <ul class="link-list">
-        
-          <li><a href="../FreeImage.html">FreeImage</a></li>
-        
-          <li><a href="../FreeImage/AbstractSource.html">FreeImage::AbstractSource</a></li>
-        
-          <li><a href="../FreeImage/AbstractSource/Decoder.html">FreeImage::AbstractSource::Decoder</a></li>
-        
-          <li><a href="../FreeImage/AbstractSource/Encoder.html">FreeImage::AbstractSource::Encoder</a></li>
-        
-          <li><a href="../FreeImage/Bitmap.html">FreeImage::Bitmap</a></li>
-        
-          <li><a href="../FreeImage/Boolean.html">FreeImage::Boolean</a></li>
-        
-          <li><a href="../FreeImage/Complex.html">FreeImage::Complex</a></li>
-        
-          <li><a href="../FreeImage/Conversions.html">FreeImage::Conversions</a></li>
-        
-          <li><a href="../FreeImage/File.html">FreeImage::File</a></li>
-        
-          <li><a href="../FreeImage/FreeImageError.html">FreeImage::FreeImageError</a></li>
-        
-          <li><a href="../FreeImage/ICC.html">FreeImage::ICC</a></li>
-        
-          <li><a href="../FreeImage/ICC/Profile.html">FreeImage::ICC::Profile</a></li>
-        
-          <li><a href="../FreeImage/IO.html">FreeImage::IO</a></li>
-        
-          <li><a href="../FreeImage/IOStruct.html">FreeImage::IOStruct</a></li>
-        
-          <li><a href="../FreeImage/Information.html">FreeImage::Information</a></li>
-        
-          <li><a href="../FreeImage/Memory.html">FreeImage::Memory</a></li>
-        
-          <li><a href="../FreeImage/MemoryStream.html">FreeImage::MemoryStream</a></li>
-        
-          <li><a href="../FreeImage/Modify.html">FreeImage::Modify</a></li>
-        
-          <li><a href="../FreeImage/Palette.html">FreeImage::Palette</a></li>
-        
-          <li><a href="../FreeImage/Pixels.html">FreeImage::Pixels</a></li>
-        
-          <li><a href="../FreeImage/RGB16.html">FreeImage::RGB16</a></li>
-        
-          <li><a href="../FreeImage/RGBA16.html">FreeImage::RGBA16</a></li>
-        
-          <li><a href="../FreeImage/RGBAF.html">FreeImage::RGBAF</a></li>
-        
-          <li><a href="../FreeImage/RGBF.html">FreeImage::RGBF</a></li>
-        
-          <li><a href="../FreeImage/RGBQuad.html">FreeImage::RGBQuad</a></li>
-        
-          <li><a href="../FreeImage/RGBTriple.html">FreeImage::RGBTriple</a></li>
-        
-          <li><a href="../FreeImage/Scanline.html">FreeImage::Scanline</a></li>
-        
-          <li><a href="../FreeImage/Transforms.html">FreeImage::Transforms</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
-
-      
-    </div>
   </div>
 
-  <div id="documentation">
-    <h1 class="class">FreeImage::Scanline</h1>
+  
 
-    <div id="description" class="description">
-      
-<h2>Summary</h2>
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-5B-5D">#[]</a>
+    
+    <li ><a href="#method-i-bytesize">#bytesize</a>
+    
+    <li ><a href="#method-i-each">#each</a>
+    
+    <li ><a href="#method-i-pixelsize">#pixelsize</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-FreeImage::Scanline">
+  <h1 id="class-FreeImage::Scanline" class="class">
+    class FreeImage::Scanline
+  </h1>
+
+  <section class="description">
+    
+<h2 id="class-FreeImage::Scanline-label-Summary">Summary<span><a href="#class-FreeImage::Scanline-label-Summary">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>Scanlines provide low level access to image data. The only lower-level
 access is working with the actual raw bytes, which you can do via the
@@ -208,7 +115,7 @@ can get a scanline via the Freeimage::Pixels#scanline method.</p>
 
 <p>To understand how scanlines work, you have to first understand that image
 data is stored differently depending on the <a
-href="http://FreeImage.image_types">image type</a> and the <a
+href="FreeImage.image_types">image type</a> and the <a
 href="FreeImage::Information#bits_per_pixel">bits per pixel</a>.  Thus,
 when you call reeImage::Scanline#[] with an index, you will get back a
 different  object depending on the image type and bit depth.</p>
@@ -244,263 +151,262 @@ as 8-bit DIB.</p>
 as 24- or 32bit DIB.  Colors are represented using <a
 href="Complex.html">FreeImage::Complex</a>.</p>
 
-<p>16-bit <a href="http://A">RGB</a> image types are stored in a similar way
-as 24-bit DIBs. Colors are represented using <a
+<p>16-bit <a href="A">RGB</a> image types are stored in a similar way as
+24-bit DIBs. Colors are represented using <a
 href="RGB16.html">FreeImage::RGB16</a> or FreeImage::RFBA16.</p>
 
-<p>Float <a href="http://A">RGB</a> image types are stored in a similar way
-32bit DIBs. Colors are represented using <a
-href="RGBF.html">FreeImage::RGBF</a> or FreeImage::RFBAF.</p>
+<p>Float <a href="A">RGB</a> image types are stored in a similar way 32bit
+DIBs. Colors are represented using <a href="RGBF.html">FreeImage::RGBF</a>
+or FreeImage::RFBAF.</p>
 
-    </div><!-- description -->
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
 
     
+
     
+
     
-    <div id="5Buntitled-5D" class="documentation-section">
-      
 
-      
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
 
-      
-
-      
-
-      <!-- Methods -->
-      
-      <div id="public-class-method-details" class="method-section section">
-        <h3 class="section-header">Public Class Methods</h3>
-
-      
-        <div id="new-method" class="method-detail ">
-          <a name="method-c-new"></a>
-
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(bitmap, index, ptr)</span>
           
-          <div class="method-heading">
-            <span class="method-name">new</span><span
-              class="method-args">(bitmap, index, ptr)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+          <span class="method-click-advice">click to toggle source</span>
           
+        </div>
+        
 
-          <div class="method-description">
-            
-            <p>Creates a new scanline instance</p>
+        <div class="method-description">
+          
+          <p>Creates a new scanline instance</p>
 
-<h2>Parameters</h2>
-<table class="rdoc-list"><tr><td class="rdoc-term"><p>bitmap</p></td>
-<td>
+<h2 id="method-c-new-label-Parameters">Parameters<span><a href="#method-c-new-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<dl class="rdoc-list note-list"><dt>bitmap
+<dd>
 <p>An instance of <a href="Bitmap.html">FreeImage::Bitmap</a></p>
-</td></tr><tr><td class="rdoc-term"><p>index</p></td>
-<td>
+</dd><dt>index
+<dd>
 <p>The index of the scanline, must be between 0 and the image pixel heigh
 minus one.</p>
-</td></tr><tr><td class="rdoc-term"><p>ptr</p></td>
-<td>
+</dd><dt>ptr
+<dd>
 <p>A pointer to the raw pixel data.</p>
-</td></tr></table>
+</dd></dl>
 
 <p>Generally you do not want to call this method directly.  Instead, use <a
-href="Pixels.html#method-i-scanline">FreeImage::Bitmap#scanline</a>.</p>
-            
+href="Pixels.html#method-i-scanline">FreeImage::Pixels#scanline</a>.</p>
+          
+          
 
-            
-            <div class="method-source-code" id="new-source">
-<pre>
-<span class="ruby-comment"># File lib/free-image/scanline.rb, line 59</span>
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/free-image/scanline.rb, line 59</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">bitmap</span>, <span class="ruby-identifier">index</span>, <span class="ruby-identifier">ptr</span>)
   <span class="ruby-ivar">@bitmap</span> = <span class="ruby-identifier">bitmap</span>
   <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">index</span>
   <span class="ruby-ivar">@ptr</span> = <span class="ruby-identifier">ptr</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- new-source -->
-            
           </div>
-
           
+        </div>
 
-          
-        </div><!-- new-method -->
+        
 
-      
-      </div><!-- public-class-method-details -->
+        
+      </div>
+
     
-      <div id="public-instance-method-details" class="method-section section">
-        <h3 class="section-header">Public Instance Methods</h3>
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
 
-      
-        <div id="5B-5D-method" class="method-detail ">
-          <a name="method-i-5B-5D"></a>
-
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(index)</span>
           
-          <div class="method-heading">
-            <span class="method-name">[]</span><span
-              class="method-args">(index)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+          <span class="method-click-advice">click to toggle source</span>
           
+        </div>
+        
 
-          <div class="method-description">
-            
-            <p>Returns the appropriate color object for the image type and bit depth.  See
+        <div class="method-description">
+          
+          <p>Returns the appropriate color object for the image type and bit depth.  See
 notes for the <a href="Scanline.html">FreeImage::Scanline</a> class.</p>
 
-<h2>Parameters</h2>
-<table class="rdoc-list"><tr><td class="rdoc-term"><p>index</p></td>
-<td>
+<h2 id="method-i-5B-5D-label-Parameters">Parameters<span><a href="#method-i-5B-5D-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<dl class="rdoc-list note-list"><dt>index
+<dd>
 <p>The index of the scanline, must be between 0 and the image pixel width
 minus one.</p>
-</td></tr></table>
+</dd></dl>
 
 <p>Returns the appropriate object for manipulating the data.</p>
-            
+          
+          
 
-            
-            <div class="method-source-code" id="5B-5D-source">
-<pre>
-<span class="ruby-comment"># File lib/free-image/scanline.rb, line 74</span>
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/free-image/scanline.rb, line 74</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">index</span>)
   <span class="ruby-keyword">unless</span> (<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">pixelsize</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">index</span>)
     <span class="ruby-identifier">raise</span>(<span class="ruby-constant">RangeError</span>, <span class="ruby-node">&quot;Index must be between 0 and #{pixelsize - 1}&quot;</span>)
   <span class="ruby-keyword">end</span>
   <span class="ruby-identifier">bytes_per_pixel</span> = <span class="ruby-ivar">@bitmap</span>.<span class="ruby-identifier">bits_per_pixel</span><span class="ruby-operator">/</span><span class="ruby-value">8</span>
 
-  <span class="ruby-comment"># Now get the address of the pixel</span>
-  <span class="ruby-identifier">address</span> = <span class="ruby-ivar">@ptr</span>.<span class="ruby-identifier">address</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">index</span> * <span class="ruby-identifier">bytes_per_pixel</span>)
+  <span class="ruby-comment"># Now get the address of the pixel</span>
+  <span class="ruby-identifier">address</span> = <span class="ruby-ivar">@ptr</span>.<span class="ruby-identifier">address</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">index</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">bytes_per_pixel</span>)
 
-  <span class="ruby-comment"># Now get a pointer to the pixel</span>
+  <span class="ruby-comment"># Now get a pointer to the pixel</span>
   <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Pointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">bytes_per_pixel</span>, <span class="ruby-identifier">address</span>)
 
-  <span class="ruby-comment"># Now return a nice object to work with</span>
+  <span class="ruby-comment"># Now return a nice object to work with</span>
   <span class="ruby-identifier">color_type</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- 5B-5D-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- 5B-5D-method -->
-
-      
-        <div id="bytesize-method" class="method-detail ">
-          <a name="method-i-bytesize"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">bytesize</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
           </div>
           
+        </div>
 
-          <div class="method-description">
-            
-            <p>The width of the image in bytes.  Same as <a
-href="Information.html#method-i-pitch">FreeImage::Bitmap#pitch</a>.</p>
-            
+        
 
-            
-            <div class="method-source-code" id="bytesize-source">
-<pre>
-<span class="ruby-comment"># File lib/free-image/scanline.rb, line 98</span>
+        
+      </div>
+
+    
+      <div id="method-i-bytesize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">bytesize</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The width of the image in bytes.  Same as <a
+href="Information.html#method-i-pitch">FreeImage::Information#pitch</a>.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="bytesize-source">
+            <pre><span class="ruby-comment"># File lib/free-image/scanline.rb, line 98</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">bytesize</span>
   <span class="ruby-ivar">@bitmap</span>.<span class="ruby-identifier">pitch</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- bytesize-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- bytesize-method -->
-
-      
-        <div id="each-method" class="method-detail ">
-          <a name="method-i-each"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">each</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
           </div>
           
+        </div>
 
-          <div class="method-description">
-            
-            <p>Iterate over each pixel, returning the appropriate object to manipulate the
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">() { |self| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Iterate over each pixel, returning the appropriate object to manipulate the
 underlying data.</p>
-            
+          
+          
 
-            
-            <div class="method-source-code" id="each-source">
-<pre>
-<span class="ruby-comment"># File lib/free-image/scanline.rb, line 105</span>
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/free-image/scanline.rb, line 105</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">each</span>
   <span class="ruby-identifier">pixelsize</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
     <span class="ruby-keyword">yield</span> (<span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>])
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- each-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- each-method -->
-
-      
-        <div id="pixelsize-method" class="method-detail ">
-          <a name="method-i-pixelsize"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">pixelsize</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
           </div>
           
+        </div>
 
-          <div class="method-description">
-            
-            <p>The width of the image in pixels.  Same as <a
-href="Information.html#method-i-width">FreeImage::Bitmap#width</a>.</p>
-            
+        
 
-            
-            <div class="method-source-code" id="pixelsize-source">
-<pre>
-<span class="ruby-comment"># File lib/free-image/scanline.rb, line 92</span>
+        
+      </div>
+
+    
+      <div id="method-i-pixelsize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pixelsize</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The width of the image in pixels.  Same as <a
+href="Information.html#method-i-width">FreeImage::Information#width</a>.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="pixelsize-source">
+            <pre><span class="ruby-comment"># File lib/free-image/scanline.rb, line 92</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">pixelsize</span>
   <span class="ruby-ivar">@bitmap</span>.<span class="ruby-identifier">width</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- pixelsize-source -->
-            
           </div>
-
           
+        </div>
 
-          
-        </div><!-- pixelsize-method -->
+        
 
-      
-      </div><!-- public-instance-method-details -->
+        
+      </div>
+
     
-    </div><!-- 5Buntitled-5D -->
+    </section>
   
+  </section>
+</main>
 
-  </div><!-- documentation -->
 
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
-  </div>
-
-</body>
-</html>
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
 
