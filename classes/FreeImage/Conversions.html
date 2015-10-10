@@ -2,7 +2,7 @@
 <html lang='en'>
   <head>
     <title>FreeImage::Conversions</title>
-    <meta content='text/html; charset=IBM437' http-equiv='Content-Type'>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
       //<![CDATA[
@@ -34,10 +34,6 @@
             <a target="docwin" href="../../files/lib/free-image/modules/conversions_rb.html">lib/free-image/modules/conversions.rb</a>
           </li>
         </ol>
-        <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../FreeImage.html">FreeImage</a></strong>
-        </div>
       </div>
       <div id='content'>
         <div id='text'>
@@ -67,63 +63,80 @@
               <div class='method public-instance' id='method-method-i-convert_to_16bits_555'>
                 <a name='method-i-convert_to_16bits_555'></a>
                 <div class='synopsis'>
-                  <span class='name'>convert_to_16bits_555</span>
-                  <span class='arguments'>()</span>
+                  <span class='name'>
+                    <div>image.convert_to_16bits_555 -> bitmap</div>
+                    <div>image.convert_to_16bits_555 {|img| block} -> bitmap</div>
+                  </span>
                 </div>
                 <div class='description'>
                   
                   <p>Converts a bitmap to 16 bits, where each pixel has a color pattern of 5
                   bits red, 5 bits green and 5 bits blue. One bit in each pixel is unused.</p>
+                  
+                  <p>If an optional block is provided, it will be passed the new image as an
+                  argument.  The image will be automatically closed when the block completes.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-convert_to_16bits_555-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-convert_to_16bits_555-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 74</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_16bits_555</span>&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertTo16Bits555</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-convert_to_16bits_555-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 106</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_16bits_555</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertTo16Bits555</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-convert_to_16bits_565'>
                 <a name='method-i-convert_to_16bits_565'></a>
                 <div class='synopsis'>
-                  <span class='name'>convert_to_16bits_565</span>
-                  <span class='arguments'>()</span>
+                  <span class='name'>
+                    <div>image.convert_to_16bits_565 -> bitmap</div>
+                    <div>image.convert_to_16bits_565 {|img| block} -> bitmap</div>
+                  </span>
                 </div>
                 <div class='description'>
                   
                   <p>Converts a bitmap to 16 bits, where each pixel has a color pattern of 5
                   bits red, 6 bits green and 5 bits blue. One bit in each pixel is unused.</p>
+                  
+                  <p>If an optional block is provided, it will be passed the new image as an
+                  argument.  The image will be automatically closed when the block completes.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-convert_to_16bits_565-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-convert_to_16bits_565-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 83</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_16bits_565</span>&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertTo16Bits565</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-convert_to_16bits_565-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 123</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_16bits_565</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertTo16Bits565</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-convert_to_24bits'>
                 <a name='method-i-convert_to_24bits'></a>
                 <div class='synopsis'>
-                  <span class='name'>convert_to_24bits</span>
-                  <span class='arguments'>()</span>
+                  <span class='name'>
+                    <div>image.convert_to_24bits -> bitmap</div>
+                    <div>image.convert_to_24bits {|img| block} -> bitmap</div>
+                  </span>
                 </div>
                 <div class='description'>
                   
                   <p>Converts a bitmap to 24 bits. For 48-bit RGB images, conversion is done by
                   dividing each 16-bit channel by 256. A nil value is returned for other
                   non-standard bitmap types.</p>
+                  
+                  <p>If an optional block is provided, it will be passed the new image as an
+                  argument.  The image will be automatically closed when the block completes.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-convert_to_24bits-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-convert_to_24bits-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 92</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_24bits</span>&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertTo24Bits</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-convert_to_24bits-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 140</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_24bits</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertTo24Bits</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-convert_to_32bits'>
                 <a name='method-i-convert_to_32bits'></a>
                 <div class='synopsis'>
-                  <span class='name'>convert_to_32bits</span>
-                  <span class='arguments'>()</span>
+                  <span class='name'>
+                    <div>image.convert_to_32bits -> bitmap</div>
+                    <div>image.convert_to_32bits {|img| block} -> bitmap</div>
+                  </span>
                 </div>
                 <div class='description'>
                   
@@ -132,19 +145,24 @@
                   opaque value (0xFF). For 64-bit RGBA images, conversion is done by dividing
                   each 16-bit channel by 256. A nil value is returned for other non-standard
                   bitmap types.</p>
+                  
+                  <p>If an optional block is provided, it will be passed the new image as an
+                  argument.  The image will be automatically closed when the block completes.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-convert_to_32bits-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-convert_to_32bits-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 103</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_32bits</span>&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertTo32Bits</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-convert_to_32bits-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 159</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_32bits</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertTo32Bits</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-convert_to_4bits'>
                 <a name='method-i-convert_to_4bits'></a>
                 <div class='synopsis'>
-                  <span class='name'>convert_to_4bits</span>
-                  <span class='arguments'>()</span>
+                  <span class='name'>
+                    <div>image.convert_to_4bits -> bitmap</div>
+                    <div>image.convert_to_4bits {|img| block} -> bitmap</div>
+                  </span>
                 </div>
                 <div class='description'>
                   
@@ -152,23 +170,28 @@
                   32-bit), monochrome or greyscale bitmap (1 or 8-bit) the end result will be
                   a greyscale bitmap. A 1-bit bitmap will become a palletized bitmap.</p>
                   
-                  <p>Note that "greyscale" means that the resulting bitmap will have grey
-                  colors, but the palette won't be a linear greyscale palette. Thus, <a
-                  href="Information.html#method-i-color_type">FreeImage::Bitmap.color_type</a>
+                  <p>Note that “greyscale” means that the resulting bitmap will have grey
+                  colors, but the palette won&#39;t be a linear greyscale palette. Thus, <a
+                  href="Information.html#method-i-color_type">FreeImage::Information#color_type</a>
                   will return a :palette.</p>
+                  
+                  <p>If an optional block is provided, it will be passed the new image as an
+                  argument.  The image will be automatically closed when the block completes.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-convert_to_4bits-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-convert_to_4bits-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 43</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_4bits</span>&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertTo4Bits</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-convert_to_4bits-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 51</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_4bits</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertTo4Bits</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-convert_to_8bits'>
                 <a name='method-i-convert_to_8bits'></a>
                 <div class='synopsis'>
-                  <span class='name'>convert_to_8bits</span>
-                  <span class='arguments'>()</span>
+                  <span class='name'>
+                    <div>image.convert_to_8bits -> bitmap</div>
+                    <div>image.convert_to_8bits {|img| block} -> bitmap</div>
+                  </span>
                 </div>
                 <div class='description'>
                   
@@ -181,40 +204,50 @@
                   done by dividing the 16-bit channel by 256 (see also <a
                   href="Bitmap.html">FreeImage::Bitmap</a>.ConvertToStandardType). A nil
                   value is returned for other non-standard bitmap types.</p>
+                  
+                  <p>If an optional block is provided, it will be passed the new image as an
+                  argument.  The image will be automatically closed when the block completes.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-convert_to_8bits-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-convert_to_8bits-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 56</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_8bits</span>&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertTo8Bits</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-convert_to_8bits-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 72</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_8bits</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertTo8Bits</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-convert_to_greyscale'>
                 <a name='method-i-convert_to_greyscale'></a>
                 <div class='synopsis'>
-                  <span class='name'>convert_to_greyscale</span>
-                  <span class='arguments'>()</span>
+                  <span class='name'>
+                    <div>image.convert_to_greyscale -> bitmap</div>
+                    <div>image.convert_to_greyscale {|img| block} -> bitmap</div>
+                  </span>
                 </div>
                 <div class='description'>
                   
                   <p>Converts a bitmap to a 8-bit greyscale image with a linear ramp. Contrary
                   to the <a
-                  href="Conversions.html#method-i-convert_to_8bits">FreeImage::Conversions#convert_to_8bits</a>
+                  href="Conversions.html#method-i-convert_to_8bits">#convert_to_8bits</a>
                   function, 1-, 4- and 8-bit palletized bitmaps are correctly converted, as
                   well as images with a :minis_white color type.</p>
+                  
+                  <p>If an optional block is provided, it will be passed the new image as an
+                  argument.  The image will be automatically closed when the block completes.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-convert_to_greyscale-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-convert_to_greyscale-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 65</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_greyscale</span>&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertToGreyscale</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-convert_to_greyscale-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 89</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_greyscale</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertToGreyscale</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-convert_to_standard_type'>
                 <a name='method-i-convert_to_standard_type'></a>
                 <div class='synopsis'>
-                  <span class='name'>convert_to_standard_type</span>
-                  <span class='arguments'>(scale_linear = true)</span>
+                  <span class='name'>
+                    <div>image.convert_to_standard_type(scale_linear = true) -> bitmap</div>
+                    <div>image.convert_to_standard_type(scale_linear = true) {|img| block} -> bitmap</div>
+                  </span>
                 </div>
                 <div class='description'>
                   
@@ -231,19 +264,24 @@
                   <p>For standard bitmaps, a clone of the original bitmap is returned. For
                   complex images, the magnitude is extracted as a double image and then
                   converted according to the scale parameter.</p>
+                  
+                  <p>If an optional block is provided, it will be passed the new image as an
+                  argument.  The image will be automatically closed when the block completes.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-convert_to_standard_type-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-convert_to_standard_type-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 122</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_standard_type</span>(<span class="ruby-identifier">scale_linear</span> = <span class="ruby-keyword">true</span>)&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertToStandardType</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">scale_linear</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-convert_to_standard_type-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 186</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_standard_type</span>(<span class="ruby-identifier">scale_linear</span> = <span class="ruby-keyword">true</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertToStandardType</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">scale_linear</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-convert_to_type'>
                 <a name='method-i-convert_to_type'></a>
                 <div class='synopsis'>
-                  <span class='name'>convert_to_type</span>
-                  <span class='arguments'>(dst_image_type, scale_linear = true)</span>
+                  <span class='name'>
+                    <div>image.convert_to_type(dst_image_type, scale_linear = true) -> bitmap</div>
+                    <div>image.convert_to_type(dst_image_type, scale_linear = true) {|img| block} -> bitmap</div>
+                  </span>
                 </div>
                 <div class='description'>
                   
@@ -254,19 +292,24 @@
                   not allowed, a nil value is returned and an error is thrown. Please refer
                   to the <a href="../FreeImage.html">FreeImage</a> documentation for allowed
                   conversions.</p>
+                  
+                  <p>If an optional block is provided, it will be passed the new image as an
+                  argument.  The image will be automatically closed when the block completes.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-convert_to_type-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-convert_to_type-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 133</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_type</span>(<span class="ruby-identifier">dst_image_type</span>, <span class="ruby-identifier">scale_linear</span> = <span class="ruby-keyword">true</span>)&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertToType</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">dst_image_type</span>, <span class="ruby-identifier">scale_linear</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-convert_to_type-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 205</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_type</span>(<span class="ruby-identifier">dst_image_type</span>, <span class="ruby-identifier">scale_linear</span> = <span class="ruby-keyword">true</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ConvertToType</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">dst_image_type</span>, <span class="ruby-identifier">scale_linear</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-dither'>
                 <a name='method-i-dither'></a>
                 <div class='synopsis'>
-                  <span class='name'>dither</span>
-                  <span class='arguments'>(algorithm)</span>
+                  <span class='name'>
+                    <div>image.dither(algorithm) -> bitmap</div>
+                    <div>image.dither(algorithm) {|img| block} -> bitmap</div>
+                  </span>
                 </div>
                 <div class='description'>
                   
@@ -275,19 +318,24 @@
                   1-bit input bitmaps, the function clones the input bitmap and builds a
                   monochrome palette.  Otherwise the function first converts the bitmap to a
                   8-bit greyscale bitmap.</p>
+                  
+                  <p>If an optional block is provided, it will be passed the new image as an
+                  argument.  The image will be automatically closed when the block completes.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-dither-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-dither-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 144</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">dither</span>(<span class="ruby-identifier">algorithm</span>)&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_Dither</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">algorithm</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-dither-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 224</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">dither</span>(<span class="ruby-identifier">algorithm</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_Dither</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">algorithm</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-threshold'>
                 <a name='method-i-threshold'></a>
                 <div class='synopsis'>
-                  <span class='name'>threshold</span>
-                  <span class='arguments'>(value)</span>
+                  <span class='name'>
+                    <div>image.threshold(value) -> bitmap</div>
+                    <div>image.threshold(value) {|img| block} -> bitmap</div>
+                  </span>
                 </div>
                 <div class='description'>
                   
@@ -296,12 +344,15 @@
                   greyscale bitmap. Then any brightness level that is less than the threshold
                   is set to zero and any value above is set to 1. For 1-bit input bitmaps,
                   the function clones the input bitmap and builds a monochrome palette.</p>
+                  
+                  <p>If an optional block is provided, it will be passed the new image as an
+                  argument.  The image will be automatically closed when the block completes.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-threshold-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-threshold-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 156</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">threshold</span>(<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-identifier">value</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-keyword">unless</span> (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">255</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">value</span>)&#x000A;    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">RangeError</span>, <span class="ruby-node">&quot;Value is out of range 0..255. Value: #{value}&quot;</span>)&#x000A;  <span class="ruby-keyword">end</span>&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_Threshold</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-threshold-source'><span class="ruby-comment"># File lib/free-image/modules/conversions.rb, line 244</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">threshold</span>(<span class="ruby-identifier">value</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;  <span class="ruby-identifier">value</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-keyword">unless</span> (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">255</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">value</span>)&#x000A;    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">RangeError</span>, <span class="ruby-node">&quot;Value is out of range 0..255. Value: #{value}&quot;</span>)&#x000A;  <span class="ruby-keyword">end</span>&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_Threshold</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
             </div>

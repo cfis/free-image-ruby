@@ -2,7 +2,7 @@
 <html lang='en'>
   <head>
     <title>FreeImage::IO</title>
-    <meta content='text/html; charset=IBM437' http-equiv='Content-Type'>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
       //<![CDATA[
@@ -33,24 +33,30 @@
           <li>
             <a target="docwin" href="../../files/lib/free-image/sources/io_rb.html">lib/free-image/sources/io.rb</a>
           </li>
+          <li class='other'>
+            <a target="docwin" href="../../files/lib/free-image/sources/memory_rb.html">lib/free-image/sources/memory.rb</a>
+          </li>
+          <li>
+            <a class='show' href='#' onclick='this.parentNode.parentNode.className += " expanded"; this.parentNode.removeChild(this); return false'>show all</a>
+          </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../FreeImage.html">FreeImage</a></strong>
+          Superclass:
+          <strong><a target="docwin" href="AbstractSource.html">AbstractSource</a></strong>
         </div>
       </div>
       <div id='content'>
         <div id='text'>
           <div id='description'>
             
-            <h2>Summary</h2>
+            <h2 id="class-FreeImage::IO-label-Summary">Summary<span><a href="#class-FreeImage::IO-label-Summary">&para;</a> <a href="#top">&uarr;</a></span></h2>
             
             <p>Supports loading and saving images to a Ruby <a href="IO.html">IO</a>
             stream.</p>
             
-            <h2>Usage</h2>
+            <h2 id="class-FreeImage::IO-label-Usage">Usage<span><a href="#class-FreeImage::IO-label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             
-            <pre># Read an image from an io stream string&#x000A;file = ::File.open('test/fixtures/lena.png', :encoding =&gt; Encoding::BINARY)&#x000A;image = FreeImage::IO.open(file)&#x000A;# Save an image to a byte string&#x000A;dest = FreeImage::IO.new(::File.open('test/fixtures/lena_new.png', :encoding =&gt; Encoding::BINARY))&#x000A;image.save(dest, :jpeg)&#x000A;dest.bytes</pre>
+            <pre class="ruby"><span class="ruby-comment"># Read an image from an io stream string</span>&#x000A;<span class="ruby-identifier">file</span> = <span class="ruby-operator">::</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&#39;test/fixtures/lena.png&#39;</span>, :<span class="ruby-identifier">encoding</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">BINARY</span>)&#x000A;<span class="ruby-identifier">image</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">IO</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">file</span>)&#x000A;&#x000A;<span class="ruby-comment"># Save an image to a byte string</span>&#x000A;<span class="ruby-identifier">dest</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">IO</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">::</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&#39;test/fixtures/lena_new.png&#39;</span>, :<span class="ruby-identifier">encoding</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">BINARY</span>))&#x000A;<span class="ruby-identifier">image</span>.<span class="ruby-identifier">save</span>(<span class="ruby-identifier">dest</span>, :<span class="ruby-identifier">jpeg</span>)&#x000A;<span class="ruby-identifier">dest</span>.<span class="ruby-identifier">bytes</span></pre>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>
@@ -80,17 +86,16 @@
                   <p>Create a new <a href="IO.html">FreeImage::IO</a> instance that can read and
                   write image data from a Ruby <a href="IO.html">IO</a> stream.</p>
                   
-                  <h2>Parameters</h2>
-                  <table class="rdoc-list"><tr><td class="rdoc-term"><p>io</p></td>
-                  <td>
+                  <h2 id="method-c-new-label-Parameters">Parameters<span><a href="#method-c-new-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h2>
+                  <table class="rdoc-list note-list"><tbody><tr><td class='label'>io</td><td>
                   <p>A standard Ruby io stream such as a file.</p>
-                  </td></tr></table>
+                  </td></tr></tbody></table>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-new-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-c-new-source'><span class="ruby-comment"># File lib/free-image/sources/io.rb, line 74</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">io</span>)&#x000A;  <span class="ruby-ivar">@io</span> = <span class="ruby-identifier">io</span>&#x000A;&#x000A;  <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:int</span>)&#x000A;  <span class="ruby-ivar">@handle</span>.<span class="ruby-identifier">put_int</span>(<span class="ruby-value">0</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">object_id</span>)&#x000A;&#x000A;  <span class="ruby-ivar">@ffi_io</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">IOStruct</span>.<span class="ruby-identifier">new</span>&#x000A;  <span class="ruby-ivar">@ffi_io</span>[<span class="ruby-value">:read_proc</span>] = <span class="ruby-identifier">method</span>(<span class="ruby-value">:read</span>)&#x000A;  <span class="ruby-ivar">@ffi_io</span>[<span class="ruby-value">:write_proc</span>] = <span class="ruby-identifier">method</span>(<span class="ruby-value">:write</span>)&#x000A;  <span class="ruby-ivar">@ffi_io</span>[<span class="ruby-value">:seek_proc</span>] = <span class="ruby-identifier">method</span>(<span class="ruby-value">:seek</span>)&#x000A;  <span class="ruby-ivar">@ffi_io</span>[<span class="ruby-value">:tell_proc</span>] = <span class="ruby-identifier">method</span>(<span class="ruby-value">:tell</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-c-new-source'><span class="ruby-comment"># File lib/free-image/sources/io.rb, line 74</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">io</span>)&#x000A;  <span class="ruby-ivar">@io</span> = <span class="ruby-identifier">io</span>&#x000A;&#x000A;  <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:ulong</span>)&#x000A;  <span class="ruby-ivar">@handle</span>.<span class="ruby-identifier">put_ulong</span>(<span class="ruby-value">0</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">object_id</span>)&#x000A;&#x000A;  <span class="ruby-ivar">@ffi_io</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">IOStruct</span>.<span class="ruby-identifier">new</span>&#x000A;  <span class="ruby-ivar">@ffi_io</span>[<span class="ruby-value">:read_proc</span>] = <span class="ruby-identifier">method</span>(<span class="ruby-value">:read</span>)&#x000A;  <span class="ruby-ivar">@ffi_io</span>[<span class="ruby-value">:write_proc</span>] = <span class="ruby-identifier">method</span>(<span class="ruby-value">:write</span>)&#x000A;  <span class="ruby-ivar">@ffi_io</span>[<span class="ruby-value">:seek_proc</span>] = <span class="ruby-identifier">method</span>(<span class="ruby-value">:seek</span>)&#x000A;  <span class="ruby-ivar">@ffi_io</span>[<span class="ruby-value">:tell_proc</span>] = <span class="ruby-identifier">method</span>(<span class="ruby-value">:tell</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <h2>Public Instance methods</h2>
@@ -124,22 +129,20 @@
                   
                   <p>Saves an image to a file.</p>
                   
-                  <h2>Parameters</h2>
-                  <table class="rdoc-list"><tr><td class="rdoc-term"><p>format</p></td>
-                  <td>
+                  <h2 id="method-i-save-label-Parameters">Parameters<span><a href="#method-i-save-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h2>
+                  <table class="rdoc-list note-list"><tbody><tr><td class='label'>format</td><td>
                   <p>The <a href="../FreeImage.html#method-i-formats">format</a> to save the
                   image to.</p>
-                  </td></tr><tr><td class="rdoc-term"><p>flags</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>flags</td><td>
                   <p>Format specific flags that control how a bitmap is saved.  These flags are
                   defined</p>
                   
-                  <pre>as constants on the AbstractSource::Encoder module.  Flags can be combined using&#x000A;Ruby's bitwise or operator (|)</pre>
-                  </td></tr></table>
+                  <pre>as constants on the AbstractSource::Encoder module.  Flags can be combined using&#x000A;Ruby&#39;s bitwise or operator (|)</pre>
+                  </td></tr></tbody></table>
                   
-                  <h2>Usage</h2>
+                  <h2 id="method-i-save-label-Usage">Usage<span><a href="#method-i-save-label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
                   
-                  <pre>image = Bimap.open('&lt;path_to_file&gt;')&#x000A;source = FreeImage::File.new('&lt;path_to_new_file&gt;')&#x000A;source.save(image, :jpeg, AbtractSource::JPEG_QUALITYSUPERB | AbtractSource::JPEG_PROGRESSIVE)</pre>
+                  <pre class="ruby"><span class="ruby-identifier">image</span> = <span class="ruby-constant">Bimap</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&#39;&lt;path_to_file&gt;&#39;</span>)&#x000A;<span class="ruby-identifier">source</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;&lt;path_to_new_file&gt;&#39;</span>)&#x000A;<span class="ruby-identifier">source</span>.<span class="ruby-identifier">save</span>(<span class="ruby-identifier">image</span>, :<span class="ruby-identifier">jpeg</span>, <span class="ruby-constant">AbtractSource</span><span class="ruby-operator">::</span><span class="ruby-constant">JPEG_QUALITYSUPERB</span> <span class="ruby-operator">|</span> <span class="ruby-constant">AbtractSource</span><span class="ruby-operator">::</span><span class="ruby-constant">JPEG_PROGRESSIVE</span>)</pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-save-source'); return false">

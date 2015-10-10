@@ -2,7 +2,7 @@
 <html lang='en'>
   <head>
     <title>FreeImage</title>
-    <meta content='text/html; charset=IBM437' http-equiv='Content-Type'>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../css/style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
       //<![CDATA[
@@ -31,6 +31,9 @@
         </h1>
         <ol class='paths'>
           <li>
+            <a target="docwin" href="../files/lib/free-image_rb.html">lib/free-image.rb</a>
+          </li>
+          <li class='other'>
             <a target="docwin" href="../files/lib/free-image/bitmap_rb.html">lib/free-image/bitmap.rb</a>
           </li>
           <li class='other'>
@@ -100,7 +103,16 @@
             <a target="docwin" href="../files/lib/free-image/types/ffi_rb.html">lib/free-image/types/ffi.rb</a>
           </li>
           <li class='other'>
+            <a target="docwin" href="../files/lib/free-image/types/info_header_rb.html">lib/free-image/types/info_header.rb</a>
+          </li>
+          <li class='other'>
             <a target="docwin" href="../files/lib/free-image/types/rgb16_rb.html">lib/free-image/types/rgb16.rb</a>
+          </li>
+          <li class='other'>
+            <a target="docwin" href="../files/lib/free-image/types/rgb_quad_rb.html">lib/free-image/types/rgb_quad.rb</a>
+          </li>
+          <li class='other'>
+            <a target="docwin" href="../files/lib/free-image/types/rgb_triple_rb.html">lib/free-image/types/rgb_triple.rb</a>
           </li>
           <li class='other'>
             <a target="docwin" href="../files/lib/free-image/types/rgba16_rb.html">lib/free-image/types/rgba16.rb</a>
@@ -111,23 +123,10 @@
           <li class='other'>
             <a target="docwin" href="../files/lib/free-image/types/rgbf_rb.html">lib/free-image/types/rgbf.rb</a>
           </li>
-          <li class='other'>
-            <a target="docwin" href="../files/lib/free-image/types/rgb_quad_rb.html">lib/free-image/types/rgb_quad.rb</a>
-          </li>
-          <li class='other'>
-            <a target="docwin" href="../files/lib/free-image/types/rgb_triple_rb.html">lib/free-image/types/rgb_triple.rb</a>
-          </li>
-          <li class='other'>
-            <a target="docwin" href="../files/lib/free-image_rb.html">lib/free-image.rb</a>
-          </li>
           <li>
             <a class='show' href='#' onclick='this.parentNode.parentNode.className += " expanded"; this.parentNode.removeChild(this); return false'>show all</a>
           </li>
         </ol>
-        <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../files/lib/free-image_rb.html">free-image.rb</a></strong>
-        </div>
       </div>
       <div id='content'>
         <div id='text'>
@@ -138,9 +137,11 @@
             <ol>
               <li><a target="docwin" href="#method-c-check_last_error">check_last_error</a></li>
               <li><a target="docwin" href="#method-c-copyright">copyright</a></li>
-              <li><a target="docwin" href="#method-c-library">library</a></li>
+              <li><a target="docwin" href="#method-c-find_lib">find_lib</a></li>
+              <li><a target="docwin" href="#method-c-free_image_library_paths">free_image_library_paths</a></li>
               <li><a target="docwin" href="#method-c-little_endian-3F">little_endian?</a></li>
               <li><a target="docwin" href="#method-c-msvc-3F">msvc?</a></li>
+              <li><a target="docwin" href="#method-c-search_paths">search_paths</a></li>
               <li><a target="docwin" href="#method-c-version">version</a></li>
             </ol>
             <h3>Public Instance</h3>
@@ -158,6 +159,7 @@
             <h2>Classes and Modules</h2>
             <ol>
               <li><a target="docwin" href="FreeImage/Conversions.html">FreeImage::Conversions</a></li>
+              <li><a target="docwin" href="FreeImage/FFI.html">FreeImage::FFI</a></li>
               <li><a target="docwin" href="FreeImage/ICC.html">FreeImage::ICC</a></li>
               <li><a target="docwin" href="FreeImage/Information.html">FreeImage::Information</a></li>
               <li><a target="docwin" href="FreeImage/Modify.html">FreeImage::Modify</a></li>
@@ -167,14 +169,16 @@
               <li><a target="docwin" href="FreeImage/Bitmap.html">FreeImage::Bitmap</a></li>
               <li><a target="docwin" href="FreeImage/Boolean.html">FreeImage::Boolean</a></li>
               <li><a target="docwin" href="FreeImage/Complex.html">FreeImage::Complex</a></li>
+              <li><a target="docwin" href="FreeImage/Error.html">FreeImage::Error</a></li>
               <li><a target="docwin" href="FreeImage/File.html">FreeImage::File</a></li>
-              <li><a target="docwin" href="FreeImage/FreeImageError.html">FreeImage::FreeImageError</a></li>
               <li><a target="docwin" href="FreeImage/IO.html">FreeImage::IO</a></li>
               <li><a target="docwin" href="FreeImage/IOStruct.html">FreeImage::IOStruct</a></li>
+              <li><a target="docwin" href="FreeImage/InfoHeader.html">FreeImage::InfoHeader</a></li>
               <li><a target="docwin" href="FreeImage/Memory.html">FreeImage::Memory</a></li>
               <li><a target="docwin" href="FreeImage/MemoryStream.html">FreeImage::MemoryStream</a></li>
               <li><a target="docwin" href="FreeImage/Palette.html">FreeImage::Palette</a></li>
               <li><a target="docwin" href="FreeImage/RGB16.html">FreeImage::RGB16</a></li>
+              <li><a target="docwin" href="FreeImage/RGB16BF565.html">FreeImage::RGB16BF565</a></li>
               <li><a target="docwin" href="FreeImage/RGBA16.html">FreeImage::RGBA16</a></li>
               <li><a target="docwin" href="FreeImage/RGBAF.html">FreeImage::RGBAF</a></li>
               <li><a target="docwin" href="FreeImage/RGBF.html">FreeImage::RGBF</a></li>
@@ -189,6 +193,16 @@
               <div class='name-list'>
                 <table summary='Constants'>
                   <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>BITFIELDS</td>
+                    <td>=</td>
+                    <td class='context-item-value'>3</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>BI_BITFIELDS</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
                     <td class='context-item-name'>CALLBACK</td>
                     <td>=</td>
                     <td class='context-item-value'>
@@ -197,7 +211,7 @@
                       # because FreeImage won't be able to clean up any resources it needs to.
                       # Instead, the calling code must call check_last_error.
                       message = ptr.get_string(0)
-                      Thread.current[LAST_ERROR] = FreeImageError.new(format, message)
+                      Thread.current[LAST_ERROR] = Error.new(format, message)
                       end
                     </td>
                     <td>&nbsp;</td>
@@ -210,7 +224,7 @@
                     <td>&nbsp;</td>
                     <td class='context-item-desc'>
                       
-                      <p>The color's rgbReserved member (alpha) contains the palette index to be
+                      <p>The color&#39;s rgbReserved member (alpha) contains the palette index to be
                       used</p>
                     </td>
                   </tr>
@@ -221,7 +235,8 @@
                     <td>&nbsp;</td>
                     <td class='context-item-desc'>
                       
-                      <p>For palettized images: lookup equal RGB color from palette</p>
+                      <p>For palettized images: lookup equal <a href="FreeImage.html#RGB">RGB</a>
+                      color from palette</p>
                     </td>
                   </tr>
                   <tr class='top-aligned-row context-row'>
@@ -241,7 +256,8 @@
                     <td>&nbsp;</td>
                     <td class='context-item-desc'>
                       
-                      <p>RGBQUAD color is a RGB color (contains no valid alpha channel)</p>
+                      <p>RGBQUAD color is a <a href="FreeImage.html#RGB">RGB</a> color (contains no
+                      valid alpha channel)</p>
                     </td>
                   </tr>
                   <tr class='top-aligned-row context-row'>
@@ -260,6 +276,16 @@
                     <td class='context-item-value'>'free_image_error'</td>
                     <td>&nbsp;</td>
                     <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>RGB</td>
+                    <td>=</td>
+                    <td class='context-item-value'>0</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>BI_RGB</p>
+                    </td>
                   </tr>
                 </table>
               </div>
@@ -300,20 +326,36 @@
                   <pre id='method-c-copyright-source'><span class="ruby-comment"># File lib/free-image/modules/helper.rb, line 27</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">copyright</span>&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetCopyrightMessage</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
-              <div class='method public-class' id='method-method-c-library'>
-                <a name='method-c-library'></a>
+              <div class='method public-class' id='method-method-c-find_lib'>
+                <a name='method-c-find_lib'></a>
                 <div class='synopsis'>
-                  <span class='name'>library</span>
+                  <span class='name'>find_lib</span>
+                  <span class='arguments'>(lib)</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-c-find_lib-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-c-find_lib-source'><span class="ruby-comment"># File lib/free-image.rb, line 28</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_lib</span>(<span class="ruby-identifier">lib</span>)&#x000A;  <span class="ruby-identifier">files</span> = <span class="ruby-identifier">search_paths</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">array</span>, <span class="ruby-identifier">path</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-identifier">file_name</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">path</span>, <span class="ruby-node">&quot;#{lib}.#{FFI::Platform::LIBSUFFIX}&quot;</span>))&#x000A;    <span class="ruby-identifier">array</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-identifier">file_name</span>)&#x000A;    <span class="ruby-identifier">array</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;  <span class="ruby-identifier">files</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">first</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-class' id='method-method-c-free_image_library_paths'>
+                <a name='method-c-free_image_library_paths'></a>
+                <div class='synopsis'>
+                  <span class='name'>free_image_library_paths</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='description'>
                   
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('method-c-library-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-c-free_image_library_paths-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-c-library-source'><span class="ruby-comment"># File lib/free-image.rb, line 16</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">library</span>&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span>.<span class="ruby-identifier">windows?</span>&#x000A;    <span class="ruby-string">'FreeImaged'</span>&#x000A;  <span class="ruby-keyword">else</span>&#x000A;    <span class="ruby-string">'free_image'</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-c-free_image_library_paths-source'><span class="ruby-comment"># File lib/free-image.rb, line 37</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">free_image_library_paths</span>&#x000A;  <span class="ruby-ivar">@free_image_library_paths</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>&#x000A;    <span class="ruby-identifier">libs</span> = <span class="ruby-node">%w{libfreeimage libfreeimage.3 FreeImage}</span>&#x000A;&#x000A;    <span class="ruby-identifier">libs</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">lib</span><span class="ruby-operator">|</span>&#x000A;      <span class="ruby-identifier">find_lib</span>(<span class="ruby-identifier">lib</span>)&#x000A;    <span class="ruby-keyword">end</span>.<span class="ruby-identifier">compact</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-class' id='method-method-c-little_endian-3F'>
@@ -352,6 +394,22 @@
                   <pre id='method-c-msvc-3F-source'><span class="ruby-comment"># File lib/free-image.rb, line 5</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">msvc?</span>&#x000A;  <span class="ruby-comment"># If this is windows we assume FreeImage was compiled with</span>&#x000A;  <span class="ruby-comment"># MSVC since that is the binary distibution provided on</span>&#x000A;  <span class="ruby-comment"># the web site.  If you have compiled FreeImage yourself</span>&#x000A;  <span class="ruby-comment"># on windows using another compiler, set this to false.</span>&#x000A;  <span class="ruby-comment">#</span>&#x000A;  <span class="ruby-comment"># This is important because FreeImage defines different</span>&#x000A;  <span class="ruby-comment"># type sizes for MSVC - see types/ffi.rb</span>&#x000A;  <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span>.<span class="ruby-identifier">windows?</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
+              <div class='method public-class' id='method-method-c-search_paths'>
+                <a name='method-c-search_paths'></a>
+                <div class='synopsis'>
+                  <span class='name'>search_paths</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-c-search_paths-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-c-search_paths-source'><span class="ruby-comment"># File lib/free-image.rb, line 16</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">search_paths</span>&#x000A;  <span class="ruby-ivar">@search_paths</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>&#x000A;    <span class="ruby-keyword">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">&#39;FREE_IMAGE_LIBRARY_PATH&#39;</span>]&#x000A;      [ <span class="ruby-constant">ENV</span>[<span class="ruby-string">&#39;FREE_IMAGE_LIBRARY_PATH&#39;</span>] ]&#x000A;    <span class="ruby-keyword">elsif</span> <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span><span class="ruby-operator">::</span><span class="ruby-constant">IS_WINDOWS</span>&#x000A;      <span class="ruby-constant">ENV</span>[<span class="ruby-string">&#39;PATH&#39;</span>].<span class="ruby-identifier">split</span>(<span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">PATH_SEPARATOR</span>)&#x000A;    <span class="ruby-keyword">else</span>&#x000A;      [ <span class="ruby-string">&#39;/usr/local/{lib64,lib32,lib}&#39;</span>, <span class="ruby-string">&#39;/opt/local/{lib64,lib32,lib}&#39;</span>, <span class="ruby-string">&#39;/usr/{lib64,lib32,lib}&#39;</span> ]&#x000A;    <span class="ruby-keyword">end</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
               <div class='method public-class' id='method-method-c-version'>
                 <a name='method-c-version'></a>
                 <div class='synopsis'>
@@ -381,33 +439,27 @@
                 <div class='description'>
                   
                   <p><a href="FreeImage.html">FreeImage</a> supports the following color types:</p>
-                  <table class="rdoc-list"><tr><td class="rdoc-term"><p>:minis_black</p></td>
-                  <td>
+                  <table class="rdoc-list note-list"><tbody><tr><td class='label'>:minis_black</td><td>
                   <p>Monochrome bitmap (1-bit) -&gt; first palette entry is black. Palletised
                   bitmap (4 or 8-bit) and single channel non standard bitmap -&gt; the bitmap
                   has a greyscale palette</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:minis_white</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:minis_white</td><td>
                   <p>Monochrome bitmap (1-bit) -&gt; first palette entry is white. Palletised
                   bitmap (4 or 8-bit) and single channel non standard bitmap -&gt; the bitmap
                   has an inverted greyscale palette</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:palette</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:palette</td><td>
                   <p>Palettized bitmap (1, 4 or 8 bit)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:rgb</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:rgb</td><td>
                   <p>High-color bitmap (16, 24 or 32 bit), <a
                   href="FreeImage/RGB16.html">RGB16</a> or <a
                   href="FreeImage/RGBF.html">RGBF</a></p>
-                  </td></tr><tr><td class="rdoc-term"><p>:rgb_alpha</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:rgb_alpha</td><td>
                   <p>High-color bitmap with an alpha channel (32 bit bitmap, <a
                   href="FreeImage/RGBA16.html">RGBA16</a> or <a
                   href="FreeImage/RGBAF.html">RGBAF</a>)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:cmyk</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:cmyk</td><td>
                   <p>CMYK bitmap (32 bit only)</p>
-                  </td></tr></table>
+                  </td></tr></tbody></table>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-color_types-source'); return false">
@@ -426,28 +478,21 @@
                   
                   <p><a href="FreeImage.html">FreeImage</a> supports the following dithering
                   algorithms:</p>
-                  <table class="rdoc-list"><tr><td class="rdoc-term"><p>:fs</p></td>
-                  <td>
+                  <table class="rdoc-list note-list"><tbody><tr><td class='label'>:fs</td><td>
                   <p>Floyd &amp; Steinberg error diffusion algorithm</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:bayer4x4</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:bayer4x4</td><td>
                   <p>Bayer ordered dispersed dot dithering (order 2 – 4x4 -dithering matrix)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:bayer8x8</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:bayer8x8</td><td>
                   <p>Bayer ordered dispersed dot dithering (order 3 – 8x8 -dithering matrix)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:bayer16x16</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:bayer16x16</td><td>
                   <p>Bayer ordered dispersed dot dithering (order 4 – 16x16 dithering matrix)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:cluster6x6</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:cluster6x6</td><td>
                   <p>Ordered clustered dot dithering (order 3 - 6x6 matrix)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:cluster8x8</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:cluster8x8</td><td>
                   <p>Ordered clustered dot dithering (order 4 - 8x8 matrix)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:cluster16x16</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:cluster16x16</td><td>
                   <p>Ordered clustered dot dithering (order 8 - 16x16 matrix)</p>
-                  </td></tr></table>
+                  </td></tr></tbody></table>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-dithers-source'); return false">
@@ -484,116 +529,80 @@
                   
                   <p><a href="FreeImage.html">FreeImage</a> supports over 30 bitmap types, which
                   are indentified via symbols. Supported formats include:</p>
-                  <table class="rdoc-list"><tr><td class="rdoc-term"><p>:bmp</p></td>
-                  <td>
+                  <table class="rdoc-list note-list"><tbody><tr><td class='label'>:bmp</td><td>
                   <p>Windows or OS/2 <a href="FreeImage/Bitmap.html">Bitmap</a> <a
                   href="FreeImage/File.html">File</a> (*.BMP)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:cut</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:cut</td><td>
                   <p>Dr. Halo (*.CUT)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:dds</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:dds</td><td>
                   <p>DirectDraw Surface (*.DDS)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:exr</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:exr</td><td>
                   <p>ILM OpenEXR (*.EXR)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:faxg3</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:faxg3</td><td>
                   <p>Raw Fax format CCITT G3 (*.G3)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:gif</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:gif</td><td>
                   <p>Graphics Interchange Format (*.GIF)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:hdr</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:hdr</td><td>
                   <p>High Dynamic Range (*.HDR)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:ico</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:ico</td><td>
                   <p>Windows Icon (*.ICO)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:iff</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:iff</td><td>
                   <p>Amiga IFF (*.IFF, *.LBM)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:jpeg</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:jpeg</td><td>
                   <p>Independent JPEG Group (*.JPG, *.JIF, *.JPEG, *.JPE)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:jng</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:jng</td><td>
                   <p>JPEG Network Graphics (*.JNG)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:j2k</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:j2k</td><td>
                   <p>JPEG-2000 codestream (*.J2K, *.J2C)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:jp2</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:jp2</td><td>
                   <p>JPEG-2000 <a href="FreeImage/File.html">File</a> Format (*.JP2)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:koala</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:koala</td><td>
                   <p>Commodore 64 Koala format (*.KOA)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:lbm</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:lbm</td><td>
                   <p>Amiga IFF (*.IFF, *.LBM)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:mng</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:mng</td><td>
                   <p>Multiple Network Graphics (*.MNG)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:pbm</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:pbm</td><td>
                   <p>Portable <a href="FreeImage/Bitmap.html">Bitmap</a> (ASCII) (*.PBM)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:pbmraw</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:pbmraw</td><td>
                   <p>Portable <a href="FreeImage/Bitmap.html">Bitmap</a> (BINARY) (*.PBM)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:pcd</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:pcd</td><td>
                   <p>Kodak PhotoCD (*.PCD)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:pcsx</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:pcsx</td><td>
                   <p>Zsoft Paintbrush PCX bitmap format (*.PCX)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:pfm</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:pfm</td><td>
                   <p>Portable Floatmap (*.PFM)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:pgm</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:pgm</td><td>
                   <p>Portable Graymap (ASCII) (*.PGM)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:pgmraw</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:pgmraw</td><td>
                   <p>Portable Graymap (BINARY) (*.PGM)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:pict</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:pict</td><td>
                   <p>Macintosh PICT (*.PCT, *.PICT, *.PIC)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:png</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:png</td><td>
                   <p>Portable Network Graphics (*.PNG)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:ppm</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:ppm</td><td>
                   <p>Portable Pixelmap (ASCII) (*.PPM)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:ppmraw</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:ppmraw</td><td>
                   <p>Portable Pixelmap (BINARY) (*.PPM)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:psd</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:psd</td><td>
                   <p>Adobe Photoshop (*.PSD)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:ras</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:ras</td><td>
                   <p>Sun Rasterfile (*.RAS)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:raw</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:raw</td><td>
                   <p>RAW camera image (many extensions)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:sgi</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:sgi</td><td>
                   <p>Silicon Graphics SGI image format (*.SGI)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:targa</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:targa</td><td>
                   <p>Truevision Targa files (*.TGA, *.TARGA)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:tiff</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:tiff</td><td>
                   <p>Tagged Image <a href="FreeImage/File.html">File</a> Format (*.TIF, *.TIFF)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:wbmp</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:wbmp</td><td>
                   <p>Wireless <a href="FreeImage/Bitmap.html">Bitmap</a> (*.WBMP)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:xbm</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:xbm</td><td>
                   <p>X11 <a href="FreeImage/Bitmap.html">Bitmap</a> Format (*.XBM)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:xpm</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:xpm</td><td>
                   <p>X11 Pitmap Format (*.XPM)</p>
-                  </td></tr></table>
+                  </td></tr></tbody></table>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-formats-source'); return false">
@@ -611,46 +620,33 @@
                 <div class='description'>
                   
                   <p><a href="FreeImage.html">FreeImage</a> supports the following image types:</p>
-                  <table class="rdoc-list"><tr><td class="rdoc-term"><p>:unknown</p></td>
-                  <td>
+                  <table class="rdoc-list note-list"><tbody><tr><td class='label'>:unknown</td><td>
                   <p>Unknown format (returned value only, never use it as input value)</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:bitmap</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:bitmap</td><td>
                   <p>Standard image: 1-, 4-, 8-, 16-, 24-, 32-bit</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:uint16</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:uint16</td><td>
                   <p>Array of unsigned short: unsigned 16-bit</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:int16</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:int16</td><td>
                   <p>Array of short: signed 16-bit</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:uint32</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:uint32</td><td>
                   <p>Array of unsigned long: unsigned 32-bit</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:int32</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:int32</td><td>
                   <p>Array of long: signed 32-bit</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:float</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:float</td><td>
                   <p>Array of float: 32-bit IEEE floating point</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:double</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:double</td><td>
                   <p>Array of double: 64-bit IEEE floating point</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:complex</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:complex</td><td>
                   <p>Array of FICOMPLEX: 2 x 64-bit IEEE floating point</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:rgb16</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:rgb16</td><td>
                   <p>48-bit rgb image: 3 x 16-bit</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:rgba16</p></td>
-                  <td>
-                  <p>64-bit rgbA image: 4 x 16-bit</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:rgbf</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>:rgba16</td><td>
+                  <p>64-bit rgba image: 4 x 16-bit</p>
+                  </td></tr><tr><td class='label'>:rgbf</td><td>
                   <p>96-bit rgb float image: 3 x 32-bit IEEE floating point</p>
-                  </td></tr><tr><td class="rdoc-term"><p>:rgbaf</p></td>
-                  <td>
-                  <p>128-bit rgbA float image: 4 x 32-bit IEEE floating point</p>
-                  </td></tr></table>
+                  </td></tr><tr><td class='label'>:rgbaf</td><td>
+                  <p>128-bit rgba float image: 4 x 32-bit IEEE floating point</p>
+                  </td></tr></tbody></table>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-image_types-source'); return false">

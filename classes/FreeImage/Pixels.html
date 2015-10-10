@@ -2,7 +2,7 @@
 <html lang='en'>
   <head>
     <title>FreeImage::Pixels</title>
-    <meta content='text/html; charset=IBM437' http-equiv='Content-Type'>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
       //<![CDATA[
@@ -34,16 +34,12 @@
             <a target="docwin" href="../../files/lib/free-image/modules/pixels_rb.html">lib/free-image/modules/pixels.rb</a>
           </li>
         </ol>
-        <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../FreeImage.html">FreeImage</a></strong>
-        </div>
       </div>
       <div id='content'>
         <div id='text'>
           <div id='description'>
             
-            <h2>Summary</h2>
+            <h2 id="module-FreeImage::Pixels-label-Summary">Summary<span><a href="#module-FreeImage::Pixels-label-Summary">&para;</a> <a href="#top">&uarr;</a></span></h2>
             
             <p>The Pixel module provides methods that allow you to read, write and work
             pixel-by-pixel with image data. FreeImage not only can work with standard
@@ -85,13 +81,16 @@
                   
                   <p>Returns the data-bits of the bitmap. It is up to you to interpret these
                   bytes correctly, according to the results of <a
-                  href="Information.html#method-i-bits_per_pixel">Information#bits_per_pixel</a>,
-                  <a href="Information.html#method-i-red_mask">Information#red_mask</a>, <a
-                  href="Information.html#method-i-green_mask">Information#green_mask</a> and
-                  <a href="Information.html#method-i-blue_mask">Information#blue_mask</a>.</p>
+                  href="Information.html#method-i-bits_per_pixel">FreeImage::Information#bits_per_pixel</a>,
+                  <a
+                  href="Information.html#method-i-red_mask">FreeImage::Information#red_mask</a>,
+                  <a
+                  href="Information.html#method-i-green_mask">FreeImage::Information#green_mask</a>
+                  and <a
+                  href="Information.html#method-i-blue_mask">FreeImage::Information#blue_mask</a>.</p>
                   
                   <p>If the bitmap does not contain pixel data (see <a
-                  href="Information.html#method-i-has_pixels">Information#has_pixels</a>),
+                  href="Information.html#method-i-has_pixels">FreeImage::Information#has_pixels</a>),
                   nil will be returned.</p>
                   
                   <p>For a performance reason, the address returned by FreeImage_GetBits is
@@ -115,14 +114,12 @@
                   <p>Gets the pixel color of a 16-, 24- or 32-bit image at the specified
                   coordinate.</p>
                   
-                  <h2>Parameters</h2>
-                  <table class="rdoc-list"><tr><td class="rdoc-term"><p>x</p></td>
-                  <td>
+                  <h2 id="method-i-pixel_color-label-Parameters">Parameters<span><a href="#method-i-pixel_color-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h2>
+                  <table class="rdoc-list note-list"><tbody><tr><td class='label'>x</td><td>
                   <p>The pixel position in horizontal direction</p>
-                  </td></tr><tr><td class="rdoc-term"><p>y</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>y</td><td>
                   <p>The pixel position in vertical direction.</p>
-                  </td></tr></table>
+                  </td></tr></tbody></table>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-pixel_color-source'); return false">
@@ -141,14 +138,12 @@
                   
                   <p>Gets the pixel index of a palettized image at the specified coordinate.</p>
                   
-                  <h2>Parameters</h2>
-                  <table class="rdoc-list"><tr><td class="rdoc-term"><p>x</p></td>
-                  <td>
+                  <h2 id="method-i-pixel_index-label-Parameters">Parameters<span><a href="#method-i-pixel_index-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h2>
+                  <table class="rdoc-list note-list"><tbody><tr><td class='label'>x</td><td>
                   <p>The pixel position in horizontal direction</p>
-                  </td></tr><tr><td class="rdoc-term"><p>y</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>y</td><td>
                   <p>The pixel position in vertical direction.</p>
-                  </td></tr></table>
+                  </td></tr></tbody></table>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-pixel_index-source'); return false">
@@ -169,7 +164,7 @@
                   href="Scanline.html">FreeImage::Scanline</a> instance.</p>
                   
                   <p>If the bitmap does not contain pixel data (see <a
-                  href="Information.html#method-i-has_pixels">Information#has_pixels</a>),
+                  href="Information.html#method-i-has_pixels">FreeImage::Information#has_pixels</a>),
                   nil will be returned.</p>
                 </div>
                 <div class='source'>
@@ -190,17 +185,14 @@
                   <p>Sets the pixel color of a 16-, 24- or 32-bit image at the specified
                   coordinate.</p>
                   
-                  <h2>Parameters</h2>
-                  <table class="rdoc-list"><tr><td class="rdoc-term"><p>x</p></td>
-                  <td>
+                  <h2 id="method-i-set_pixel_color-label-Parameters">Parameters<span><a href="#method-i-set_pixel_color-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h2>
+                  <table class="rdoc-list note-list"><tbody><tr><td class='label'>x</td><td>
                   <p>The pixel position in horizontal direction</p>
-                  </td></tr><tr><td class="rdoc-term"><p>y</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>y</td><td>
                   <p>The pixel position in vertical direction.</p>
-                  </td></tr><tr><td class="rdoc-term"><p>color</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>color</td><td>
                   <p>The new color as a RGBAQuad instance.</p>
-                  </td></tr></table>
+                  </td></tr></tbody></table>
                   
                   <p>The function returns true on success and false otherwise.</p>
                 </div>
@@ -221,14 +213,12 @@
                   
                   <p>Sets the pixel index of a palettized image at the specified coordinate.</p>
                   
-                  <h2>Parameters</h2>
-                  <table class="rdoc-list"><tr><td class="rdoc-term"><p>x</p></td>
-                  <td>
+                  <h2 id="method-i-set_pixel_index-label-Parameters">Parameters<span><a href="#method-i-set_pixel_index-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h2>
+                  <table class="rdoc-list note-list"><tbody><tr><td class='label'>x</td><td>
                   <p>The pixel position in horizontal direction</p>
-                  </td></tr><tr><td class="rdoc-term"><p>y</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>y</td><td>
                   <p>The pixel position in vertical direction.</p>
-                  </td></tr></table>
+                  </td></tr></tbody></table>
                   
                   <p>The function returns true on success and false otherwise.</p>
                 </div>

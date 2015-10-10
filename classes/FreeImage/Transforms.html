@@ -2,7 +2,7 @@
 <html lang='en'>
   <head>
     <title>FreeImage::Transforms</title>
-    <meta content='text/html; charset=IBM437' http-equiv='Content-Type'>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
       //<![CDATA[
@@ -34,10 +34,6 @@
             <a target="docwin" href="../../files/lib/free-image/modules/transforms_rb.html">lib/free-image/modules/transforms.rb</a>
           </li>
         </ol>
-        <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../FreeImage.html">FreeImage</a></strong>
-        </div>
       </div>
       <div id='content'>
         <div id='text'>
@@ -72,7 +68,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-flip_horizontal-21-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-flip_horizontal-21-source'><span class="ruby-comment"># File lib/free-image/modules/transforms.rb, line 66</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">flip_horizontal!</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_FlipHorizontal</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-flip_horizontal-21-source'><span class="ruby-comment"># File lib/free-image/modules/transforms.rb, line 74</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">flip_horizontal!</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_FlipHorizontal</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-flip_vertical-21'>
@@ -84,13 +80,13 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Flip the input image vertically horizontally along the horizontal axis.</p>
+                  <p>Flip the input image vertically along the horizontal axis.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-flip_vertical-21-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-flip_vertical-21-source'><span class="ruby-comment"># File lib/free-image/modules/transforms.rb, line 77</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">flip_vertical!</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_FlipHorizontal</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-flip_vertical-21-source'><span class="ruby-comment"># File lib/free-image/modules/transforms.rb, line 85</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">flip_vertical!</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_FlipVertical</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-rotate'>
@@ -98,6 +94,7 @@
                 <div class='synopsis'>
                   <span class='name'>
                     <div>bitmap.rotate(angle, bk_color) -> bitmap</div>
+                    <div>bitmap.rotate(angle, bk_color) -> {|img| block} -> bitmap</div>
                   </span>
                 </div>
                 <div class='description'>
@@ -111,15 +108,18 @@
                   filled with the supplied bkcolor parameter.  When bkcolor is nil, the
                   default value, the background is filled with a black.</p>
                   
-                  <h2>Parameters</h2>
+                  <h2 id="method-i-rotate-label-Parameters">Parameters<span><a href="#method-i-rotate-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h2>
                   
                   <pre>angle::    Specifies the angle of rotation in degrees&#x000A;bk_color:: The color used to fill the background.</pre>
+                  
+                  <p>If an optional block is provided, it will be passed the new image as an
+                  argument.  The image will be automatically closed when the block completes.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-rotate-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-rotate-source'><span class="ruby-comment"># File lib/free-image/modules/transforms.rb, line 32</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">rotate</span>(<span class="ruby-identifier">angle</span>, <span class="ruby-identifier">bk_color</span> = <span class="ruby-keyword">nil</span>)&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_Rotate</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">angle</span>, <span class="ruby-identifier">bk_color</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-rotate-source'><span class="ruby-comment"># File lib/free-image/modules/transforms.rb, line 36</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">rotate</span>(<span class="ruby-identifier">angle</span>, <span class="ruby-identifier">bk_color</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_Rotate</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">angle</span>, <span class="ruby-identifier">bk_color</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-rotate_ex'>
@@ -127,6 +127,7 @@
                 <div class='synopsis'>
                   <span class='name'>
                     <div>bitmap.rotate_ex(aangle, x_shift, y_shift, x_origin, y_origin, use_mask = false) -> bitmap</div>
+                    <div>bitmap.rotate_ex(aangle, x_shift, y_shift, x_origin, y_origin, use_mask = false) {|img| block} -> bitmap</div>
                   </span>
                 </div>
                 <div class='description'>
@@ -135,15 +136,18 @@
                   have the same width and height as the source image, so that this function
                   is better suited for computer vision and robotics.</p>
                   
-                  <h2>Parameters:</h2>
+                  <h2 id="method-i-rotate_ex-label-Parameters-3A">Parameters:<span><a href="#method-i-rotate_ex-label-Parameters-3A">&para;</a> <a href="#top">&uarr;</a></span></h2>
                   
                   <pre>angle::    Specifies the angle of rotation in degrees&#x000A;x_shift::  Specifies horizonal image translation&#x000A;y_shift::  Specifies vertical image translation&#x000A;x_origin:: Specifies the x coordinate of the center of rotation&#x000A;y_origin:: Specifies the y coordinate of the center of rotation&#x000A;use_mask:: When true, irrelevant parts of the image are set to black,&#x000A;           otherwise, a mirroring technique is used to fill irrelevant pixels.</pre>
+                  
+                  <p>If an optional block is provided, it will be passed the new image as an
+                  argument.  The image will be automatically closed when the block completes.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-rotate_ex-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-rotate_ex-source'><span class="ruby-comment"># File lib/free-image/modules/transforms.rb, line 55</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">rotate_ex</span>(<span class="ruby-identifier">angle</span>, <span class="ruby-identifier">x_shift</span>, <span class="ruby-identifier">y_shift</span>, <span class="ruby-identifier">x_origin</span>, <span class="ruby-identifier">y_origin</span>, <span class="ruby-identifier">use_mask</span> = <span class="ruby-keyword">false</span>);&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_RotateEx</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">angle</span>, <span class="ruby-identifier">x_shift</span>, <span class="ruby-identifier">y_shift</span>, <span class="ruby-identifier">x_origin</span>, <span class="ruby-identifier">y_origin</span>, <span class="ruby-identifier">use_mask</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-rotate_ex-source'><span class="ruby-comment"># File lib/free-image/modules/transforms.rb, line 63</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">rotate_ex</span>(<span class="ruby-identifier">angle</span>, <span class="ruby-identifier">x_shift</span>, <span class="ruby-identifier">y_shift</span>, <span class="ruby-identifier">x_origin</span>, <span class="ruby-identifier">y_origin</span>, <span class="ruby-identifier">use_mask</span> = <span class="ruby-keyword">false</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_RotateEx</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">angle</span>, <span class="ruby-identifier">x_shift</span>, <span class="ruby-identifier">y_shift</span>, <span class="ruby-identifier">x_origin</span>, <span class="ruby-identifier">y_origin</span>, <span class="ruby-identifier">use_mask</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
             </div>

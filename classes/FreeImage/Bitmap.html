@@ -2,7 +2,7 @@
 <html lang='en'>
   <head>
     <title>FreeImage::Bitmap</title>
-    <meta content='text/html; charset=IBM437' http-equiv='Content-Type'>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
       //<![CDATA[
@@ -35,30 +35,31 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../FreeImage.html">FreeImage</a></strong>
+          Superclass:
+          <strong>FreeImage::FFI::AutoPointer</strong>
         </div>
       </div>
       <div id='content'>
         <div id='text'>
           <div id='description'>
             
-            <h2>Summary</h2>
+            <h2 id="class-FreeImage::Bitmap-label-Summary">Summary<span><a href="#class-FreeImage::Bitmap-label-Summary">&para;</a> <a href="#top">&uarr;</a></span></h2>
             
             <p>Represents an image that has been loaded into memory.  Once the image is
             loaded, you can get <a href="Information.html">information</a> about it, <a
             href="Conversions.html">convert</a> it, <a href="Modify.html">modify</a>
             it. <a href="Information.html">transform</a> it,</p>
             
-            <h2>Usage</h2>
+            <h2 id="class-FreeImage::Bitmap-label-Usage">Usage<span><a href="#class-FreeImage::Bitmap-label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             
-            <pre># Open an image form a file&#x000A;image = FreeImage::BitmapFile.open('test/fixtures/lena.png')&#x000A;# Get information about it&#x000A;bg = image.background_color&#x000A;&#x000A;# Convert it&#x000A;image = image.convert_to_greyscale&#x000A;&#x000A;# Modify it&#x000A;image = image.convert_to_greyscale&#x000A;&#x000A;# Transform it&#x000A;image = image.rotate(90)</pre>
+            <pre class="ruby"><span class="ruby-comment"># Open an image form a file</span>&#x000A;<span class="ruby-identifier">image</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">BitmapFile</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&#39;test/fixtures/lena.png&#39;</span>)&#x000A;&#x000A;<span class="ruby-comment"># Get information about it</span>&#x000A;<span class="ruby-identifier">bg</span> = <span class="ruby-identifier">image</span>.<span class="ruby-identifier">background_color</span>&#x000A;&#x000A;<span class="ruby-comment"># Convert it</span>&#x000A;<span class="ruby-identifier">image</span> = <span class="ruby-identifier">image</span>.<span class="ruby-identifier">convert_to_greyscale</span>&#x000A;&#x000A;<span class="ruby-comment"># Modify it</span>&#x000A;<span class="ruby-identifier">image</span> = <span class="ruby-identifier">image</span>.<span class="ruby-identifier">convert_to_greyscale</span>&#x000A;&#x000A;<span class="ruby-comment"># Transform it</span>&#x000A;<span class="ruby-identifier">image</span> = <span class="ruby-identifier">image</span>.<span class="ruby-identifier">rotate</span>(<span class="ruby-value">90</span>)</pre>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>
             <h3>Public Class</h3>
             <ol>
               <li><a target="docwin" href="#method-c-create">create</a></li>
+              <li><a target="docwin" href="#method-c-new">new</a></li>
               <li><a target="docwin" href="#method-c-new">new</a></li>
               <li><a target="docwin" href="#method-c-open">open</a></li>
             </ol>
@@ -114,26 +115,21 @@
                   
                   <p>Creates a new image with the specified width, height and bits per pixel.</p>
                   
-                  <h2>Parameters</h2>
-                  <table class="rdoc-list"><tr><td class="rdoc-term"><p>width</p></td>
-                  <td>
+                  <h2 id="method-c-create-label-Parameters">Parameters<span><a href="#method-c-create-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h2>
+                  <table class="rdoc-list note-list"><tbody><tr><td class='label'>width</td><td>
                   <p>The width of the new image</p>
-                  </td></tr><tr><td class="rdoc-term"><p>height</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>height</td><td>
                   <p>The height of the new image</p>
-                  </td></tr><tr><td class="rdoc-term"><p>bits_per_pixel</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>bits_per_pixel</td><td>
                   <p>The size in bits of a pixel</p>
-                  </td></tr><tr><td class="rdoc-term"><p>red_mask</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>red_mask</td><td>
                   <p>The bit-layout of the red color component in a bitmap</p>
-                  </td></tr></table>
+                  </td></tr></tbody></table>
                   
                   <p>green_mask:P: The bit-layout of the green color component in a bitmap</p>
-                  <table class="rdoc-list"><tr><td class="rdoc-term"><p>blue_mask</p></td>
-                  <td>
+                  <table class="rdoc-list note-list"><tbody><tr><td class='label'>blue_mask</td><td>
                   <p>The bit-layout of the blue color component in a bitmap</p>
-                  </td></tr></table>
+                  </td></tr></tbody></table>
                   
                   <p>The last three parameter are used to tell <a
                   href="../FreeImage.html">FreeImage</a> the bit-layout of the color
@@ -168,15 +164,31 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Creates a new image from a c-pointer an image source.  Generally you do not
-                  want to use this method.  Instead, use <a
-                  href="Bitmap.html#method-c-open">Bitmap.open</a>.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-new-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-c-new-source'><span class="ruby-comment"># File lib/free-image/bitmap.rb, line 98</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-identifier">source</span> = <span class="ruby-keyword">nil</span>)&#x000A;  <span class="ruby-ivar">@source</span> = <span class="ruby-identifier">source</span>&#x000A;  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-c-new-source'><span class="ruby-comment"># File lib/free-image/bitmap.rb, line 100</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-identifier">source</span> = <span class="ruby-keyword">nil</span>)&#x000A;  <span class="ruby-comment"># Ptr must be set</span>&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-identifier">ptr</span>.<span class="ruby-identifier">null?</span>&#x000A;    <span class="ruby-identifier">error</span> = <span class="ruby-constant">Error</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:unknown</span>, <span class="ruby-string">&quot;Cannot create a bitmap from a null pointer&quot;</span>)&#x000A;    <span class="ruby-identifier">raise</span>(<span class="ruby-identifier">error</span>)&#x000A;  <span class="ruby-keyword">end</span>&#x000A;&#x000A;  <span class="ruby-identifier">bitmap</span> = <span class="ruby-keyword">super</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-identifier">source</span>)&#x000A;&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>&#x000A;    <span class="ruby-keyword">begin</span>&#x000A;      <span class="ruby-keyword">yield</span> <span class="ruby-identifier">bitmap</span>&#x000A;    <span class="ruby-keyword">ensure</span>&#x000A;      <span class="ruby-identifier">bitmap</span>.<span class="ruby-identifier">free</span>&#x000A;    <span class="ruby-keyword">end</span>&#x000A;  <span class="ruby-keyword">else</span>&#x000A;    <span class="ruby-identifier">bitmap</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-class' id='method-method-c-new'>
+                <a name='method-c-new'></a>
+                <div class='synopsis'>
+                  <span class='name'>new</span>
+                  <span class='arguments'>(ptr, source = nil)</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Creates a new image from a c-pointer an image source.  Generally you do not
+                  want to use this method.  Instead, use <a
+                  href="Bitmap.html#method-c-open">::open</a>.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-c-new-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-c-new-source'><span class="ruby-comment"># File lib/free-image/bitmap.rb, line 130</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-identifier">source</span> = <span class="ruby-keyword">nil</span>)&#x000A;  <span class="ruby-ivar">@source</span> = <span class="ruby-identifier">source</span>&#x000A;  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-class' id='method-method-c-open'>
@@ -189,11 +201,10 @@
                   
                   <p>Opens a new image from the specified source.</p>
                   
-                  <h2>Parameters</h2>
-                  <table class="rdoc-list"><tr><td class="rdoc-term"><p>source</p></td>
-                  <td>
+                  <h2 id="method-c-open-label-Parameters">Parameters<span><a href="#method-c-open-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h2>
+                  <table class="rdoc-list note-list"><tbody><tr><td class='label'>source</td><td>
                   <p>The source of the image</p>
-                  </td></tr></table>
+                  </td></tr></tbody></table>
                   
                   <p>The source parameter can be a <a href="File.html">File</a>, <a
                   href="Memory.html">Memory</a> or <a href="IO.html">IO</a> stream.  It can
@@ -203,25 +214,30 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-open-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-c-open-source'><span class="ruby-comment"># File lib/free-image/bitmap.rb, line 87</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">source</span>)&#x000A;  <span class="ruby-identifier">figure_source</span>(<span class="ruby-identifier">source</span>).<span class="ruby-identifier">open</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-c-open-source'><span class="ruby-comment"># File lib/free-image/bitmap.rb, line 87</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">source</span>)&#x000A;  <span class="ruby-identifier">bitmap</span> = <span class="ruby-identifier">figure_source</span>(<span class="ruby-identifier">source</span>).<span class="ruby-identifier">open</span>&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>&#x000A;    <span class="ruby-keyword">begin</span>&#x000A;      <span class="ruby-keyword">yield</span> <span class="ruby-identifier">bitmap</span>&#x000A;    <span class="ruby-keyword">ensure</span>&#x000A;      <span class="ruby-identifier">bitmap</span>.<span class="ruby-identifier">free</span>&#x000A;    <span class="ruby-keyword">end</span>&#x000A;  <span class="ruby-keyword">else</span>&#x000A;    <span class="ruby-identifier">bitmap</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <h2>Public Instance methods</h2>
               <div class='method public-instance' id='method-method-i-clone'>
                 <a name='method-i-clone'></a>
                 <div class='synopsis'>
-                  <span class='name'>clone</span>
-                  <span class='arguments'>()</span>
+                  <span class='name'>
+                    <div>image.clone -> bitmap</div>
+                    <div>image.clone {|img| block} -> bitmap</div>
+                  </span>
                 </div>
                 <div class='description'>
                   
                   <p>Creates an exact copy of the current image.</p>
+                  
+                  <p>If an optional block is provided, it will be passed the new image as an
+                  argument.  The image will be automatically closed when the block completes.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-clone-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-clone-source'><span class="ruby-comment"># File lib/free-image/bitmap.rb, line 104</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">clone</span>&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_Clone</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-clone-source'><span class="ruby-comment"># File lib/free-image/bitmap.rb, line 144</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">clone</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_Clone</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-save'>
@@ -234,27 +250,24 @@
                   
                   <p>Save the image to the specified source.</p>
                   
-                  <h2>Parameters</h2>
-                  <table class="rdoc-list"><tr><td class="rdoc-term"><p>dst</p></td>
-                  <td>
+                  <h2 id="method-i-save-label-Parameters">Parameters<span><a href="#method-i-save-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h2>
+                  <table class="rdoc-list note-list"><tbody><tr><td class='label'>dst</td><td>
                   <p>The destination where the image will be saved.</p>
-                  </td></tr><tr><td class="rdoc-term"><p>format</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>format</td><td>
                   <p>The <a href="../FreeImage.html#method-i-formats">format</a> to save the
                   image to.</p>
-                  </td></tr><tr><td class="rdoc-term"><p>flags</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>flags</td><td>
                   <p>Format specific flags that control how a bitmap is saved.  These flags are
                   defined</p>
                   
-                  <pre>as constants on the AbstractSource class.  Flags can be combined using&#x000A;Ruby's bitwise or operator (|)</pre>
-                  </td></tr></table>
+                  <pre>as constants on the AbstractSource class.  Flags can be combined using&#x000A;Ruby&#39;s bitwise or operator (|)</pre>
+                  </td></tr></tbody></table>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-save-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-save-source'><span class="ruby-comment"># File lib/free-image/bitmap.rb, line 119</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">save</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">format</span>, <span class="ruby-identifier">flags</span> = <span class="ruby-value">0</span>)&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">figure_source</span>(<span class="ruby-identifier">source</span>).<span class="ruby-identifier">save</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">format</span>, <span class="ruby-identifier">flags</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-save-source'><span class="ruby-comment"># File lib/free-image/bitmap.rb, line 159</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">save</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">format</span>, <span class="ruby-identifier">flags</span> = <span class="ruby-value">0</span>)&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">figure_source</span>(<span class="ruby-identifier">source</span>).<span class="ruby-identifier">save</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">format</span>, <span class="ruby-identifier">flags</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
             </div>

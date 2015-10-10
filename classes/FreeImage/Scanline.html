@@ -2,7 +2,7 @@
 <html lang='en'>
   <head>
     <title>FreeImage::Scanline</title>
-    <meta content='text/html; charset=IBM437' http-equiv='Content-Type'>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
       //<![CDATA[
@@ -35,15 +35,15 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../FreeImage.html">FreeImage</a></strong>
+          Superclass:
+          <strong>Object</strong>
         </div>
       </div>
       <div id='content'>
         <div id='text'>
           <div id='description'>
             
-            <h2>Summary</h2>
+            <h2 id="class-FreeImage::Scanline-label-Summary">Summary<span><a href="#class-FreeImage::Scanline-label-Summary">&para;</a> <a href="#top">&uarr;</a></span></h2>
             
             <p>Scanlines provide low level access to image data. The only lower-level
             access is working with the actual raw bytes, which you can do via the
@@ -54,7 +54,7 @@
             
             <p>To understand how scanlines work, you have to first understand that image
             data is stored differently depending on the <a
-            href="http://FreeImage.image_types">image type</a> and the <a
+            href="FreeImage.image_types">image type</a> and the <a
             href="FreeImage::Information#bits_per_pixel">bits per pixel</a>.  Thus,
             when you call reeImage::Scanline#[] with an index, you will get back a
             different  object depending on the image type and bit depth.</p>
@@ -90,13 +90,13 @@
             as 24- or 32bit DIB.  Colors are represented using <a
             href="Complex.html">FreeImage::Complex</a>.</p>
             
-            <p>16-bit <a target="_top" href="http://A">RGB</a> image types are stored in a similar way
-            as 24-bit DIBs. Colors are represented using <a
+            <p>16-bit <a href="A">RGB</a> image types are stored in a similar way as
+            24-bit DIBs. Colors are represented using <a
             href="RGB16.html">FreeImage::RGB16</a> or FreeImage::RFBA16.</p>
             
-            <p>Float <a target="_top" href="http://A">RGB</a> image types are stored in a similar way
-            32bit DIBs. Colors are represented using <a
-            href="RGBF.html">FreeImage::RGBF</a> or FreeImage::RFBAF.</p>
+            <p>Float <a href="A">RGB</a> image types are stored in a similar way 32bit
+            DIBs. Colors are represented using <a href="RGBF.html">FreeImage::RGBF</a>
+            or FreeImage::RFBAF.</p>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>
@@ -133,21 +133,18 @@
                   
                   <p>Creates a new scanline instance</p>
                   
-                  <h2>Parameters</h2>
-                  <table class="rdoc-list"><tr><td class="rdoc-term"><p>bitmap</p></td>
-                  <td>
+                  <h2 id="method-c-new-label-Parameters">Parameters<span><a href="#method-c-new-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h2>
+                  <table class="rdoc-list note-list"><tbody><tr><td class='label'>bitmap</td><td>
                   <p>An instance of <a href="Bitmap.html">FreeImage::Bitmap</a></p>
-                  </td></tr><tr><td class="rdoc-term"><p>index</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>index</td><td>
                   <p>The index of the scanline, must be between 0 and the image pixel heigh
                   minus one.</p>
-                  </td></tr><tr><td class="rdoc-term"><p>ptr</p></td>
-                  <td>
+                  </td></tr><tr><td class='label'>ptr</td><td>
                   <p>A pointer to the raw pixel data.</p>
-                  </td></tr></table>
+                  </td></tr></tbody></table>
                   
                   <p>Generally you do not want to call this method directly.  Instead, use <a
-                  href="Pixels.html#method-i-scanline">FreeImage::Bitmap#scanline</a>.</p>
+                  href="Pixels.html#method-i-scanline">FreeImage::Pixels#scanline</a>.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-new-source'); return false">
@@ -168,12 +165,11 @@
                   <p>Returns the appropriate color object for the image type and bit depth.  See
                   notes for the <a href="Scanline.html">FreeImage::Scanline</a> class.</p>
                   
-                  <h2>Parameters</h2>
-                  <table class="rdoc-list"><tr><td class="rdoc-term"><p>index</p></td>
-                  <td>
+                  <h2 id="method-i-5B-5D-label-Parameters">Parameters<span><a href="#method-i-5B-5D-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h2>
+                  <table class="rdoc-list note-list"><tbody><tr><td class='label'>index</td><td>
                   <p>The index of the scanline, must be between 0 and the image pixel width
                   minus one.</p>
-                  </td></tr></table>
+                  </td></tr></tbody></table>
                   
                   <p>Returns the appropriate object for manipulating the data.</p>
                 </div>
@@ -181,7 +177,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-5B-5D-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-5B-5D-source'><span class="ruby-comment"># File lib/free-image/scanline.rb, line 74</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">index</span>)&#x000A;  <span class="ruby-keyword">unless</span> (<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">pixelsize</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">index</span>)&#x000A;    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">RangeError</span>, <span class="ruby-node">&quot;Index must be between 0 and #{pixelsize - 1}&quot;</span>)&#x000A;  <span class="ruby-keyword">end</span>&#x000A;  <span class="ruby-identifier">bytes_per_pixel</span> = <span class="ruby-ivar">@bitmap</span>.<span class="ruby-identifier">bits_per_pixel</span><span class="ruby-operator">/</span><span class="ruby-value">8</span>&#x000A;&#x000A;  <span class="ruby-comment"># Now get the address of the pixel</span>&#x000A;  <span class="ruby-identifier">address</span> = <span class="ruby-ivar">@ptr</span>.<span class="ruby-identifier">address</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">index</span> * <span class="ruby-identifier">bytes_per_pixel</span>)&#x000A;&#x000A;  <span class="ruby-comment"># Now get a pointer to the pixel</span>&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Pointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">bytes_per_pixel</span>, <span class="ruby-identifier">address</span>)&#x000A;&#x000A;  <span class="ruby-comment"># Now return a nice object to work with</span>&#x000A;  <span class="ruby-identifier">color_type</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-5B-5D-source'><span class="ruby-comment"># File lib/free-image/scanline.rb, line 74</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">index</span>)&#x000A;  <span class="ruby-keyword">unless</span> (<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">pixelsize</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">index</span>)&#x000A;    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">RangeError</span>, <span class="ruby-node">&quot;Index must be between 0 and #{pixelsize - 1}&quot;</span>)&#x000A;  <span class="ruby-keyword">end</span>&#x000A;  <span class="ruby-identifier">bytes_per_pixel</span> = <span class="ruby-ivar">@bitmap</span>.<span class="ruby-identifier">bits_per_pixel</span><span class="ruby-operator">/</span><span class="ruby-value">8</span>&#x000A;&#x000A;  <span class="ruby-comment"># Now get the address of the pixel</span>&#x000A;  <span class="ruby-identifier">address</span> = <span class="ruby-ivar">@ptr</span>.<span class="ruby-identifier">address</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">index</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">bytes_per_pixel</span>)&#x000A;&#x000A;  <span class="ruby-comment"># Now get a pointer to the pixel</span>&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Pointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">bytes_per_pixel</span>, <span class="ruby-identifier">address</span>)&#x000A;&#x000A;  <span class="ruby-comment"># Now return a nice object to work with</span>&#x000A;  <span class="ruby-identifier">color_type</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-bytesize'>
@@ -193,7 +189,7 @@
                 <div class='description'>
                   
                   <p>The width of the image in bytes.  Same as <a
-                  href="Information.html#method-i-pitch">FreeImage::Bitmap#pitch</a>.</p>
+                  href="Information.html#method-i-pitch">FreeImage::Information#pitch</a>.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-bytesize-source'); return false">
@@ -229,7 +225,7 @@
                 <div class='description'>
                   
                   <p>The width of the image in pixels.  Same as <a
-                  href="Information.html#method-i-width">FreeImage::Bitmap#width</a>.</p>
+                  href="Information.html#method-i-width">FreeImage::Information#width</a>.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-pixelsize-source'); return false">

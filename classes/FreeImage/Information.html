@@ -2,7 +2,7 @@
 <html lang='en'>
   <head>
     <title>FreeImage::Information</title>
-    <meta content='text/html; charset=IBM437' http-equiv='Content-Type'>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
       //<![CDATA[
@@ -34,10 +34,6 @@
             <a target="docwin" href="../../files/lib/free-image/modules/information_rb.html">lib/free-image/modules/information.rb</a>
           </li>
         </ol>
-        <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../FreeImage.html">FreeImage</a></strong>
-        </div>
       </div>
       <div id='content'>
         <div id='text'>
@@ -63,8 +59,10 @@
               <li><a target="docwin" href="#method-i-green_mask">green_mask</a></li>
               <li><a target="docwin" href="#method-i-has_background_color">has_background_color</a></li>
               <li><a target="docwin" href="#method-i-has_pixels">has_pixels</a></li>
+              <li><a target="docwin" href="#method-i-has_rgb_masks">has_rgb_masks</a></li>
               <li><a target="docwin" href="#method-i-height">height</a></li>
               <li><a target="docwin" href="#method-i-image_type">image_type</a></li>
+              <li><a target="docwin" href="#method-i-info_header">info_header</a></li>
               <li><a target="docwin" href="#method-i-line">line</a></li>
               <li><a target="docwin" href="#method-i-palette">palette</a></li>
               <li><a target="docwin" href="#method-i-pitch">pitch</a></li>
@@ -110,7 +108,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-background_color-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-background_color-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 80</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">background_color</span>&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:pointer</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetBackgroundColor</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">ptr</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-constant">RGBQuad</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-background_color-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 86</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">background_color</span>&#x000A;  <span class="ruby-identifier">ptr</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:pointer</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetBackgroundColor</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">ptr</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-constant">RGBQuad</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ptr</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-background_color-3D'>
@@ -132,7 +130,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-background_color-3D-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-background_color-3D-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 93</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">background_color=</span>(<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetBackgroundColor</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">result</span>&#x000A;    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">RuntimeError</span>, <span class="ruby-string">&quot;Could not save background color&quot;</span>)&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-background_color-3D-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 99</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">background_color=</span>(<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetBackgroundColor</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">result</span>&#x000A;    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">RuntimeError</span>, <span class="ruby-string">&quot;Could not save background color&quot;</span>)&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-bits_per_pixel'>
@@ -152,7 +150,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-bits_per_pixel-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-bits_per_pixel-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 105</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">bits_per_pixel</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetBPP</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-bits_per_pixel-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 111</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">bits_per_pixel</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetBPP</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-blue_mask'>
@@ -170,7 +168,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-blue_mask-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-blue_mask-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 113</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">blue_mask</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetBlueMask</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-blue_mask-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 119</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">blue_mask</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetBlueMask</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-color_type'>
@@ -186,7 +184,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-color_type-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-color_type-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 119</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">color_type</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetColorType</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-color_type-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 125</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">color_type</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetColorType</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-dib_size'>
@@ -205,7 +203,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-dib_size-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-dib_size-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 128</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">dib_size</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetDIBSize</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-dib_size-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 134</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">dib_size</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetDIBSize</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-dots_per_meter_x'>
@@ -223,7 +221,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-dots_per_meter_x-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-dots_per_meter_x-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 136</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">dots_per_meter_x</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetDotsPerMeterX</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-dots_per_meter_x-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 142</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">dots_per_meter_x</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetDotsPerMeterX</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-dots_per_meter_x-3D'>
@@ -241,7 +239,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-dots_per_meter_x-3D-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-dots_per_meter_x-3D-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 144</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">dots_per_meter_x=</span>(<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SetDotsPerMeterX</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-dots_per_meter_x-3D-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 150</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">dots_per_meter_x=</span>(<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SetDotsPerMeterX</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-dots_per_meter_y'>
@@ -259,7 +257,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-dots_per_meter_y-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-dots_per_meter_y-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 152</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">dots_per_meter_y</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetDotsPerMeterY</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-dots_per_meter_y-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 158</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">dots_per_meter_y</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetDotsPerMeterY</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-dots_per_meter_y-3D'>
@@ -277,7 +275,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-dots_per_meter_y-3D-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-dots_per_meter_y-3D-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 160</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">dots_per_meter_y=</span>(<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SetDotsPerMeterY</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-dots_per_meter_y-3D-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 166</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">dots_per_meter_y=</span>(<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SetDotsPerMeterY</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-green_mask'>
@@ -295,7 +293,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-green_mask-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-green_mask-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 167</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">green_mask</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetGreenMask</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-green_mask-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 173</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">green_mask</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetGreenMask</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-has_background_color'>
@@ -312,7 +310,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-has_background_color-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-has_background_color-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 174</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">has_background_color</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_HasBackgroundColor</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-has_background_color-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 180</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">has_background_color</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_HasBackgroundColor</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-has_pixels'>
@@ -332,7 +330,23 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-has_pixels-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-has_pixels-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 184</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">has_pixels</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_HasPixels</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-has_pixels-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 190</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">has_pixels</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_HasPixels</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-has_rgb_masks'>
+                <a name='method-i-has_rgb_masks'></a>
+                <div class='synopsis'>
+                  <span class='name'>has_rgb_masks</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-has_rgb_masks-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-has_rgb_masks-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 196</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">has_rgb_masks</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_HasRGBMasks</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-height'>
@@ -349,7 +363,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-height-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-height-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 191</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">height</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetHeight</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-height-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 203</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">height</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetHeight</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-image_type'>
@@ -367,7 +381,23 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-image_type-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-image_type-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 198</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">image_type</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetImageType</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-image_type-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 210</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">image_type</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetImageType</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-info_header'>
+                <a name='method-i-info_header'></a>
+                <div class='synopsis'>
+                  <span class='name'>info_header</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-info_header-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-info_header-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 216</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">info_header</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">InfoHeader</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetInfoHeader</span>(<span class="ruby-keyword">self</span>))&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-line'>
@@ -379,18 +409,17 @@
                 <div class='description'>
                   
                   <p>Returns the width of the bitmap in bytes.  See also <a
-                  href="Information.html#method-i-pitch">FreeImage::Information.pitch</a>.
-                  There has been some criticism on the name of this function. Some people
-                  expect it to return a scanline in the pixel data, while it actually returns
-                  the width of the bitmap in bytes. As far as I know the term Line is common
-                  terminology for the width of a bitmap in bytes. It is at least used by
-                  Microsoft DirectX.</p>
+                  href="Information.html#method-i-pitch">#pitch</a>. There has been some
+                  criticism on the name of this function. Some people expect it to return a
+                  scanline in the pixel data, while it actually returns the width of the
+                  bitmap in bytes. As far as I know the term Line is common terminology for
+                  the width of a bitmap in bytes. It is at least used by Microsoft DirectX.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-line-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-line-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 209</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">line</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetLine</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-line-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 227</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">line</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetLine</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-palette'>
@@ -401,14 +430,14 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Returns a bitmap's palette. If the bitmap doesn’t have a palette (i.e.
+                  <p>Returns a bitmap&#39;s palette. If the bitmap doesn’t have a palette (i.e.
                   when the pixel bit depth is greater than 8), this return nil.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-palette-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-palette-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 217</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">palette</span>&#x000A;  <span class="ruby-ivar">@palette</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Palette</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-palette-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 235</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">palette</span>&#x000A;  <span class="ruby-ivar">@palette</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Palette</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-pitch'>
@@ -429,7 +458,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-pitch-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-pitch-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 226</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">pitch</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetPitch</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-pitch-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 244</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">pitch</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetPitch</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-red_mask'>
@@ -447,7 +476,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-red_mask-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-red_mask-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 233</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">red_mask</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetRedMask</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-red_mask-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 251</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">red_mask</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetRedMask</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-transparency_count'>
@@ -465,7 +494,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-transparency_count-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-transparency_count-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 241</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">transparency_count</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetTransparencyCount</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-transparency_count-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 259</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">transparency_count</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetTransparencyCount</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-transparent'>
@@ -485,7 +514,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-transparent-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-transparent-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 250</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">transparent</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_IsTransparent</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-transparent-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 268</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">transparent</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_IsTransparent</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-transparent-3D'>
@@ -506,7 +535,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-transparent-3D-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-transparent-3D-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 260</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">transparent=</span>(<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SetTransparent</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-transparent-3D-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 278</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">transparent=</span>(<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SetTransparent</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-transparent_index'>
@@ -528,7 +557,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-transparent_index-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-transparent_index-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 272</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">transparent_index</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetTransparentIndex</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-transparent_index-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 290</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">transparent_index</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetTransparentIndex</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-transparent_index-3D'>
@@ -549,13 +578,13 @@
                   non-transparent by this method.</p>
                   
                   <p>As with FreeImage::Bitmap.transparency_table=, this method also sets the
-                  image's transparency property to true for palletised images.</p>
+                  image&#39;s transparency property to true for palletised images.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-transparent_index-3D-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-transparent_index-3D-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 288</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">transparent_index=</span>(<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SetTransparentIndex</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-transparent_index-3D-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 306</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">transparent_index=</span>(<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SetTransparentIndex</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-width'>
@@ -572,7 +601,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-width-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-width-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 299</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">width</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetWidth</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-width-source'><span class="ruby-comment"># File lib/free-image/modules/information.rb, line 317</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">width</span>&#x000A;  <span class="ruby-identifier">result</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_GetWidth</span>(<span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">result</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
             </div>

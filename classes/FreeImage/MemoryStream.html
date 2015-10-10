@@ -2,7 +2,7 @@
 <html lang='en'>
   <head>
     <title>FreeImage::MemoryStream</title>
-    <meta content='text/html; charset=IBM437' http-equiv='Content-Type'>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
       //<![CDATA[
@@ -35,8 +35,8 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../FreeImage.html">FreeImage</a></strong>
+          Superclass:
+          <strong>FreeImage::FFI::AutoPointer</strong>
         </div>
       </div>
       <div id='content'>
@@ -76,14 +76,13 @@
                   
                   <p>Create a new memory stream.</p>
                   
-                  <h2>Parameters</h2>
-                  <table class="rdoc-list"><tr><td class="rdoc-term"><p>bytes</p></td>
-                  <td>
+                  <h2 id="method-c-new-label-Parameters">Parameters<span><a href="#method-c-new-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h2>
+                  <table class="rdoc-list note-list"><tbody><tr><td class='label'>bytes</td><td>
                   <p>If specified, a binary encoded Ruby string that stores image data.  <a
                   href="../FreeImage.html">FreeImage</a> will treat the string as read-only. 
                   If not specified, a writable <a href="MemoryStream.html">MemoryStream</a>
                   is created.</p>
-                  </td></tr></table>
+                  </td></tr></tbody></table>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-new-source'); return false">
@@ -123,7 +122,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-bytes-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-bytes-source'><span class="ruby-comment"># File lib/free-image/sources/memory.rb, line 79</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">bytes</span>&#x000A;  <span class="ruby-identifier">size</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Type</span><span class="ruby-operator">::</span><span class="ruby-constant">CHAR</span>.<span class="ruby-identifier">size</span>&#x000A;&#x000A;  <span class="ruby-comment"># Reset memory to start</span>&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SeekMemory</span>(<span class="ruby-keyword">self</span>, <span class="ruby-value">0</span>, <span class="ruby-operator">::</span><span class="ruby-constant">IO</span><span class="ruby-operator">::</span><span class="ruby-constant">SEEK_SET</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;&#x000A;  <span class="ruby-identifier">buffer</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Type</span><span class="ruby-operator">::</span><span class="ruby-constant">CHAR</span>, <span class="ruby-identifier">size</span> * <span class="ruby-identifier">count</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">size</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ReadMemory</span>(<span class="ruby-identifier">buffer</span>, <span class="ruby-identifier">size</span>, <span class="ruby-identifier">count</span>, <span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">null?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">read_string</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-bytes-source'><span class="ruby-comment"># File lib/free-image/sources/memory.rb, line 79</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">bytes</span>&#x000A;  <span class="ruby-identifier">size</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Type</span><span class="ruby-operator">::</span><span class="ruby-constant">CHAR</span>.<span class="ruby-identifier">size</span>&#x000A;&#x000A;  <span class="ruby-comment"># Reset memory to start</span>&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_SeekMemory</span>(<span class="ruby-keyword">self</span>, <span class="ruby-value">0</span>, <span class="ruby-operator">::</span><span class="ruby-constant">IO</span><span class="ruby-operator">::</span><span class="ruby-constant">SEEK_SET</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;&#x000A;  <span class="ruby-identifier">buffer</span> = <span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">MemoryPointer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">FFI</span><span class="ruby-operator">::</span><span class="ruby-constant">Type</span><span class="ruby-operator">::</span><span class="ruby-constant">CHAR</span>, <span class="ruby-identifier">size</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">count</span>)&#x000A;  <span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">check_last_error</span>&#x000A;  <span class="ruby-identifier">size</span> = <span class="ruby-constant">FreeImage</span>.<span class="ruby-constant">FreeImage_ReadMemory</span>(<span class="ruby-identifier">buffer</span>, <span class="ruby-identifier">size</span>, <span class="ruby-identifier">count</span>, <span class="ruby-keyword">self</span>)&#x000A;  <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">null?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">read_string</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-count'>
