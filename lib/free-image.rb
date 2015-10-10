@@ -49,8 +49,6 @@ module FreeImage
 
   if free_image_library_paths.any?
     ffi_lib(*free_image_library_paths)
-  elsif FFI::Platform.windows?
-    ffi_lib("FreeImaged")
   else
     ffi_lib("freeimage")
   end
