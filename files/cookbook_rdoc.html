@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>cookbook.rdoc</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <link href='../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='file' id='wrapper'>
+      <div class='header'>
+        <h1 class='name'>cookbook.rdoc</h1>
+        <div class='paths'>
+          cookbook.rdoc
+        </div>
+        <div class='last-update'>
+          Last Update:
+          <span class='datetime'>2015-10-10 16:16:28 -0700</span>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            
+            <h1 id="label-Getting+Started+With+FreeImage">Getting Started With FreeImage<span><a href="#label-Getting+Started+With+FreeImage">&para;</a> <a href="#top">&uarr;</a></span></h1>
+            
+            <p>Below are various recipes to get you up and running with FreeImage as
+            quickly as possible.  The example images tcan be found in the test/images
+            directory.  For more general information about FreeImage, including
+            installation instructions, please refer to <a
+            href="README_rdoc.html">README.rdoc</a>.</p>
+            
+            <h2 id="label-Loading+An+Image">Loading An Image<span><a href="#label-Loading+An+Image">&para;</a> <a href="#top">&uarr;</a></span></h2>
+            
+            <p>The first step in using FreeImage is to load an image.  FreeImage can load
+            images from files, strings or IO streams.  The simplest way to do this is
+            via the <a
+            href="../classes/FreeImage/Bitmap.html#method-c-open">FreeImage::Bitmap.open</a>
+            method:</p>
+            
+            <pre class="ruby"><span class="ruby-identifier">image</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">Bitmap</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&#39;images/lena.tiff&#39;</span>)&#x000A;<span class="ruby-identifier">image</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">Bitmap</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">io_object</span>)&#x000A;<span class="ruby-identifier">image</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">Bitmap</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">Memory</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">string</span>))</pre>
+            
+            <p>The open method also takes two additional optional parameters, format and
+            flags, that provide greater control over opening images if needed.</p>
+            
+            <p>The open method works similary to File.open, meaning you can also pass it a
+            block.</p>
+            
+            <pre>FreeImage::Bitmap.open(&#39;images/lena.png&#39;) do |image|&#x000A;  ... do some stuff..&#x000A;end</pre>
+            
+            <p>Once the block completes, the image will be automatically freed for you. 
+            If you don&#39;t pass block, then the image will be freed by Ruby&#39;s
+            Garbage Collector once it goes out of scope.  For more information about
+            memory management, refer to the readme [<a
+            href="README_rdoc.html">README.rdoc</a>].</p>
+            
+            <p><img src="../cookbook/lena.png" /></p>
+            
+            <h2 id="label-Saving+An+Image">Saving An Image<span><a href="#label-Saving+An+Image">&para;</a> <a href="#top">&uarr;</a></span></h2>
+            
+            <p>Now let&#39;s say you want to save the image to :png format.  This is done
+            via the <a
+            href="../classes/FreeImage/Bitmap.html#method-i-save">FreeImage::Bitmap#save</a>
+            method.  The save method takes a destination, which can be a files, strings
+            or IO stream, and an image format.</p>
+            
+            <pre class="ruby"><span class="ruby-identifier">image</span>.<span class="ruby-identifier">save</span>(<span class="ruby-string">&#39;images/lena.png&#39;</span>, :<span class="ruby-identifier">png</span>)</pre>
+            
+            <h2 id="label-Creating+a+Thumbnail">Creating a Thumbnail<span><a href="#label-Creating+a+Thumbnail">&para;</a> <a href="#top">&uarr;</a></span></h2>
+            
+            <p>Next, let&#39;s assume our application needs to show a list of thumbnails
+            for the images</p>
+            
+            <pre>it stores.  This can be done using the make_thumbnail[rdoc-ref:FreeImage::Modify.make_thumbnail]</pre>
+            
+            <p>method in the <a href="../classes/FreeImage/Modify.html">Modify</a> module.</p>
+            
+            <pre class="ruby"><span class="ruby-identifier">thumbnail</span> = <span class="ruby-identifier">image</span>.<span class="ruby-identifier">make_thumbnail</span>(<span class="ruby-value">100</span>)&#x000A;<span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">save</span>(<span class="ruby-string">&#39;images/lena_thumbnail.png&#39;</span>, :<span class="ruby-identifier">png</span>)</pre>
+            
+            <p><img src="../cookbook/lena_thumbnail.png" /></p>
+            
+            <h2 id="label-Putting+a+Border+Around+a+Thumbnail">Putting a Border Around a Thumbnail<span><a href="#label-Putting+a+Border+Around+a+Thumbnail">&para;</a> <a href="#top">&uarr;</a></span></h2>
+            
+            <p>Once we have created a thumbnail, let&#39;s outline it with a red border. 
+            There are various approaches to do doing this.  In the first approach,
+            we&#39;ll use the <a
+            href="../classes/FreeImage/Modify.html#method-i-enlarge_canvas">FreeImage::Modify#enlarge_canvas</a>
+            method.</p>
+            
+            <pre class="ruby"><span class="ruby-comment"># Border size</span>&#x000A;<span class="ruby-identifier">border</span> = <span class="ruby-value">4</span>&#x000A;&#x000A;<span class="ruby-comment"># Specify the color as red</span>&#x000A;<span class="ruby-identifier">color</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">RGBQuad</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">255</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>)&#x000A;&#x000A;<span class="ruby-comment"># Add 4 pixel red border around the thumbnail</span>&#x000A;<span class="ruby-identifier">thumbnail_border</span> = <span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">enlarge_canvas</span>(<span class="ruby-identifier">border</span>, <span class="ruby-identifier">border</span>, <span class="ruby-identifier">border</span>, <span class="ruby-identifier">border</span>, <span class="ruby-identifier">color</span>)&#x000A;<span class="ruby-identifier">thumbnail_border</span>.<span class="ruby-identifier">save</span>(<span class="ruby-string">&#39;images/lena_thumbnail_border_1.png&#39;</span>, :<span class="ruby-identifier">png</span>)</pre>
+            
+            <p><img src="../cookbook/lena_thumbnail_border_enlarge.png" /></p>
+            
+            <p>In the second approach, let&#39;s create a image with a red background and
+            then paste it on top of our thumbnail:</p>
+            
+            <pre class="ruby"><span class="ruby-comment"># Create a red image that is the same size as the thumbnail</span>&#x000A;<span class="ruby-identifier">red_image</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">Bitmap</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">width</span>, <span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">height</span>, <span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">bits_per_pixel</span>)&#x000A;<span class="ruby-identifier">red_image_new</span>.<span class="ruby-identifier">fill_background</span>(<span class="ruby-identifier">color</span>)&#x000A;&#x000A;<span class="ruby-comment"># Now copy a subimage from the thumbnail that is 2 borders less wide and tall</span>&#x000A;<span class="ruby-identifier">subimage</span> = <span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">copy</span>(<span class="ruby-identifier">border</span>, <span class="ruby-identifier">border</span>, <span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">width</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">border</span>, <span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">height</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">border</span>)&#x000A;&#x000A;<span class="ruby-comment"># Now paste the subimage into the red image.  Specify an alpha over 255</span>&#x000A;<span class="ruby-comment"># to disable alpha blending</span>&#x000A;<span class="ruby-identifier">red_image</span>.<span class="ruby-identifier">paste</span>(<span class="ruby-identifier">subimage</span>, <span class="ruby-identifier">border</span>, <span class="ruby-identifier">border</span>, <span class="ruby-value">300</span>)&#x000A;<span class="ruby-identifier">red_image</span>.<span class="ruby-identifier">save</span>(<span class="ruby-string">&#39;images/test1.png&#39;</span>, :<span class="ruby-identifier">png</span>)&#x000A;<span class="ruby-identifier">thumbnail_border</span>.<span class="ruby-identifier">save</span>(<span class="ruby-string">&#39;images/lena_thumbnail_border_2.png&#39;</span>, :<span class="ruby-identifier">png</span>)</pre>
+            
+            <p><img src="../cookbook/lena_thumbnail_border_paste.png" /></p>
+            
+            <h2 id="label-Resampling+An+Image">Resampling An Image<span><a href="#label-Resampling+An+Image">&para;</a> <a href="#top">&uarr;</a></span></h2>
+            
+            <p>If you need additional control over how an image is resampled, use the <a
+            href="../classes/FreeImage/Modify.html#method-i-rescale">FreeImage::Modify#rescale</a>
+            method, which lets you specify a filtering algorithm.  To see how each
+            filter works, let&#39;s scale up the thumbnail by 400%.</p>
+            
+            <pre class="ruby"><span class="ruby-identifier">thumbnail</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">Bitmap</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&#39;images/lena_thumbnail.png&#39;</span>)&#x000A;&#x000A;<span class="ruby-constant">FreeImage</span>.<span class="ruby-identifier">enum_type</span>(:<span class="ruby-identifier">filter</span>).<span class="ruby-identifier">symbols</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">filter</span><span class="ruby-operator">|</span>&#x000A;  <span class="ruby-identifier">rescaled</span> = <span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">rescale</span>(<span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">width</span> <span class="ruby-operator">*</span> <span class="ruby-value">4</span>, <span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">height</span> <span class="ruby-operator">*</span> <span class="ruby-value">4</span>, <span class="ruby-identifier">filter</span>)&#x000A;  <span class="ruby-identifier">rescaled</span>.<span class="ruby-identifier">save</span>(<span class="ruby-node">&quot;images/lena_rescale_#{filter.to_s}.png&quot;</span>, :<span class="ruby-identifier">png</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+            
+            <p><img src="../cookbook/lena_rescale_box.png" /> <img
+            src="../cookbook/lena_rescale_bicubic.png" /> <img
+            src="../cookbook/lena_rescale_bilinear.png" /> <img
+            src="../cookbook/lena_rescale_bspline.png" /> <img
+            src="../cookbook/lena_rescale_catmullrom.png" /> <img
+            src="../cookbook/lena_rescale_lanczos3.png" /></p>
+            
+            <h2 id="label-Flipping+An+Image">Flipping An Image<span><a href="#label-Flipping+An+Image">&para;</a> <a href="#top">&uarr;</a></span></h2>
+            
+            <p>The Transform modules lets you flip or rotate an image. Let&#39;s say you
+            want to flip your image horizontally:</p>
+            
+            <pre class="ruby"><span class="ruby-identifier">image</span>.<span class="ruby-identifier">flip_horizontal</span>&#x000A;<span class="ruby-identifier">image</span>.<span class="ruby-identifier">save</span>(<span class="ruby-string">&#39;images/lena_flipped.png&#39;</span>, :<span class="ruby-identifier">png</span>)</pre>
+            
+            <p><img src="../cookbook/lena_flipped.png" /></p>
+            
+            <h2 id="label-Rotating+An+Image">Rotating An Image<span><a href="#label-Rotating+An+Image">&para;</a> <a href="#top">&uarr;</a></span></h2>
+            
+            <p>Next, let&#39;s rotate an image. Two methods are provide, <a
+            href="../classes/FreeImage/Transforms.html#method-i-rotate">FreeImage::Transforms#rotate</a>
+            and <a
+            href="../classes/FreeImage/Transforms.html#method-i-rotate_ex">FreeImage::Transforms#rotate_ex</a>.
+            The rotate method is simpler to use:</p>
+            
+            <pre class="ruby"><span class="ruby-identifier">image</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">Bitmap</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&#39;images/lena.png&#39;</span>, :<span class="ruby-identifier">png</span>)&#x000A;&#x000A;<span class="ruby-comment"># Rotate the image 45 degrees using white as the background fill color</span>&#x000A;<span class="ruby-identifier">color</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">RGBQuad</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">255</span>, <span class="ruby-value">255</span>, <span class="ruby-value">255</span>, <span class="ruby-value">0</span>)&#x000A;<span class="ruby-identifier">rotated</span> = <span class="ruby-identifier">image</span>.<span class="ruby-identifier">rotate</span>(<span class="ruby-value">45</span>, <span class="ruby-identifier">color</span>)&#x000A;<span class="ruby-identifier">rotated</span>.<span class="ruby-identifier">save</span>(<span class="ruby-string">&quot;images/lena_rotate_45.png&quot;</span>, :<span class="ruby-identifier">png</span>)</pre>
+            
+            <p><img src="../cookbook/lena_rotate_45.png" /></p>
+            
+            <p>Notice that the image size and geometry has changed?  Thus, the rotate
+            function is best for rotating and image 90, 180 or 270 degrees.</p>
+            
+            <p>Let&#39;s now rotate the image using the rotate_ex method while using a
+            mask:</p>
+            
+            <pre class="ruby"><span class="ruby-identifier">rotated</span> = <span class="ruby-identifier">image</span>.<span class="ruby-identifier">rotate_ex</span>(<span class="ruby-value">45</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-identifier">image</span>.<span class="ruby-identifier">width</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>, <span class="ruby-identifier">image</span>.<span class="ruby-identifier">height</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>, <span class="ruby-keyword">true</span>)&#x000A;<span class="ruby-identifier">rotated</span>.<span class="ruby-identifier">save</span>(<span class="ruby-string">&quot;images/lena_rotate_ex_45_masked.png&quot;</span>, :<span class="ruby-identifier">png</span>)</pre>
+            
+            <p>And now let&#39;s rotate the image without a mask, so data is filled in
+            using a mirroring algorithm:</p>
+            
+            <pre class="ruby"><span class="ruby-identifier">rotated</span> = <span class="ruby-identifier">image</span>.<span class="ruby-identifier">rotate_ex</span>(<span class="ruby-value">45</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-identifier">image</span>.<span class="ruby-identifier">width</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>, <span class="ruby-identifier">image</span>.<span class="ruby-identifier">height</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>, <span class="ruby-keyword">false</span>)&#x000A;<span class="ruby-identifier">rotated</span>.<span class="ruby-identifier">save</span>(<span class="ruby-string">&quot;images/lena_rotate_ex_45_mirrored.png&quot;</span>, :<span class="ruby-identifier">png</span>)</pre>
+            
+            <p><img src="../cookbook/lena_rotate_ex_45_masked.png" /> <img
+            src="../cookbook/lena_rotate_ex_45_mirrored.png" /></p>
+            
+            <p>Last, lets rotate the image around the top left corner:</p>
+            
+            <pre class="ruby"><span class="ruby-identifier">rotated</span> = <span class="ruby-identifier">image</span>.<span class="ruby-identifier">rotate_ex</span>(<span class="ruby-value">45</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-keyword">true</span>)&#x000A;<span class="ruby-identifier">rotated</span>.<span class="ruby-identifier">save</span>(<span class="ruby-string">&quot;images/lena_rotate_ex_45_top_left.png&quot;</span>, :<span class="ruby-identifier">png</span>)</pre>
+            
+            <p><img src="../cookbook/lena_rotate_ex_45_top_left.png" /></p>
+            
+            <h2 id="label-Compositing+An+Image">Compositing An Image<span><a href="#label-Compositing+An+Image">&para;</a> <a href="#top">&uarr;</a></span></h2>
+            
+            <p>FreeImage also lets you composite an image with a background color or
+            another image. Here is an example of compositing an image with the color
+            green.</p>
+            
+            <pre class="ruby"><span class="ruby-identifier">image</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">Bitmap</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&#39;images/sample.png&#39;</span>)&#x000A;<span class="ruby-identifier">color</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">RGBQuad</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">0</span>, <span class="ruby-value">255</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>)&#x000A;<span class="ruby-identifier">composite</span> =  <span class="ruby-identifier">image</span>.<span class="ruby-identifier">composite_with_color</span>(<span class="ruby-identifier">color</span>)&#x000A;<span class="ruby-identifier">composite</span>.<span class="ruby-identifier">save</span>(<span class="ruby-string">&quot;images/sample_composite_color.png&quot;</span>, :<span class="ruby-identifier">png</span>)</pre>
+            
+            <p><img src="../cookbook/sample.png" /> <img
+            src="../cookbook/sample_composite_color.png" /></p>
+            
+            <p>And here is an example of compositing two images together:</p>
+            
+            <pre class="ruby"><span class="ruby-identifier">image</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">Bitmap</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">image_path</span>(<span class="ruby-string">&#39;sample.png&#39;</span>))&#x000A;<span class="ruby-identifier">background</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">Bitmap</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">image_path</span>(<span class="ruby-string">&#39;gradient.png&#39;</span>))&#x000A;<span class="ruby-comment"># Need to make sure the background image is the same size</span>&#x000A;<span class="ruby-identifier">background</span> = <span class="ruby-identifier">background</span>.<span class="ruby-identifier">rescale</span>(<span class="ruby-identifier">image</span>.<span class="ruby-identifier">width</span>, <span class="ruby-identifier">image</span>.<span class="ruby-identifier">height</span>, :<span class="ruby-identifier">box</span>)&#x000A;<span class="ruby-identifier">composite</span> = <span class="ruby-identifier">image</span>.<span class="ruby-identifier">composite</span>(<span class="ruby-identifier">background</span>)</pre>
+            
+            <p><img src="../cookbook/sample.png" /> <img
+            src="../cookbook/sample_composite.png" /></p>
+            
+            <h2 id="label-Manipulating+An+Image">Manipulating An Image<span><a href="#label-Manipulating+An+Image">&para;</a> <a href="#top">&uarr;</a></span></h2>
+            
+            <p>FreeImage also allows you to directly access each pixel in an image. As an
+            example, let&#39;s create an image that has a gradient from blue in the top
+            left corner to green in the bottom right</p>
+            
+            <pre class="ruby"><span class="ruby-identifier">image</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">Bitmap</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">300</span>, <span class="ruby-value">300</span>, <span class="ruby-value">24</span>)&#x000A;<span class="ruby-identifier">color</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">RGBQuad</span>.<span class="ruby-identifier">new</span>&#x000A;&#x000A;<span class="ruby-identifier">image</span>.<span class="ruby-identifier">width</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>&#x000A;  <span class="ruby-identifier">image</span>.<span class="ruby-identifier">height</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">y</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-identifier">color</span>[:<span class="ruby-identifier">green</span>] = (<span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_f</span><span class="ruby-operator">/</span><span class="ruby-identifier">image</span>.<span class="ruby-identifier">width</span>) <span class="ruby-operator">*</span> <span class="ruby-value">255</span>&#x000A;    <span class="ruby-identifier">color</span>[:<span class="ruby-identifier">blue</span>] =  (<span class="ruby-identifier">y</span>.<span class="ruby-identifier">to_f</span><span class="ruby-operator">/</span><span class="ruby-identifier">image</span>.<span class="ruby-identifier">height</span>) <span class="ruby-operator">*</span> <span class="ruby-value">255</span>&#x000A;    <span class="ruby-identifier">image</span>.<span class="ruby-identifier">set_pixel_color</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>, <span class="ruby-identifier">color</span>)&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span>&#x000A;&#x000A;<span class="ruby-identifier">image</span>.<span class="ruby-identifier">save</span>(<span class="ruby-string">&#39;images/gradient.png&#39;</span>, :<span class="ruby-identifier">png</span>)</pre>
+            
+            <p><img src="../cookbook/gradient.png" /></p>
+            
+            <p>You can use a similar technique as another solution to drawing a border
+            around a thumbnail as discussed above.</p>
+            
+            <h2 id="label-Using+Scanlines">Using Scanlines<span><a href="#label-Using+Scanlines">&para;</a> <a href="#top">&uarr;</a></span></h2>
+            
+            <p><a href="../classes/FreeImage/Scanline.html">Scanlines</a> provide low
+            level access to image data.</p>
+            
+            <p>The only lower-level access is working with the actual raw bytes, which you
+            can do via the FreeeImage::Bitmap#bytes method, but its not recommended.</p>
+            
+            <p>A scanline represents one row of image data, starting from the bottom. 
+            Let&#39;s go back to our example above of drawing a red border around a
+            thumbnail.</p>
+            
+            <pre class="ruby"><span class="ruby-comment"># Helper method</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_to_red</span>(<span class="ruby-identifier">color</span>)&#x000A;  <span class="ruby-identifier">color</span>[:<span class="ruby-identifier">red</span>] = <span class="ruby-value">255</span>&#x000A;  <span class="ruby-identifier">color</span>[:<span class="ruby-identifier">green</span>] = <span class="ruby-value">0</span>&#x000A;  <span class="ruby-identifier">color</span>[:<span class="ruby-identifier">blue</span>] = <span class="ruby-value">0</span>&#x000A;<span class="ruby-keyword">end</span>&#x000A;&#x000A;<span class="ruby-comment"># Create a thumbnail</span>&#x000A;<span class="ruby-identifier">image</span> = <span class="ruby-constant">FreeImage</span><span class="ruby-operator">::</span><span class="ruby-constant">Bitmap</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&#39;images/lena.png&#39;</span>)&#x000A;<span class="ruby-identifier">thumbnail</span> = <span class="ruby-identifier">image</span>.<span class="ruby-identifier">make_thumbnail</span>(<span class="ruby-value">100</span>)&#x000A;&#x000A;<span class="ruby-comment"># Draw bottom border 4 pixels tall</span>&#x000A;(<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">3</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">index</span><span class="ruby-operator">|</span>&#x000A;  <span class="ruby-identifier">scanline</span> = <span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">scanline</span>(<span class="ruby-identifier">index</span>)&#x000A;  <span class="ruby-identifier">scanline</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">color</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-identifier">set_to_red</span>(<span class="ruby-identifier">color</span>)&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span>&#x000A;&#x000A;<span class="ruby-comment"># Draw top border 4 pixels tall</span>&#x000A;((<span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">height</span> <span class="ruby-operator">-</span> <span class="ruby-value">5</span>)<span class="ruby-operator">..</span>(<span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">height</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">index</span><span class="ruby-operator">|</span>&#x000A;  <span class="ruby-identifier">scanline</span> = <span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">scanline</span>(<span class="ruby-identifier">index</span>)&#x000A;  <span class="ruby-identifier">scanline</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">color</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-identifier">set_to_red</span>(<span class="ruby-identifier">color</span>)&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span>&#x000A;&#x000A;<span class="ruby-comment"># We could skip top and bottom 4 scanlines since</span>&#x000A;<span class="ruby-comment"># already drew them.</span>&#x000A;<span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">height</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">index</span><span class="ruby-operator">|</span>&#x000A;  <span class="ruby-identifier">scanline</span> = <span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">scanline</span>(<span class="ruby-identifier">index</span>)&#x000A;  <span class="ruby-comment"># Draw left and right borders 4 pixels wide</span>&#x000A;  (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">4</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">index</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-identifier">set_to_red</span>(<span class="ruby-identifier">scanline</span>[<span class="ruby-identifier">index</span>])&#x000A;  <span class="ruby-keyword">end</span>&#x000A;&#x000A;  ((<span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">width</span> <span class="ruby-operator">-</span> <span class="ruby-value">5</span>)<span class="ruby-operator">..</span>(<span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">width</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">index</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-identifier">set_to_red</span>(<span class="ruby-identifier">scanline</span>[<span class="ruby-identifier">index</span>])&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span>&#x000A;&#x000A;<span class="ruby-identifier">thumbnail</span>.<span class="ruby-identifier">save</span>(<span class="ruby-string">&quot;images/lena_thumbnail_border_scanline.png&quot;</span>, :<span class="ruby-identifier">png</span>)</pre>
+            
+            <p><img src="../cookbook/lena_thumbnail_border_scanline.png" /></p>
+          </div>
+          <div id='context'>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a target="docwin" href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>
