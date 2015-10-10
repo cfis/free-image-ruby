@@ -1,15 +1,25 @@
 = Release History
 
-== 0.6.2 / 2011-09-06 Charlie Savage
+== 0.7.0 / 2015-10-10
+* Add test and example for compositing images (Charlie Savage)
+* Specify freeimage version requirement (Charlie Savage)
+* Fix up failing tests and test with FreeImage version 3.17.0 (Charlie Savage)
+* Fix flip_vertical! to flip vertically, not horizontally (Chris Howlett)
+* No rgb mask stored in modern FreeImage unless using BI_BITFIELDS in 16 bit BMP  (Benjamin Armintor)
+* Ruby object_id is a 32-bit value (Benjamin Armintor)
+* Fix C type translation for bytes on osx/intel (Benjamin Armintor)
+* Test suite clean up  (Benjamin Armintor)
+
+== 0.6.2 / 2011-09-06
 
 * Add null pointer checks when loading images
 * Add null pointer check when creating a new image
 
-== 0.6.1 / 2011-09-06 Charlie Savage
+== 0.6.1 / 2011-09-06
 
 * Use release version on windows of FreeImage, not debug version.
 
-== 0.6.0 / 2011-09-02 Charlie Savage
+== 0.6.0 / 2011-09-02
 
 * Update documentation
 * Add alternate library names
