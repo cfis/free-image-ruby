@@ -153,8 +153,8 @@ module FreeImage
     # dst::     The destination where the image will be saved.
     # format::  The format[rdoc-ref:FreeImage.formats] to save the image to.
     # flags::   Format specific flags that control how a bitmap is saved.  These flags are defined
-    #            as constants on the AbstractSource class.  Flags can be combined using
-    #            Ruby's bitwise or operator (|)
+    #           as constants on the AbstractSource[rdoc-ref:FreeImage::AbstractSource::Encoder] class.
+    #           Flags can be combined using Ruby's bitwise or operator (|)
     #
     def save(source, format, flags = 0)
       self.class.figure_source(source).save(self, format, flags)
