@@ -28,7 +28,7 @@ Note that FreeImage is not the right library for you if you need:
 * Vector graphics
 
 == Installation
-free-image requires Ruby 1.8.7 or higher.  The easiest way to install
+free-image requires FreeImage version 3.10 or higher and Ruby 1.8.7 or higher.  The easiest way to install
 free-image is via Ruby Gems.  To install:
 
  gem install free-image
