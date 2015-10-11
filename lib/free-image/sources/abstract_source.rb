@@ -60,6 +60,8 @@ module FreeImage
 
     # The Encoder module defines various constants that
     # control how various image formats are saved.
+    #
+    # Note, some image formats, such as JPEG, reserve an optional integer range for setting the quality level. For example, to save a progressive JPEG with a quality of 90 (out of 100), you'd use the following flag <tt>90 | JPEG_PROGRESSIVE</tt>. For more information, refer to the FreeImage documentation: http://freeimage.sourceforge.net/documentation.html.
     module Encoder
       BMP_DEFAULT = 0x0
       BMP_SAVE_RLE = 0x1
