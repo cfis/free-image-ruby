@@ -166,7 +166,7 @@ module FreeImage
       case source
       when AbstractSource
         source
-      when ::IO
+      when ::IO, (const_get(:StringIO) rescue ::IO), (const_get(:Tempfile) rescue ::IO)
         IO.new(source)
       when String
         File.new(source)
