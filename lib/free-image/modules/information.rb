@@ -50,9 +50,6 @@ module FreeImage
   #DLL_API BITMAPINFOHEADER DLL_CALLCONV FreeImage_GetInfoHeader(FIBITMAP *dib);
   attach_function('FreeImage_GetInfoHeader', [:pointer], FreeImage::InfoHeader)
 
-  #DLL_API BOOL DLL_CALLCONV FreeImage_hasRGBMasks(FIBITMAP *dib);
-  attach_function('FreeImage_HasRGBMasks', [:pointer], FreeImage::Boolean)
-
   #DLL_API unsigned DLL_CALLCONV FreeImage_GetTransparencyCount(FIBITMAP *dib);
   attach_function('FreeImage_GetTransparencyCount', [:pointer], :ulong)
 
@@ -76,7 +73,13 @@ module FreeImage
 
   # DLL_API BOOL DLL_CALLCONV FreeImage_SetBackgroundColor(FIBITMAP *dib, RGBQUAD *bkcolor);
   attach_function('FreeImage_SetBackgroundColor', [:pointer, :pointer], FreeImage::Boolean)
-  
+
+  begin
+    attach_function('FreeImage_HasRGBMasks', [:pointer], FreeImage::Boolean)
+  rescue FFI::NotFoundError
+    # nothing to do
+  end
+
   # Once a bitmap is loaded into memory, you can use the following methods to
   # retrieve information about is type, dimensions, colors, etc.
   module Information
