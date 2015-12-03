@@ -1,5 +1,8 @@
 = Release History
 
+== 0.7.1 / 2015-12-02
+* Don't crash if FreeImage_HasRGBMasks does not exist
+
 == 0.7.0 / 2015-10-10
 * Add test and example for compositing images (Charlie Savage)
 * Specify freeimage version requirement (Charlie Savage)
