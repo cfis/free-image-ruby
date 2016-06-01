@@ -45,6 +45,10 @@ class InformationTest < Minitest::Test
     assert_equal(52664, sample_image.dib_size)
   end
 
+  def test_memory_size
+    assert_equal(54737, sample_image.memory_size)
+  end
+
   def test_dots_per_meter_x
     assert_equal(2835, sample_image.dots_per_meter_x)
   end

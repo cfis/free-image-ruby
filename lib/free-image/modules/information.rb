@@ -23,6 +23,9 @@ module FreeImage
   #DLL_API unsigned DLL_CALLCONV FreeImage_GetDIBSize(FIBITMAP *dib);
   attach_function('FreeImage_GetDIBSize', [:pointer], :ulong)
 
+  #FreeImage_GetMemorySize DLL_API unsigned DLL_CALLCONV FreeImage_GetMemorySize(FIBITMAP *dib);
+  attach_function('FreeImage_GetMemorySize', [:pointer], :ulong)
+
   #DLL_API unsigned DLL_CALLCONV FreeImage_GetDotsPerMeterX(FIBITMAP *dib);
   attach_function('FreeImage_GetDotsPerMeterX', [:pointer], :ulong)
 
@@ -136,6 +139,12 @@ module FreeImage
     # size of a bitmap, just the size of its DIB-element.
     def dib_size
       result = FreeImage.FreeImage_GetDIBSize(self)
+      FreeImage.check_last_error
+      result
+    end
+
+    def memory_size
+      result = FreeImage.FreeImage_GetMemorySize(self)
       FreeImage.check_last_error
       result
     end
