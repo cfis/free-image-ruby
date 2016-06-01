@@ -80,8 +80,7 @@ module FreeImage
       count = FreeImage.FreeImage_TellMemory(self)
 
       # Restore position
-      self.seek(last_position, ::IO::SEEK_END)
-      FreeImage.FreeImage_SeekMemory(self, last_position, ::IO::SEEK_SET)
+      self.seek(last_position, ::IO::SEEK_SET)
 
       count
     end
