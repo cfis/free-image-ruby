@@ -49,22 +49,25 @@ class MemoryTest < Minitest::Test
   end
 
   def test_save
-    dst = FreeImage::Memory.new
+    dest = FreeImage::Memory.new
 
     bitmap = memory.open
-    result = bitmap.save(dst, :png)
+    result = bitmap.save(dest, :png)
+    assert(result)
+    assert_equal(37115, dest.memory.count)
+    refute_nil(dest.memory.bytes)
+    assert_equal(37115, dest.memory.bytes.length)
 
     assert(result)
-    refute_nil(dst.memory.bytes)
     if defined?(Encoding)
-      assert_equal(dst.memory.bytes.encoding, Encoding::BINARY)
+      assert_equal(dest.memory.bytes.encoding, Encoding::BINARY)
     end
   end
 
   def test_corrupt
     data = image_data('corrupt.jpg')
     memory = FreeImage::Memory.new(data)
-    
+
     error = assert_raises(FreeImage::Error) do
       memory.open
     end

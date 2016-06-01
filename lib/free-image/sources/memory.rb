@@ -19,6 +19,9 @@ module FreeImage
   #DLL_API unsigned DLL_CALLCONV FreeImage_ReadMemory(void *buffer, unsigned size, unsigned count, FIMEMORY *stream);
   attach_function('FreeImage_ReadMemory', [:pointer, :ulong, :ulong, :memory], :ulong)
 
+  #DLL_API unsigned DLL_CALLCONV FreeImage_WriteMemory(void *buffer, unsigned size, unsigned count, FIMEMORY *stream);
+  attach_function('FreeImage_WriteMemory', [:pointer, :ulong, :ulong, :memory], :ulong)
+
   # DLL_API long DLL_CALLCONV FreeImage_TellMemory(FIMEMORY *stream);
   attach_function('FreeImage_TellMemory', [:memory], :long)
 
@@ -77,16 +80,17 @@ module FreeImage
 
     # Returns the bytes of the memory stream.
     def bytes
-      size = FFI::Type::CHAR.size
-
       # Reset memory to start
       FreeImage.FreeImage_SeekMemory(self, 0, ::IO::SEEK_SET)
       FreeImage.check_last_error
 
-      buffer = FFI::MemoryPointer.new(FFI::Type::CHAR, size * count)
+      # Create a buffer to store the memory
+      buffer = FFI::MemoryPointer.new(FFI::Type::CHAR.size, self.count)
       FreeImage.check_last_error
-      size = FreeImage.FreeImage_ReadMemory(buffer, size, count, self)
-      buffer.null? ? nil : buffer.read_string
+      written = FreeImage.FreeImage_ReadMemory(buffer, FFI::Type::CHAR.size, self.count, self)
+
+      # Return a string
+      buffer.get_bytes(0, FFI::Type::CHAR.size * count)
     end
   end
 
