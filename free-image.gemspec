@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name        = 'free-image'
-  spec.version     = '0.7.1'
+  spec.version     = '0.8.0'
   spec.summary     = 'Ruby Bindings for the Free Image Library'
   spec.description = <<-EOS
     FreeImage is an Open Source library project for developers who would like to support

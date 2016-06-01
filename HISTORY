@@ -1,5 +1,13 @@
 = Release History
 
+== 0.8.0 / 2016-5-31
+* Return correct bytes from memory pointer (Charlie Savage)
+* Return correct image type from memory pointer (Charlie Savage)
+* Wrap new functions - FreeImage_GetMemorySize, FreeImage_WriteMemory (Charlie Savage)
+* Port to minitest from unit test (Charlie Savage)
+* Support msys2 naming scheme on Windows  (Charlie Savage)
+* Add support for reading images from StringIO and Tempfiles (Tom Wardrop)
+
 == 0.7.1 / 2015-12-02
 * Don't crash if FreeImage_HasRGBMasks does not exist
 
