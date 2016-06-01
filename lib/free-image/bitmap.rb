@@ -166,7 +166,7 @@ module FreeImage
       case source
       when AbstractSource
         source
-      when ::IO
+      when ::IO, (StringIO if defined? StringIO), (Tempfile if defined? Tempfile)
         IO.new(source)
       when String
         File.new(source)
