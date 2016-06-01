@@ -37,7 +37,7 @@ module FreeImage
 
   def self.free_image_library_paths
     @free_image_library_paths ||= begin
-      libs = %w{libfreeimage libfreeimage.3 FreeImage}
+      libs = %w{libfreeimage libfreeimage.3 libfreeimage-3 FreeImage}
 
       libs.map do |lib|
         find_lib(lib)
