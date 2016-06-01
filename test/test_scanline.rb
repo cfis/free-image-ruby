@@ -1,8 +1,7 @@
 # encoding: UTF-8
 require File.join(File.dirname(__FILE__),'test_helper')
-require 'test/unit'
 
-class ScanlineTest < Test::Unit::TestCase
+class ScanlineTest < Minitest::Test
   def scanline(index = 0)
     image = lena_image
     image.scanline(index)
@@ -39,24 +38,24 @@ class ScanlineTest < Test::Unit::TestCase
   end
 
   def test_invalid_y
-    error = assert_raise(RangeError) do
+    error = assert_raises(RangeError) do
       lena_image.scanline(-1)
     end
     assert_equal("Index must be between 0 and 511", error.to_s)
 
-    error = assert_raise(RangeError) do
+    error = assert_raises(RangeError) do
       lena_image.scanline(1000)
     end
     assert_equal("Index must be between 0 and 511", error.to_s)
   end
 
   def test_invalid_x
-    error = assert_raise(RangeError) do
+    error = assert_raises(RangeError) do
       scanline[-1]
     end
     assert_equal("Index must be between 0 and 511", error.to_s)
 
-    error = assert_raise(RangeError) do
+    error = assert_raises(RangeError) do
       scanline[1000]
     end
     assert_equal("Index must be between 0 and 511", error.to_s)

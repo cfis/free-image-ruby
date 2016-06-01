@@ -10,6 +10,8 @@ $LOAD_PATH << LIB_DIR
 require 'rubygems'
 require 'free-image'
 require 'tempfile'
+require 'minitest/autorun'
+
 
 def image_path(image)
   File.join(ROOT_DIR, 'test', 'images', image)

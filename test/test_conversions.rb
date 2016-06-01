@@ -1,8 +1,7 @@
 # encoding: UTF-8
 require File.join(File.dirname(__FILE__),'test_helper')
-require 'test/unit'
 
-class ConverstionsTest < Test::Unit::TestCase
+class ConverstionsTest < Minitest::Test
   def test_convert_to_4bits
     bitmap = sample_image.convert_to_4bits
     assert_kind_of(FreeImage::Bitmap, bitmap)
@@ -70,14 +69,14 @@ class ConverstionsTest < Test::Unit::TestCase
   end
 
   def test_threshold_low
-    error = assert_raise(RangeError) do
+    error = assert_raises(RangeError) do
       sample_image.threshold(-1)
     end
     assert_equal("Value is out of range 0..255. Value: -1", error.message)
   end
 
   def test_threshold_hight
-    error = assert_raise(RangeError) do
+    error = assert_raises(RangeError) do
       sample_image.threshold(5555)
     end
     assert_equal("Value is out of range 0..255. Value: 5555", error.message)

@@ -1,15 +1,14 @@
 # encoding: UTF-8
 require File.join(File.dirname(__FILE__),'test_helper')
-require 'test/unit'
 
-class MemoryTest < Test::Unit::TestCase
+class MemoryTest < Minitest::Test
   def memory(image = 'sample.png')
     data = image_data(image)
     FreeImage::Memory.new(data)
   end
 
   def test_wrap
-    assert_not_nil(memory)
+    refute_nil(memory)
   end
 
   def test_format
@@ -26,7 +25,7 @@ class MemoryTest < Test::Unit::TestCase
   end
 
   def test_load_unknown
-    error = assert_raise(FreeImage::Error) do
+    error = assert_raises(FreeImage::Error) do
       memory('not_an_image.txt').open
     end
     assert_equal("Cannot load :unknown image format",
@@ -34,7 +33,7 @@ class MemoryTest < Test::Unit::TestCase
   end
 
   def test_load_wrong_format
-    error = assert_raise(FreeImage::Error) do
+    error = assert_raises(FreeImage::Error) do
       memory.open(:jpeg, 0)
     end
     assert_equal("Not a JPEG file: starts with 0x89 0x50", error.to_s)
@@ -56,7 +55,7 @@ class MemoryTest < Test::Unit::TestCase
     result = bitmap.save(dst, :png)
 
     assert(result)
-    assert_not_nil(dst.memory.bytes)
+    refute_nil(dst.memory.bytes)
     if defined?(Encoding)
       assert_equal(dst.memory.bytes.encoding, Encoding::BINARY)
     end
@@ -66,7 +65,7 @@ class MemoryTest < Test::Unit::TestCase
     data = image_data('corrupt.jpg')
     memory = FreeImage::Memory.new(data)
     
-    error = assert_raise(FreeImage::Error) do
+    error = assert_raises(FreeImage::Error) do
       memory.open
     end
     assert_equal("Cannot load :unknown image format", error.message)
@@ -76,7 +75,7 @@ class MemoryTest < Test::Unit::TestCase
     data = image_data('corrupt.jpg')
     memory = FreeImage::Memory.new(data)
 
-    error = assert_raise(FreeImage::Error) do
+    error = assert_raises(FreeImage::Error) do
       memory.open(:png)
     end
     assert_equal("Could not load the image", error.message)

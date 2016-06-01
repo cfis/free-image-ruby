@@ -1,8 +1,7 @@
 # encoding: UTF-8
 require File.join(File.dirname(__FILE__),'test_helper')
-require 'test/unit'
 
-class IoTest < Test::Unit::TestCase
+class IoTest < Minitest::Test
   def io(image = 'sample.png')
     path = image_path(image)
     file = File.open(path)
@@ -23,7 +22,7 @@ class IoTest < Test::Unit::TestCase
   end
 
   def test_load_unknown
-    error = assert_raise(FreeImage::Error) do
+    error = assert_raises(FreeImage::Error) do
       io('not_an_image.txt').open
     end
     assert_equal("Cannot load :unknown image format",
@@ -31,7 +30,7 @@ class IoTest < Test::Unit::TestCase
   end
 
   def test_load_wrong_format
-    error = assert_raise(FreeImage::Error) do
+    error = assert_raises(FreeImage::Error) do
       io.open(:jpeg)
     end
     assert_equal("Not a JPEG file: starts with 0x89 0x50", error.to_s)
@@ -55,7 +54,7 @@ class IoTest < Test::Unit::TestCase
     file = File.open(path)
     io = FreeImage::IO.new(file)
 
-    error = assert_raise(FreeImage::Error) do
+    error = assert_raises(FreeImage::Error) do
       io.open
     end
     assert_equal("Cannot load :unknown image format", error.message)
@@ -66,7 +65,7 @@ class IoTest < Test::Unit::TestCase
     file = File.open(path)
     io = FreeImage::IO.new(file)
 
-    error = assert_raise(FreeImage::Error) do
+    error = assert_raises(FreeImage::Error) do
       io.open(:png)
     end
     assert_equal("Could not load the image", error.message)

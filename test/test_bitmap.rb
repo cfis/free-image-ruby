@@ -1,8 +1,7 @@
 # encoding: UTF-8
 require File.join(File.dirname(__FILE__),'test_helper')
-require 'test/unit'
 
-class BitmapTest < Test::Unit::TestCase
+class BitmapTest < Minitest::Test
   def test_bits
     bytes = sample_image.bits
     assert_equal(6466, bytes.size)
@@ -25,7 +24,7 @@ class BitmapTest < Test::Unit::TestCase
   end
 
   def test_open_yield_error
-    assert_raise(ArgumentError) do
+    assert_raises(ArgumentError) do
       FreeImage::Bitmap.open(image_path('lena.png')) do |bitmap|
         raise(ArgumentError, "Let's mess things up")
       end
@@ -34,7 +33,7 @@ class BitmapTest < Test::Unit::TestCase
 
   def test_new_from_nil
     ptr = FFI::Pointer::NULL
-    error = assert_raise(FreeImage::Error) do
+    error = assert_raises(FreeImage::Error) do
       FreeImage::Bitmap.new(ptr)
     end
     assert_equal("Cannot create a bitmap from a null pointer", error.message)
@@ -48,7 +47,7 @@ class BitmapTest < Test::Unit::TestCase
 
   def test_clone_block
     lena_image.clone do |image|
-      assert_not_nil(image)
+      refute_nil(image)
     end
   end
 

@@ -1,9 +1,7 @@
 # encoding: UTF-8
-
 require File.join(File.dirname(__FILE__),'test_helper')
-require 'test/unit'
 
-class InformationTest < Test::Unit::TestCase
+class InformationTest < Minitest::Test
   def test_background_color_16bit
     background_color = bit16_bmp.background_color
     assert_kind_of(FreeImage::RGBQuad, background_color)

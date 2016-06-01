@@ -1,11 +1,10 @@
 # encoding: UTF-8
 require File.join(File.dirname(__FILE__),'test_helper')
-require 'test/unit'
 
-class PaletteTest < Test::Unit::TestCase
+class PaletteTest < Minitest::Test
   def test_palette
     palette = sample_image.palette
-    assert_not_nil(palette)
+    refute_nil(palette)
     assert_kind_of(FreeImage::Palette, palette)
   end
 
@@ -27,7 +26,7 @@ class PaletteTest < Test::Unit::TestCase
   def test_index_too_small
     palette = sample_image.palette
 
-    error = assert_raise(RangeError) do
+    error = assert_raises(RangeError) do
       palette[-1]
     end
     assert_equal("Value is out of range 0..256. Value: -1", error.message)
@@ -36,7 +35,7 @@ class PaletteTest < Test::Unit::TestCase
   def test_index_too_large
     palette = sample_image.palette
 
-    error = assert_raise(RangeError) do
+    error = assert_raises(RangeError) do
       palette[300]
     end
     assert_equal("Value is out of range 0..256. Value: 300", error.message)

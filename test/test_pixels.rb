@@ -1,11 +1,10 @@
 # encoding: UTF-8
 require File.join(File.dirname(__FILE__),'test_helper')
-require 'test/unit'
 
-class PixelTest < Test::Unit::TestCase
+class PixelTest < Minitest::Test
   def test_bits
     bytes = sample_image.bits
-    assert_not_nil(bytes)
+    refute_nil(bytes)
   end
 
   def test_pixel_index

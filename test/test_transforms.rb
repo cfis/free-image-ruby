@@ -1,8 +1,7 @@
 # encoding: UTF-8
 require File.join(File.dirname(__FILE__),'test_helper')
-require 'test/unit'
 
-class TrasformsTest < Test::Unit::TestCase
+class TrasformsTest < Minitest::Test
   def test_rotate
     bitmap1 = FreeImage::Bitmap.open(image_path('sample.png'))
     bitmap2 = bitmap1.rotate(45)

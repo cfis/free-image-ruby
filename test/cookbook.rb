@@ -1,6 +1,5 @@
 # encoding: UTF-8
 require File.join(File.dirname(__FILE__),'test_helper')
-require 'test/unit'
 
 def set_to_red(color)
   color[:red] = 255

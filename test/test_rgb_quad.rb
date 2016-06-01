@@ -1,8 +1,7 @@
 # encoding: UTF-8
 require File.join(File.dirname(__FILE__),'test_helper')
-require 'test/unit'
 
-class RGBQuadTest < Test::Unit::TestCase
+class RGBQuadTest < Minitest::Test
   def test_create
     color = FreeImage::RGBQuad.create(1,2,3,4)
     assert_equal(color[:red], 1)

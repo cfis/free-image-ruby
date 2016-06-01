@@ -1,8 +1,7 @@
 # encoding: UTF-8
 require File.join(File.dirname(__FILE__),'test_helper')
-require 'test/unit'
 
-class ModifyTest < Test::Unit::TestCase
+class ModifyTest < Minitest::Test
   def test_copy
     bitmap1 = FreeImage::Bitmap.open(image_path('sample.png'))
     bitmap2 = bitmap1.copy(0, 0, 50, 60)
