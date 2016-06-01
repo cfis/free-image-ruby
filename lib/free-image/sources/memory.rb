@@ -60,20 +60,28 @@ module FreeImage
       super(ptr)
     end
 
+    def position
+      result = FreeImage.FreeImage_TellMemory(self)
+      FreeImage.check_last_error
+      result
+    end
+
+    def seek(amount, whence=IO::SEEK_SET)
+      FreeImage.FreeImage_SeekMemory(self, amount, whence)
+      FreeImage.check_last_error
+    end
+
     # Returns the size of the memory stream.
     def count
-      # Store current position
-      pos = FreeImage.FreeImage_TellMemory(self)
-      FreeImage.check_last_error
+      last_position = self.position
 
       # Go to end of stream to get length
-      FreeImage.FreeImage_SeekMemory(self, 0, ::IO::SEEK_END)
-      FreeImage.check_last_error
+      self.seek(0, ::IO::SEEK_END)
       count = FreeImage.FreeImage_TellMemory(self)
 
       # Restore position
-      FreeImage.FreeImage_SeekMemory(self, pos, ::IO::SEEK_SET)
-      FreeImage.check_last_error
+      self.seek(last_position, ::IO::SEEK_END)
+      FreeImage.FreeImage_SeekMemory(self, last_position, ::IO::SEEK_SET)
 
       count
     end
@@ -81,8 +89,7 @@ module FreeImage
     # Returns the bytes of the memory stream.
     def bytes
       # Reset memory to start
-      FreeImage.FreeImage_SeekMemory(self, 0, ::IO::SEEK_SET)
-      FreeImage.check_last_error
+      self.seek(0, ::IO::SEEK_SET)
 
       # Create a buffer to store the memory
       buffer = FFI::MemoryPointer.new(FFI::Type::CHAR.size, self.count)
@@ -152,7 +159,10 @@ module FreeImage
     # Returns the image format for a memory stream. If the image format cannot be determined
     # the :unknown will be returned.
     def format
-      result = FreeImage.FreeImage_GetFileTypeFromMemory(@memory, 0)
+      # Reset memory to start
+      self.memory.seek(0, ::IO::SEEK_SET)
+
+      result = FreeImage.FreeImage_GetFileTypeFromMemory(self.memory, 0)
       FreeImage.check_last_error
       result
     end
@@ -177,7 +187,7 @@ module FreeImage
     #   dst.bytes
     #
     def save(bitmap, format, flags = 0)
-      result = FreeImage.FreeImage_SaveToMemory(format, bitmap, @memory, flags)
+      result = FreeImage.FreeImage_SaveToMemory(format, bitmap, self.memory, flags)
       FreeImage.check_last_error
       result
     end
@@ -185,7 +195,7 @@ module FreeImage
     private
 
     def load(format, flags)
-      ptr = FreeImage.FreeImage_LoadFromMemory(format, @memory, flags)
+      ptr = FreeImage.FreeImage_LoadFromMemory(format, self.memory, flags)
       FreeImage.check_last_error
       ptr
     end
